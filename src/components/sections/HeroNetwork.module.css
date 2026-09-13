@@ -1,0 +1,109 @@
+.network {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 520 / 580;
+  margin-inline: auto;
+  color: var(--color-brand-mint);
+}
+
+.paths {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.label {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.caption {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.name {
+  color: var(--color-brand-white);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 3px;
+  font-size: 11px;
+}
+
+.profile {
+  top: 9%;
+  left: 4%;
+}
+
+.tournament {
+  top: 22%;
+  right: 1%;
+  text-align: right;
+}
+
+.community {
+  top: 84%;
+  left: 4%;
+}
+
+.company {
+  right: 1%;
+  top: 88%;
+  text-align: right;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .network {
+    max-width: 460px;
+  }
+}
+
+@media (max-width: 767px) {
+  .network {
+    width: 90%;
+    max-width: 378px;
+    aspect-ratio: 520 / 540;
+  }
+
+  .paths {
+    position: absolute;
+    top: -3%;
+    height: 107%;
+  }
+
+  .name {
+    font-size: 13px;
+  }
+
+  .profile {
+    top: 0;
+    left: 0;
+  }
+
+  .tournament {
+    top: 30%;
+    right: 0;
+  }
+
+  .community {
+    left: 0;
+  }
+
+  .company {
+    top: auto;
+    right: 0;
+    bottom: 0;
+  }
+}

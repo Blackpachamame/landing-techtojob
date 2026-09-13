@@ -3,9 +3,31 @@
     "title": "TechToJob",
     "description": "Base técnica de TechToJob en preparación."
   },
-  "Navigation": {},
+  "Navigation": {
+    "home": "TechToJob, inicio",
+    "label": "Navegación principal",
+    "menu": "Menú",
+    "howItWorks": "Cómo funciona",
+    "talent": "Talento",
+    "companies": "Empresas",
+    "tournaments": "Torneos",
+    "community": "Comunidad"
+  },
   "Hero": {
-    "heading": "TechToJob · Verificación inicial"
+    "eyebrow": "Desarrolladores y empresas tech, en una misma comunidad",
+    "title": "Que te conozcan por lo que construyes, no\u00a0por otro CV.",
+    "description": "Participa, comparte lo que sabes hacer y deja que tu trabajo hable por ti. Aquí las empresas conocen a la gente por cómo aporta, no solo por lo que pone en su CV.",
+    "cta": "Entrar a la comunidad",
+    "network": {
+      "profile": "Perfil",
+      "profileDetail": "Frontend · Junior",
+      "available": "Disponible",
+      "community": "Comunidad",
+      "tournament": "Torneo",
+      "tournamentDetail": "Torneo abierto",
+      "company": "Empresa",
+      "companyDetail": "Empresa tech"
+    }
   },
   "HowItWorks": {},
   "Talent": {},

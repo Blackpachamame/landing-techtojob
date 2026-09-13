@@ -1,0 +1,16 @@
+.logo {
+  display: block;
+  width: 184px;
+}
+
+.logo svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 1024px) {
+  .logo {
+    width: 216px;
+  }
+}
