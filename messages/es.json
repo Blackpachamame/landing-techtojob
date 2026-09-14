@@ -29,7 +29,33 @@
       "companyDetail": "Empresa tech"
     }
   },
-  "HowItWorks": {},
+  "HowItWorks": {
+    "eyebrow": "Cómo funciona",
+    "title": "Aquí el recorrido empieza participando.",
+    "description": "Entra, preséntate y deja que la comunidad conozca lo que haces. Cuando surge una oportunidad, ya existe contexto sobre ti.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Entra y ubícate",
+        "description": "Únete a la comunidad, recorre los canales y encuentra dónde encaja lo que haces o quieres aprender. Empezar no debería sentirse como otro proceso de selección."
+      },
+      {
+        "number": "02",
+        "title": "Preséntate con contexto",
+        "description": "Comparte tu stack, tu nivel y tu disponibilidad para que los demás sepan quién eres y qué buscas. Lo necesario para empezar a conocerte, sin convertirte en una ficha más."
+      },
+      {
+        "number": "03",
+        "title": "Participa de verdad",
+        "description": "Comparte dudas, ayuda, entra en torneos y enseña lo que construyes. Cada aportación da más contexto sobre ti que otra candidatura enviada en frío."
+      },
+      {
+        "number": "04",
+        "title": "Cuando encaja, ya hay contexto",
+        "description": "Si una empresa o alguien de la comunidad busca un perfil como el tuyo, no parte de cero: ya puede ver qué sabes, cómo participas y qué construyes."
+      }
+    ]
+  },
   "Talent": {},
   "Companies": {},
   "Tournaments": {},
