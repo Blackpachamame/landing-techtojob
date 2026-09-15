@@ -80,7 +80,20 @@
       "company": "Empresa"
     }
   },
-  "Companies": {},
+  "Companies": {
+    "eyebrow": "Publica como empresa",
+    "title": "Decide con más que un CV delante.",
+    "description": "Publica lo que buscas y revisa perfiles de personas que ya participan en la comunidad. Antes de hablar con alguien, puedes conocer qué construye y cómo aporta.",
+    "note": "Menos criba. Más contexto para decidir con quién hablar.",
+    "context": {
+      "source": "Publicas lo que buscas",
+      "signals": [
+        "Perfil",
+        "Lo que construye",
+        "Cómo participa"
+      ]
+    }
+  },
   "Tournaments": {},
   "Networking": {},
   "Testimonials": {},
