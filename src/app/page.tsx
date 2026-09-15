@@ -3,6 +3,7 @@ import Companies from "@/components/sections/Companies";
 import Hero from "@/components/sections/Hero";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Talent from "@/components/sections/Talent";
+import Tournaments from "@/components/sections/Tournaments";
 
 export default function HomePage() {
   return (
@@ -13,6 +14,7 @@ export default function HomePage() {
         <HowItWorks />
         <Talent />
         <Companies />
+        <Tournaments />
       </main>
     </>
   );

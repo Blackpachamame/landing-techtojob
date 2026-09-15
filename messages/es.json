@@ -94,7 +94,31 @@
       ]
     }
   },
-  "Tournaments": {},
+  "Tournaments": {
+    "eyebrow": "Torneos",
+    "title": "Construye algo que se usa de verdad.",
+    "description": "Cada torneo parte de un reto real. Presentas una solución y un jurado la evalúa con criterios públicos. La propuesta ganadora pasa de entrega a uso real.",
+    "support": "Mientras participas, aprendes haciendo, sumas una pieza concreta para enseñar en una entrevista y dejas que más gente conozca cómo trabajas.",
+    "proof": "Esta misma web nació de uno de esos torneos.",
+    "format": [
+      {
+        "term": "Reto",
+        "description": "Un problema concreto"
+      },
+      {
+        "term": "Entrega",
+        "description": "Tu solución"
+      },
+      {
+        "term": "Jurado",
+        "description": "Criterios públicos"
+      },
+      {
+        "term": "Resultado",
+        "description": "Pasa a uso real"
+      }
+    ]
+  },
   "Networking": {},
   "Testimonials": {},
   "News": {},
