@@ -56,7 +56,30 @@
       }
     ]
   },
-  "Talent": {},
+  "Talent": {
+    "eyebrow": "Ofrécete como talento",
+    "title": "Aquí tu perfil no empieza por un descarte.",
+    "description": "Tu perfil reúne lo que importa para empezar: stack, nivel y disponibilidad. Queda disponible para que cualquier empresa de la comunidad lo revise cuando busca a alguien, sin pasar primero por una criba automática.",
+    "note": "No necesitas ser senior. Publicarlo es gratis.",
+    "profile": {
+      "label": "Perfil",
+      "fields": [
+        {
+          "term": "Stack",
+          "description": "Con qué trabajas"
+        },
+        {
+          "term": "Nivel",
+          "description": "Dónde estás hoy"
+        },
+        {
+          "term": "Disponibilidad",
+          "description": "Si estás abierto a oportunidades"
+        }
+      ],
+      "company": "Empresa"
+    }
+  },
   "Companies": {},
   "Tournaments": {},
   "Networking": {},

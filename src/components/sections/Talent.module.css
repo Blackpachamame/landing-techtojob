@@ -1,0 +1,129 @@
+.profile {
+  width: 100%;
+  max-width: 680px;
+  margin-inline: auto;
+  padding: 32px 24px;
+  border-radius: 2px;
+  background: var(--color-brand-dark);
+  color: var(--color-brand-white);
+}
+
+.fields {
+  margin: 24px 0 0;
+  padding: 0;
+}
+
+.field {
+  position: relative;
+  padding-block: 24px;
+}
+
+.field + .field {
+  border-top: 1px solid rgb(255 255 255 / 15%);
+}
+
+.branch {
+  display: none;
+}
+
+.company {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 32px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.company::before {
+  position: absolute;
+  top: 0;
+  bottom: 0.75em;
+  left: 8px;
+  border-left: 1px solid var(--color-brand-mint);
+  content: "";
+}
+
+.node {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--color-brand-mint);
+  border-radius: 50%;
+  background: var(--color-brand-dark);
+}
+
+.node::after {
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: var(--color-brand-mint);
+  content: "";
+}
+
+@media (min-width: 768px) {
+  .profile {
+    padding: 40px;
+  }
+
+  .field {
+    padding-right: 88px;
+  }
+
+  .field::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-right: 1px solid var(--color-brand-mint);
+    content: "";
+  }
+
+  .field:first-child::after {
+    top: 50%;
+  }
+
+  .branch {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    display: block;
+    width: 56px;
+    height: 1px;
+    background: var(--color-brand-mint);
+  }
+
+  .branch::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border: 1px solid var(--color-brand-mint);
+    border-radius: 50%;
+    background: var(--color-brand-dark);
+    transform: translate(-50%, -50%);
+    content: "";
+  }
+
+  .company {
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 24px;
+  }
+
+  .company::before {
+    right: 0;
+    left: auto;
+    width: 33px;
+    border-right: 1px solid var(--color-brand-mint);
+    border-bottom: 1px solid var(--color-brand-mint);
+    border-left: 0;
+    border-bottom-right-radius: 24px;
+  }
+}
