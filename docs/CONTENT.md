@@ -180,7 +180,7 @@ Format:
 - Jurado — Criterios públicos
 - Resultado — Pasa a uso real
 
-## 5. Networking — approved copy, next to implement
+### Networking
 
 Eyebrow:
 Networking
@@ -194,6 +194,9 @@ En los canales por área compartes dudas, conoces gente del sector y sigues conv
 Note:
 No todo empieza con una candidatura. A veces empieza con una conversación.
 
+Discord CTA:
+Entrar a la comunidad en Discord
+
 Signals:
 - Canales por área
 - Gente del sector
@@ -206,11 +209,11 @@ Do not add:
 - avatars;
 - made-up opportunities.
 
-## 6. Remaining required sections
+## 5. Remaining required sections
 
-After Networking, the remaining required blocks are:
+The remaining required blocks are:
 
-1. Testimonials
+1. Testimonials — next to implement
 2. News
 3. Newsletter
 4. Final CTA
@@ -237,7 +240,7 @@ Footer:
 - functional and restrained;
 - include required navigation/social/legal elements based on the final brief and available real links.
 
-## 7. Confirmed links
+## 6. Confirmed links
 
 Discord:
 https://discord.gg/h9FFgKdkRd
@@ -251,7 +254,7 @@ https://x.com/techtojob
 Instagram:
 https://www.instagram.com/techtojob
 
-## 8. Section ids already established
+## 7. Section ids already established
 
 - how-it-works
 - talent
@@ -263,7 +266,7 @@ Header label “Comunidad” points to networking.
 
 Do not rename established ids without a real reason.
 
-## 9. Content safety rules for this project
+## 8. Content safety rules for this project
 
 Do not invent:
 - employment guarantees;
@@ -280,7 +283,7 @@ Do not invent:
 
 When a detail is not confirmed by the brief, leave it out rather than fabricating it.
 
-## 10. SEO copy
+## 9. SEO copy
 
 Current Metadata content is temporary and must be replaced in the final SEO pass.
 

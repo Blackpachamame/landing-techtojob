@@ -59,6 +59,12 @@ are intentionally deferred. Keep future visible copy in the message files.
 Sora is configured globally in `src/app/layout.tsx`. All application components
 are Server Components; the framework still supplies its standard client runtime.
 
+## Example testimonials
+
+The testimonials in this version are examples, as permitted by the tournament
+rules. Before a production release, replace them with real, verifiable testimonials,
+including a photograph and a link to each person's LinkedIn profile.
+
 ## Brand assets
 
 `public/brand/` contains twelve byte-for-byte SVG copies. Original `Símbolo*`

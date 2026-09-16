@@ -171,10 +171,11 @@ Approved and considered closed unless a real integration bug is discovered:
 - Talent
 - Companies
 - Tournaments
+- Networking
 
 Do not make cosmetic changes to closed sections while implementing a later section.
 
-Networking is the next planned section. Its approved copy and direction are documented in docs/CONTENT.md and docs/DESIGN.md.
+Testimonials is the next section to implement.
 
 ## Scope discipline
 

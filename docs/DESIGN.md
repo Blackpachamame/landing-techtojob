@@ -153,7 +153,7 @@ Especially:
 
 ## 6. Networking direction
 
-Status: approved concept, not yet implemented.
+Status: approved and closed.
 
 Background:
 - mint.
@@ -168,6 +168,8 @@ Layout:
 - three large typographic signals;
 - editorial horizontal bands/rules;
 - final editorial note.
+
+The closing editorial band pairs the note with a real link to Discord. It is a low-emphasis editorial text link, not a primary CTA or a button. The Hero remains the page's primary CTA.
 
 Signals:
 - Canales por área
@@ -197,6 +199,8 @@ Do not invent:
 - avatars;
 - timestamps;
 - reactions.
+
+Testimonials is the next section to implement and must introduce a distinct visual register.
 
 ## 7. Responsive philosophy
 

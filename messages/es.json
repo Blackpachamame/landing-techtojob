@@ -124,13 +124,43 @@
     "title": "Hay oportunidades de las que te enteras estando dentro.",
     "description": "En los canales por área compartes dudas, conoces gente del sector y sigues conversaciones que no aparecen en un portal de empleo. A veces una respuesta llega rápido. Otras veces, alguien comparte una oportunidad porque conoce a quien está contratando.",
     "note": "No todo empieza con una candidatura. A veces empieza con una conversación.",
+    "discordCta": "Entrar a la comunidad en Discord",
     "signals": [
       "Canales por área",
       "Gente del sector",
       "Oportunidades compartidas"
     ]
   },
-  "Testimonials": {},
+  "Testimonials": {
+    "eyebrow": "Testimonios",
+    "title": "La comunidad se nota en lo que cuenta su gente.",
+    "items": [
+      {
+        "name": "Lucía M.",
+        "role": "Frontend Developer",
+        "quote": "Compartir lo que estaba construyendo hizo que la conversación dejara de empezar por mi CV.",
+        "initials": "LM"
+      },
+      {
+        "name": "Mateo R.",
+        "role": "Backend Developer",
+        "quote": "Una duda que solo me habría llevado horas terminó en una conversación de diez minutos con alguien que ya había pasado por lo mismo.",
+        "initials": "MR"
+      },
+      {
+        "name": "Sofía G.",
+        "role": "Junior Developer",
+        "quote": "El torneo me dejó algo concreto que podía enseñar y explicar. No era otro ejercicio guardado en una carpeta.",
+        "initials": "SG"
+      },
+      {
+        "name": "Diego P.",
+        "role": "Tech Lead",
+        "quote": "Ver cómo participa alguien antes de hablar con esa persona cambia mucho la conversación. Ya tienes algo real sobre lo que preguntar.",
+        "initials": "DP"
+      }
+    ]
+  },
   "News": {},
   "Newsletter": {},
   "FinalCTA": {},
