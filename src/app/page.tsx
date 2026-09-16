@@ -2,6 +2,7 @@ import Header from "@/components/layout/Header";
 import Companies from "@/components/sections/Companies";
 import Hero from "@/components/sections/Hero";
 import HowItWorks from "@/components/sections/HowItWorks";
+import Networking from "@/components/sections/Networking";
 import Talent from "@/components/sections/Talent";
 import Tournaments from "@/components/sections/Tournaments";
 
@@ -15,6 +16,7 @@ export default function HomePage() {
         <Talent />
         <Companies />
         <Tournaments />
+        <Networking />
       </main>
     </>
   );

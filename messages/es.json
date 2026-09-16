@@ -119,7 +119,17 @@
       }
     ]
   },
-  "Networking": {},
+  "Networking": {
+    "eyebrow": "Networking",
+    "title": "Hay oportunidades de las que te enteras estando dentro.",
+    "description": "En los canales por área compartes dudas, conoces gente del sector y sigues conversaciones que no aparecen en un portal de empleo. A veces una respuesta llega rápido. Otras veces, alguien comparte una oportunidad porque conoce a quien está contratando.",
+    "note": "No todo empieza con una candidatura. A veces empieza con una conversación.",
+    "signals": [
+      "Canales por área",
+      "Gente del sector",
+      "Oportunidades compartidas"
+    ]
+  },
   "Testimonials": {},
   "News": {},
   "Newsletter": {},
