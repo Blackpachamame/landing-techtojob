@@ -209,23 +209,88 @@ Do not add:
 - avatars;
 - made-up opportunities.
 
+### Testimonials
+
+Status: implemented, reviewed, approved and closed.
+
+The current testimonials are placeholders permitted by the tournament rules. This
+condition is documented in README.md, not in the UI. Before production, replace
+them with real, verifiable testimonials, including photographs and LinkedIn profiles.
+
+Eyebrow:
+Testimonios
+
+Title:
+La comunidad se nota en lo que cuenta su gente.
+
+#### Testimonial 1
+
+Name:
+Lucía M.
+
+Role:
+Frontend Developer
+
+Quote:
+Compartir lo que estaba construyendo hizo que la conversación dejara de empezar por mi CV.
+
+Initials:
+LM
+
+#### Testimonial 2
+
+Name:
+Mateo R.
+
+Role:
+Backend Developer
+
+Quote:
+Una duda que solo me habría llevado horas terminó en una conversación de diez minutos con alguien que ya había pasado por lo mismo.
+
+Initials:
+MR
+
+#### Testimonial 3
+
+Name:
+Sofía G.
+
+Role:
+Junior Developer
+
+Quote:
+El torneo me dejó algo concreto que podía enseñar y explicar. No era otro ejercicio guardado en una carpeta.
+
+Initials:
+SG
+
+#### Testimonial 4
+
+Name:
+Diego P.
+
+Role:
+Tech Lead
+
+Quote:
+Ver cómo participa alguien antes de hablar con esa persona cambia mucho la conversación. Ya tienes algo real sobre lo que preguntar.
+
+Initials:
+DP
+
 ## 5. Remaining required sections
 
 The remaining required blocks are:
 
-1. Testimonials — next to implement
-2. News
-3. Newsletter
-4. Final CTA
-5. Footer
-
-Testimonials:
-- mandatory;
-- tournament placeholders may be fictitious;
-- production intent is for real, verifiable people with photo and LinkedIn.
+1. News
+2. Newsletter
+3. Final CTA
+4. Footer
 
 News:
-- should present community updates/content without inventing current facts.
+- next section to implement;
+- approved direction and copy are documented in docs/DESIGN.md and below.
 
 Newsletter:
 - the brief contains orientative example copy;
@@ -240,7 +305,64 @@ Footer:
 - functional and restrained;
 - include required navigation/social/legal elements based on the final brief and available real links.
 
-## 6. Confirmed links
+## 6. News — approved copy, next to implement
+
+Use three real stories based on public TechToJob posts. Each story must link to
+its real public post through an external editorial link. Do not invent dates,
+news, articles, or additional information.
+
+Eyebrow:
+Noticias
+
+Title:
+Lo que construimos también lo contamos.
+
+Description:
+Torneos, decisiones y avances que compartimos mientras TechToJob toma forma.
+
+### Story 01
+
+Category:
+Torneo #2
+
+Title:
+La comunidad está construyendo la landing oficial de TechToJob.
+
+Description:
+El reto ya está abierto: una landing con brief y rúbrica pública cuya propuesta ganadora pasará a ser la web oficial.
+
+Link label:
+Ver publicación
+
+### Story 02
+
+Category:
+Comunidad
+
+Title:
+TechToJob ya está abierto.
+
+Description:
+Torneos, proyectos colaborativos, empresas y networking conviven en un mismo lugar para que participar deje más contexto que otra candidatura anónima.
+
+Link label:
+Ver publicación
+
+### Story 03
+
+Category:
+Identidad
+
+Title:
+La identidad visual también empezó como un reto abierto.
+
+Description:
+El primer torneo puso el diseño del logo, los colores y la tipografía en manos de quienes quisieran participar.
+
+Link label:
+Ver publicación
+
+## 7. Confirmed links
 
 Discord:
 https://discord.gg/h9FFgKdkRd
@@ -254,7 +376,7 @@ https://x.com/techtojob
 Instagram:
 https://www.instagram.com/techtojob
 
-## 7. Section ids already established
+## 8. Section ids already established
 
 - how-it-works
 - talent
@@ -266,7 +388,7 @@ Header label “Comunidad” points to networking.
 
 Do not rename established ids without a real reason.
 
-## 8. Content safety rules for this project
+## 9. Content safety rules for this project
 
 Do not invent:
 - employment guarantees;
@@ -283,7 +405,7 @@ Do not invent:
 
 When a detail is not confirmed by the brief, leave it out rather than fabricating it.
 
-## 9. SEO copy
+## 10. SEO copy
 
 Current Metadata content is temporary and must be replaced in the final SEO pass.
 

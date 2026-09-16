@@ -172,10 +172,11 @@ Approved and considered closed unless a real integration bug is discovered:
 - Companies
 - Tournaments
 - Networking
+- Testimonials
 
 Do not make cosmetic changes to closed sections while implementing a later section.
 
-Testimonials is the next section to implement.
+News is the next section to implement. Its approved direction and copy are documented in docs/DESIGN.md and docs/CONTENT.md.
 
 ## Scope discipline
 

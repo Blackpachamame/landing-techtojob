@@ -137,6 +137,21 @@ Language:
 Important:
 - this section intentionally breaks the previous connection-heavy visual language.
 
+### Testimonials
+
+Status: approved and closed.
+
+Background:
+- charcoal.
+
+Language:
+- asymmetric, magazine-style editorial composition;
+- one main testimonial, two secondary testimonials, and one wide closing testimonial;
+- figure / blockquote / figcaption;
+- temporary CSS avatars with initials;
+- typography, rules, whitespace, and proportion;
+- no SaaS cards, stars, diagrams, or stock photography.
+
 ## 5. Repetition rule for remaining sections
 
 Nodes, networks, curves, branches, and connection diagrams have already been used enough.
@@ -144,8 +159,6 @@ Nodes, networks, curves, branches, and connection diagrams have already been use
 For the remaining sections, prefer new visual registers.
 
 Especially:
-- Networking should use typography and horizontal conversational bands, not another node diagram.
-- Testimonials should avoid becoming another timeline, network, or technical diagram.
 - News should feel editorial/content-oriented.
 - Newsletter should feel like a clear signup moment without generic SaaS card styling.
 - Final CTA should be bold and simple.
@@ -200,9 +213,29 @@ Do not invent:
 - timestamps;
 - reactions.
 
-Testimonials is the next section to implement and must introduce a distinct visual register.
+News is the next section to implement.
 
-## 7. Responsive philosophy
+## 7. News direction
+
+Status: approved direction, next to implement.
+
+Background:
+- white.
+
+Language:
+- newsroom / editorial feed;
+- three real stories based on public TechToJob posts;
+- one main story with greater hierarchy and two secondary stories;
+- typography, numbers 01/02/03, rules, whitespace, and composition;
+- each story links to its real public post through an external editorial link.
+
+Avoid:
+- generic blog card grids;
+- invented photographs or thumbnails;
+- invented dates, news, or articles;
+- nodes, diagrams, timelines, or rounded cards.
+
+## 8. Responsive philosophy
 
 Target widths to verify:
 
@@ -225,7 +258,7 @@ Rules:
 - decorative geometry must adapt to real content height;
 - never assume equal row heights when copy can wrap.
 
-## 8. Typography
+## 9. Typography
 
 Use Sora only.
 
@@ -242,7 +275,7 @@ General direction:
 - avoid hard br tags for line wrapping;
 - prefer max-width, responsive type, and text balancing.
 
-## 9. Cards and surfaces
+## 10. Cards and surfaces
 
 Cards are not forbidden, but should not become the default visual solution.
 
@@ -253,7 +286,7 @@ Before creating a card, ask:
 
 Avoid generic repeated cards when the content is conceptual.
 
-## 10. Decorative graphics
+## 11. Decorative graphics
 
 Decorative SVG/CSS is allowed when it adds meaning.
 
@@ -264,7 +297,7 @@ Rules:
 - avoid target/crosshair imagery;
 - do not add icon libraries unless explicitly required.
 
-## 11. Animation
+## 12. Animation
 
 Current phase:
 - static only.
