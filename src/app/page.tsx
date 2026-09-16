@@ -3,6 +3,7 @@ import Companies from "@/components/sections/Companies";
 import Hero from "@/components/sections/Hero";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Networking from "@/components/sections/Networking";
+import News from "@/components/sections/News";
 import Talent from "@/components/sections/Talent";
 import Testimonials from "@/components/sections/Testimonials";
 import Tournaments from "@/components/sections/Tournaments";
@@ -19,6 +20,7 @@ export default function HomePage() {
         <Tournaments />
         <Networking />
         <Testimonials />
+        <News />
       </main>
     </>
   );

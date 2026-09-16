@@ -159,8 +159,7 @@ Nodes, networks, curves, branches, and connection diagrams have already been use
 For the remaining sections, prefer new visual registers.
 
 Especially:
-- News should feel editorial/content-oriented.
-- Newsletter should feel like a clear signup moment without generic SaaS card styling.
+- Newsletter is next; its copy and design will be decided before implementation.
 - Final CTA should be bold and simple.
 - Footer should be functional and restrained.
 
@@ -213,11 +212,9 @@ Do not invent:
 - timestamps;
 - reactions.
 
-News is the next section to implement.
-
 ## 7. News direction
 
-Status: approved direction, next to implement.
+Status: approved and closed.
 
 Background:
 - white.
@@ -229,11 +226,18 @@ Language:
 - typography, numbers 01/02/03, rules, whitespace, and composition;
 - each story links to its real public post through an external editorial link.
 
+Layout and semantics:
+- desktop: a full-width main story with two secondary stories below;
+- tablet and mobile: stacked stories, preserving the main story's greater hierarchy;
+- each story uses article + H3 under the section H2.
+
 Avoid:
 - generic blog card grids;
-- invented photographs or thumbnails;
+- photographs or thumbnails;
 - invented dates, news, or articles;
 - nodes, diagrams, timelines, or rounded cards.
+
+Newsletter is the next section to implement. Its copy and design will be decided before implementation.
 
 ## 8. Responsive philosophy
 

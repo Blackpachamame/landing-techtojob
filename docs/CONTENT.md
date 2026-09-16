@@ -279,33 +279,9 @@ Ver cómo participa alguien antes de hablar con esa persona cambia mucho la conv
 Initials:
 DP
 
-## 5. Remaining required sections
+### News
 
-The remaining required blocks are:
-
-1. News
-2. Newsletter
-3. Final CTA
-4. Footer
-
-News:
-- next section to implement;
-- approved direction and copy are documented in docs/DESIGN.md and below.
-
-Newsletter:
-- the brief contains orientative example copy;
-- do not copy the example;
-- explain the real value of subscribing.
-
-Final CTA:
-- close the page with one strong, simple action;
-- Discord remains the primary community destination.
-
-Footer:
-- functional and restrained;
-- include required navigation/social/legal elements based on the final brief and available real links.
-
-## 6. News — approved copy, next to implement
+Status: implemented, reviewed, approved and closed.
 
 Use three real stories based on public TechToJob posts. Each story must link to
 its real public post through an external editorial link. Do not invent dates,
@@ -320,7 +296,7 @@ Lo que construimos también lo contamos.
 Description:
 Torneos, decisiones y avances que compartimos mientras TechToJob toma forma.
 
-### Story 01
+#### Story 01
 
 Category:
 Torneo #2
@@ -334,7 +310,12 @@ El reto ya está abierto: una landing con brief y rúbrica pública cuya propues
 Link label:
 Ver publicación
 
-### Story 02
+URL:
+https://es.linkedin.com/posts/techtojob_desarrolloweb-frontend-nextjs-activity-7503104580864368640-YQDy
+
+Internal note: “El reto ya está abierto” is time-sensitive. Review it in the final pass if the tournament has ended; keep the approved copy unchanged for now.
+
+#### Story 02
 
 Category:
 Comunidad
@@ -348,7 +329,10 @@ Torneos, proyectos colaborativos, empresas y networking conviven en un mismo lug
 Link label:
 Ver publicación
 
-### Story 03
+URL:
+https://es.linkedin.com/posts/techtojob_empleo-tech-programaci%C3%B3n-activity-7497649410609283072-eXDp
+
+#### Story 03
 
 Category:
 Identidad
@@ -362,7 +346,31 @@ El primer torneo puso el diseño del logo, los colores y la tipografía en manos
 Link label:
 Ver publicación
 
-## 7. Confirmed links
+URL:
+https://es.linkedin.com/posts/techtojob_dise%C3%B1o-branding-identidadvisual-activity-7498086427562254336-mUcN
+
+## 5. Remaining required sections
+
+The remaining required blocks are:
+
+1. Newsletter
+2. Final CTA
+3. Footer
+
+Newsletter:
+- next section to implement;
+- copy and design will be decided before implementation;
+- the brief contains orientative example copy; do not copy the example.
+
+Final CTA:
+- close the page with one strong, simple action;
+- Discord remains the primary community destination.
+
+Footer:
+- functional and restrained;
+- include required navigation/social/legal elements based on the final brief and available real links.
+
+## 6. Confirmed links
 
 Discord:
 https://discord.gg/h9FFgKdkRd
@@ -376,7 +384,7 @@ https://x.com/techtojob
 Instagram:
 https://www.instagram.com/techtojob
 
-## 8. Section ids already established
+## 7. Section ids already established
 
 - how-it-works
 - talent
@@ -388,7 +396,7 @@ Header label “Comunidad” points to networking.
 
 Do not rename established ids without a real reason.
 
-## 9. Content safety rules for this project
+## 8. Content safety rules for this project
 
 Do not invent:
 - employment guarantees;
@@ -405,7 +413,7 @@ Do not invent:
 
 When a detail is not confirmed by the brief, leave it out rather than fabricating it.
 
-## 10. SEO copy
+## 9. SEO copy
 
 Current Metadata content is temporary and must be replaced in the final SEO pass.
 

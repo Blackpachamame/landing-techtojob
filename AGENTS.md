@@ -173,10 +173,11 @@ Approved and considered closed unless a real integration bug is discovered:
 - Tournaments
 - Networking
 - Testimonials
+- News
 
 Do not make cosmetic changes to closed sections while implementing a later section.
 
-News is the next section to implement. Its approved direction and copy are documented in docs/DESIGN.md and docs/CONTENT.md.
+Newsletter is the next section to implement. Its copy and design will be decided before implementation.
 
 ## Scope discipline
 

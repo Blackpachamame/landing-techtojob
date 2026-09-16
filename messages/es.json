@@ -161,7 +161,37 @@
       }
     ]
   },
-  "News": {},
+  "News": {
+    "eyebrow": "Noticias",
+    "title": "Lo que construimos también lo contamos.",
+    "description": "Torneos, decisiones y avances que compartimos mientras TechToJob toma forma.",
+    "stories": [
+      {
+        "number": "01",
+        "category": "Torneo #2",
+        "title": "La comunidad está construyendo la landing oficial de TechToJob.",
+        "description": "El reto ya está abierto: una landing con brief y rúbrica pública cuya propuesta ganadora pasará a ser la web oficial.",
+        "linkLabel": "Ver publicación",
+        "href": "https://es.linkedin.com/posts/techtojob_desarrolloweb-frontend-nextjs-activity-7503104580864368640-YQDy"
+      },
+      {
+        "number": "02",
+        "category": "Comunidad",
+        "title": "TechToJob ya está abierto.",
+        "description": "Torneos, proyectos colaborativos, empresas y networking conviven en un mismo lugar para que participar deje más contexto que otra candidatura anónima.",
+        "linkLabel": "Ver publicación",
+        "href": "https://es.linkedin.com/posts/techtojob_empleo-tech-programaci%C3%B3n-activity-7497649410609283072-eXDp"
+      },
+      {
+        "number": "03",
+        "category": "Identidad",
+        "title": "La identidad visual también empezó como un reto abierto.",
+        "description": "El primer torneo puso el diseño del logo, los colores y la tipografía en manos de quienes quisieran participar.",
+        "linkLabel": "Ver publicación",
+        "href": "https://es.linkedin.com/posts/techtojob_dise%C3%B1o-branding-identidadvisual-activity-7498086427562254336-mUcN"
+      }
+    ]
+  },
   "Newsletter": {},
   "FinalCTA": {},
   "Footer": {}
