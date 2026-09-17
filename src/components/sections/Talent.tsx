@@ -8,16 +8,16 @@ export default function Talent() {
     <section
       id="talent"
       aria-labelledby="talent-title"
-      className="bg-brand-mint py-20 text-brand-dark md:py-24 lg:py-30 xl:py-32"
+      className={`${styles.section} bg-brand-mint py-20 text-brand-dark md:py-24 lg:py-32`}
     >
-      <div className="page-container grid items-center gap-12 md:gap-16 lg:grid-cols-[0.8fr_1fr] lg:gap-12 xl:gap-20">
+      <div className="page-container grid items-center gap-14 md:gap-16 lg:grid-cols-[1fr_0.9fr] lg:gap-20 xl:gap-28">
         <div className="max-w-160">
-          <p className="mb-5 text-[13px] leading-relaxed font-semibold tracking-[0.1em] uppercase">
+          <p className="section-eyebrow mb-6">
             {content.eyebrow}
           </p>
           <h2
             id="talent-title"
-            className="text-4xl leading-[1.1] font-semibold tracking-[-0.045em] text-balance md:text-5xl xl:text-[52px]"
+            className="section-title"
           >
             {content.title}
           </h2>
@@ -30,7 +30,7 @@ export default function Talent() {
         </div>
 
         <div className={styles.profile}>
-          <p className="text-3xl leading-tight font-semibold tracking-[-0.035em]">
+          <p className="text-4xl leading-tight font-semibold tracking-[-0.045em] md:text-5xl">
             {content.profile.label}
           </p>
           <dl className={styles.fields}>

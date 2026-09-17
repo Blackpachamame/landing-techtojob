@@ -1,6 +1,11 @@
+.section {
+  position: relative;
+  background-image: linear-gradient(180deg, rgb(132 192 191 / 9%), transparent 180px);
+}
+
 .journey {
   display: grid;
-  gap: 48px;
+  gap: 40px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -9,33 +14,23 @@
 .step {
   position: relative;
   min-width: 0;
-  padding-left: 40px;
+  padding-left: 28px;
 }
 
 .node {
   position: absolute;
-  top: 10px;
-  left: 0;
-  width: 18px;
-  height: 18px;
-  border: 1px solid var(--color-brand-mint);
-  border-radius: 50%;
-  background: var(--color-brand-white);
-}
-
-.node::after {
-  position: absolute;
-  inset: 4px;
-  border-radius: 50%;
-  background: var(--color-brand-mint);
-  content: "";
+  top: 18px;
+  left: -3px;
+  width: 7px;
+  height: 7px;
+  background: var(--color-brand-dark);
 }
 
 .rail {
   position: absolute;
-  top: 19px;
-  bottom: -67px;
-  left: 8px;
+  top: 22px;
+  bottom: -62px;
+  left: 0;
   width: 1px;
   background: var(--color-brand-mint);
 }
@@ -46,63 +41,75 @@
 
 .number {
   display: block;
-  font-size: 36px;
+  font-size: 76px;
   font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.05em;
+  line-height: 0.95;
+  letter-spacing: -0.075em;
+  color: color-mix(in srgb, var(--color-brand-dark) 80%, var(--color-brand-mint));
 }
 
 .title {
-  margin-top: 16px;
-  font-size: 22px;
+  margin-top: 20px;
+  font-size: 23px;
   font-weight: 600;
-  line-height: 1.3;
-  letter-spacing: -0.035em;
+  line-height: 1.25;
+  letter-spacing: -0.04em;
   text-wrap: balance;
 }
 
 .description {
-  margin-top: 12px;
-  color: color-mix(in srgb, var(--color-brand-dark) 80%, var(--color-brand-white));
+  margin-top: 14px;
+  color: color-mix(in srgb, var(--color-brand-dark) 85%, white);
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {
-  .step {
-    display: grid;
-    grid-template-columns: 48px minmax(0, 0.9fr) minmax(0, 1.2fr);
-    align-items: start;
-    column-gap: 24px;
+
+  .journey {
+    gap: 36px;
   }
 
-  .title,
-  .description {
+  .step {
+    display: grid;
+    grid-template-columns: 100px minmax(0, 0.9fr) minmax(0, 1.3fr);
+    column-gap: 24px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid rgb(47 52 54 / 12%);
+  }
+
+  .title, .description {
     margin-top: 0;
+  }
+
+  .number {
+    font-size: 88px;
   }
 }
 
 @media (min-width: 1280px) {
+
   .journey {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 32px;
   }
 
   .step {
-    padding-top: 52px;
+    padding-top: 36px;
     padding-left: 0;
   }
 
   .step:nth-child(even) {
-    padding-top: 100px;
+    padding-top: 84px;
   }
 
   .node {
-    top: 0;
+    top: 6px;
+    left: 0;
   }
 
   .step:nth-child(even) .node {
-    top: 48px;
+    top: 54px;
   }
 
   .rail {
@@ -112,7 +119,7 @@
   .connector {
     position: absolute;
     top: 9px;
-    left: 9px;
+    left: 3px;
     display: block;
     width: calc(100% + 32px);
     height: 48px;
@@ -121,10 +128,10 @@
   }
 
   .number {
-    font-size: 40px;
+    font-size: 112px;
   }
 
-  .description {
-    margin-top: 16px;
+  .title {
+    margin-top: 24px;
   }
 }

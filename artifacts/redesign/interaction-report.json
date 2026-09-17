@@ -1,0 +1,34 @@
+{
+  "missingApprovedStrings": [],
+  "menu": {
+    "open": true,
+    "focusOutline": "solid",
+    "links": [
+      {
+        "height": 44,
+        "width": 327
+      },
+      {
+        "height": 44,
+        "width": 327
+      },
+      {
+        "height": 44,
+        "width": 327
+      },
+      {
+        "height": 44,
+        "width": 327
+      },
+      {
+        "height": 44,
+        "width": 327
+      }
+    ]
+  },
+  "keyboardAfterMenu": {
+    "tag": "A",
+    "href": "#how-it-works",
+    "outline": "solid"
+  }
+}

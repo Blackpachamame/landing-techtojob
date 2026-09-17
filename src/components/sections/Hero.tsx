@@ -1,30 +1,33 @@
 import messages from "../../../messages/es.json";
 import HeroNetwork from "./HeroNetwork";
+import styles from "./Hero.module.css";
 
 export default function Hero() {
   const content = messages.Hero;
+  const titleAccentStart = content.title.lastIndexOf(",") + 1;
 
   return (
-    <section aria-labelledby="hero-title" className="bg-brand-dark">
-      <div className="page-container grid min-h-[calc(100svh-80px)] items-center gap-12 py-14 md:gap-16 md:py-20 lg:grid-cols-[1.15fr_1fr] lg:gap-8 lg:pt-8 lg:pb-24 xl:gap-12">
-        <div className="relative z-1 max-w-2xl">
-          <p className="mb-6 max-w-110 text-[13px] leading-relaxed font-semibold tracking-[0.1em] text-brand-mint uppercase md:mb-7">
+    <section aria-labelledby="hero-title" className={styles.hero}>
+      <div className={`page-container ${styles.composition}`}>
+        <div className="relative z-1 min-w-0 max-w-2xl">
+          <p className="section-eyebrow mb-7 max-w-110 text-brand-mint">
             {content.eyebrow}
           </p>
           <h1
             id="hero-title"
-            className="max-w-160 text-[40px] leading-[1.06] font-semibold tracking-[-0.055em] text-balance md:text-[56px] lg:text-[clamp(52px,4.75vw,68px)]"
+            className={styles.title}
           >
-            {content.title}
+            {content.title.slice(0, titleAccentStart)}
+            <span className="text-brand-mint">{content.title.slice(titleAccentStart)}</span>
           </h1>
-          <p className="mt-6 max-w-145 text-base leading-[1.65] text-brand-white/75 md:text-lg">
+          <p className="mt-7 max-w-125 text-base leading-[1.75] text-brand-white/75">
             {content.description}
           </p>
           <a
             href="https://discord.gg/h9FFgKdkRd"
             target="_blank"
             rel="noopener noreferrer"
-            className="group mt-8 inline-flex min-h-14 items-center justify-between gap-7 rounded-sm border border-brand-mint bg-brand-mint px-6 py-4 text-sm font-semibold text-brand-dark hover:border-brand-white hover:bg-brand-white focus-visible:outline-2 focus-visible:outline-offset-6 focus-visible:outline-brand-mint motion-safe:transition-colors"
+            className="group mt-8 inline-flex min-h-14 items-center justify-between gap-8 rounded-full border border-brand-mint bg-brand-mint px-6 py-4 text-sm font-semibold text-brand-dark hover:border-brand-white hover:bg-brand-white focus-visible:outline-2 focus-visible:outline-offset-6 focus-visible:outline-brand-mint motion-safe:transition-colors"
           >
             {content.cta}
             <svg

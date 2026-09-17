@@ -1,13 +1,20 @@
 .network {
   position: relative;
-  width: 100%;
-  max-width: 560px;
-  aspect-ratio: 520 / 580;
-  margin-inline: auto;
+  width: 112%;
+  min-width: 0;
+  margin-left: 0;
+  aspect-ratio: 600 / 590;
   color: var(--color-brand-mint);
 }
 
+.field {
+  position: absolute;
+  inset: 6% -10% 0;
+  background: radial-gradient(ellipse at 52% 49%, rgb(132 192 191 / 18%), transparent 58%);
+}
+
 .paths {
+  position: absolute;
   width: 100%;
   height: 100%;
   overflow: visible;
@@ -17,74 +24,148 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 9px;
+  padding: 20px 24px;
+  border: 1px solid rgb(132 192 191 / 24%);
+  border-radius: 4px;
+  background: linear-gradient(120deg, rgb(255 255 255 / 6%), transparent), color-mix(in srgb, var(--color-brand-deep) 92%, transparent);
+  box-shadow: 0 16px 30px rgb(0 0 0 / 8%);
+}
+
+.label::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 24px;
+  width: 26px;
+  height: 1px;
+  background: var(--color-brand-mint);
 }
 
 .caption {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 
 .name {
-  color: var(--color-brand-white);
+  color: white;
   font-size: 15px;
   font-weight: 600;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.025em;
 }
 
 .status {
   display: flex;
   align-items: center;
-  gap: 7px;
-  margin-top: 3px;
-  font-size: 11px;
+  gap: 8px;
+  font-size: 12px;
 }
 
 .profile {
   top: 9%;
-  left: 4%;
+  left: 9%;
 }
 
 .tournament {
-  top: 22%;
-  right: 1%;
-  text-align: right;
-}
-
-.community {
-  top: 84%;
-  left: 4%;
+  top: 25%;
+  right: 8%;
 }
 
 .company {
-  right: 1%;
-  top: 88%;
-  text-align: right;
+  right: 6%;
+  bottom: 9%;
+}
+
+.community {
+  position: absolute;
+  top: 46%;
+  left: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  color: white;
+  font-size: clamp(21px, 2.4vw, 32px);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+}
+
+.communityMark {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-brand-mint);
+  border-radius: 14px 4px 14px 4px;
+  background: linear-gradient(135deg, rgb(132 192 191 / 50%), rgb(132 192 191 / 5%));
+  box-shadow: 5px -5px 0 -1px var(--color-brand-deep), 5px -5px 0 0 rgb(132 192 191 / 40%);
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
+
   .network {
-    max-width: 460px;
+    width: 100%;
+    margin-left: 0;
+    height: 430px;
+    aspect-ratio: auto;
+  }
+
+  .label {
+    padding: 16px;
+  }
+
+  .profile {
+    top: 2%;
+    left: 0;
+  }
+
+  .tournament {
+    top: 28%;
+    right: 0;
+  }
+
+  .company {
+    bottom: 0;
+  }
+
+  .community {
+    top: 53%;
+    left: 16%;
   }
 }
 
 @media (max-width: 767px) {
+
   .network {
-    width: 90%;
-    max-width: 378px;
-    aspect-ratio: 520 / 540;
+    width: 100%;
+    max-width: 430px;
+    height: 270px;
+    aspect-ratio: auto;
+    margin: 0 auto;
   }
 
   .paths {
-    position: absolute;
-    top: -3%;
-    height: 107%;
+    left: -4%;
+    top: -14%;
+    width: 112%;
+    height: 120%;
+  }
+
+  .label {
+    padding: 12px 14px;
+    gap: 5px;
+  }
+
+  .caption {
+    font-size: 10px;
   }
 
   .name {
-    font-size: 13px;
+    font-size: 12px;
+  }
+
+  .status {
+    font-size: 11px;
   }
 
   .profile {
@@ -93,17 +174,25 @@
   }
 
   .tournament {
-    top: 30%;
+    top: 24%;
     right: 0;
-  }
-
-  .community {
-    left: 0;
   }
 
   .company {
-    top: auto;
-    right: 0;
+    right: 3%;
     bottom: 0;
+  }
+
+  .community {
+    top: 50%;
+    left: 9%;
+    gap: 12px;
+    font-size: 22px;
+  }
+
+  .communityMark {
+    width: 28px;
+    height: 28px;
+    border-radius: 9px 2px;
   }
 }

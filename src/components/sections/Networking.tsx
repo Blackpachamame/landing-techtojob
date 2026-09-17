@@ -1,4 +1,5 @@
 import messages from "../../../messages/es.json";
+import styles from "./Networking.module.css";
 
 export default function Networking() {
   const content = messages.Networking;
@@ -7,36 +8,31 @@ export default function Networking() {
     <section
       id="networking"
       aria-labelledby="networking-title"
-      className="bg-brand-mint py-20 text-brand-dark md:py-24 lg:py-30 xl:py-32"
+      className={`${styles.section} bg-brand-mint py-20 text-brand-dark md:py-24 lg:py-28`}
     >
       <div className="page-container">
-        <div>
-          <p className="mb-5 text-[13px] leading-relaxed font-semibold tracking-[0.1em] uppercase">
-            {content.eyebrow}
-          </p>
-          <h2
-            id="networking-title"
-            className="max-w-240 text-[34px] leading-[1.1] font-semibold tracking-[-0.045em] text-balance md:text-5xl xl:text-[52px]"
-          >
-            {content.title}
-          </h2>
-          <p className="mt-6 max-w-180 text-base leading-[1.7] md:text-lg">
+        <div className={styles.intro}>
+          <div>
+            <p className="section-eyebrow mb-6">{content.eyebrow}</p>
+            <h2 id="networking-title" className="section-title max-w-240">
+              {content.title}
+            </h2>
+          </div>
+          <p className="max-w-160 text-base leading-[1.75] lg:pt-12">
             {content.description}
           </p>
         </div>
 
-        <ul className="m-0 mt-12 list-none border-t border-brand-dark/70 p-0 md:mt-16">
+        <ul className={styles.signals}>
           {content.signals.map((signal) => (
-            <li
-              key={signal}
-              className="border-brand-dark/30 py-7 text-[30px] leading-[1.1] font-semibold tracking-[-0.045em] not-first:border-t md:py-9 md:text-[40px] lg:py-10 lg:text-5xl lg:[&:nth-child(2)]:text-right lg:[&:nth-child(3)]:text-center xl:text-[52px]"
-            >
+            <li key={signal} className={styles.signal}>
+              <span aria-hidden="true" className={styles.mark} />
               {signal}
             </li>
           ))}
         </ul>
 
-        <div className="grid gap-6 border-t border-brand-dark/70 pt-8 md:gap-8 md:pt-10 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-12">
+        <div className={`${styles.closing} grid gap-6 pt-8 md:gap-8 md:pt-10 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-12`}>
           <p className="max-w-150 text-xl leading-relaxed font-semibold tracking-[-0.025em] text-balance md:text-2xl">
             {content.note}
           </p>

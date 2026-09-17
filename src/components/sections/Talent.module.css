@@ -1,25 +1,67 @@
+.section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-image: radial-gradient(ellipse at 12% 0, rgb(255 255 255 / 45%), transparent 65%);
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 65%;
+  height: 140%;
+  right: -30%;
+  top: -15%;
+  border: 1px solid rgb(47 52 54 / 12%);
+  transform: rotate(24deg);
+}
+
 .profile {
-  width: 100%;
-  max-width: 680px;
+  position: relative;
+  isolation: isolate;
+  width: calc(100% - 12px);
+  max-width: 600px;
   margin-inline: auto;
-  padding: 32px 24px;
-  border-radius: 2px;
-  background: var(--color-brand-dark);
-  color: var(--color-brand-white);
+  padding: 32px 26px;
+  border: 1px solid rgb(255 255 255 / 22%);
+  background: linear-gradient(130deg, rgb(132 192 191 / 9%), transparent 55%), var(--color-brand-dark);
+  color: white;
+  box-shadow: 0 22px 38px rgb(47 52 54 / 12%);
+}
+
+.profile::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  inset: -14px 14px 14px -14px;
+  border: 1px solid rgb(47 52 54 / 35%);
+}
+
+.profile::after {
+  content: "";
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 18px;
+  height: 18px;
+  border-top: 1px solid var(--color-brand-mint);
+  border-right: 1px solid var(--color-brand-mint);
 }
 
 .fields {
-  margin: 24px 0 0;
+  margin: 28px 0 0;
   padding: 0;
 }
 
 .field {
   position: relative;
   padding-block: 24px;
+  border-top: 1px solid rgb(255 255 255 / 18%);
 }
 
-.field + .field {
-  border-top: 1px solid rgb(255 255 255 / 15%);
+.field dt {
+  color: var(--color-brand-mint);
 }
 
 .branch {
@@ -29,101 +71,61 @@
 .company {
   position: relative;
   display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
   justify-content: flex-end;
-  gap: 12px;
-  padding-top: 32px;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+  padding-top: 26px;
+  border-top: 1px solid rgb(255 255 255 / 18%);
   font-size: 16px;
-  line-height: 1.5;
+  font-weight: 600;
 }
 
 .company::before {
-  position: absolute;
-  top: 0;
-  bottom: 0.75em;
-  left: 8px;
-  border-left: 1px solid var(--color-brand-mint);
   content: "";
+  flex: 1;
+  height: 1px;
+  margin-right: 8px;
+  background: linear-gradient(90deg, transparent, rgb(132 192 191 / 60%));
 }
 
 .node {
-  position: relative;
   display: block;
-  flex-shrink: 0;
-  width: 18px;
-  height: 18px;
+  width: 8px;
+  height: 8px;
   border: 1px solid var(--color-brand-mint);
   border-radius: 50%;
-  background: var(--color-brand-dark);
-}
-
-.node::after {
-  position: absolute;
-  inset: 4px;
-  border-radius: 50%;
-  background: var(--color-brand-mint);
-  content: "";
 }
 
 @media (min-width: 768px) {
+
   .profile {
-    padding: 40px;
+    padding: 44px;
   }
 
   .field {
-    padding-right: 88px;
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 20px;
+    padding-block: 30px;
   }
 
-  .field::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    border-right: 1px solid var(--color-brand-mint);
-    content: "";
+  .field dd {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .profile {
+    transform: translateY(10px);
   }
 
-  .field:first-child::after {
-    top: 50%;
-  }
-
-  .branch {
-    position: absolute;
-    top: 50%;
-    right: 0;
+  .field {
     display: block;
-    width: 56px;
-    height: 1px;
-    background: var(--color-brand-mint);
   }
 
-  .branch::before {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 10px;
-    height: 10px;
-    border: 1px solid var(--color-brand-mint);
-    border-radius: 50%;
-    background: var(--color-brand-dark);
-    transform: translate(-50%, -50%);
-    content: "";
-  }
-
-  .company {
-    flex-direction: row;
-    justify-content: flex-end;
-    padding-right: 24px;
-  }
-
-  .company::before {
-    right: 0;
-    left: auto;
-    width: 33px;
-    border-right: 1px solid var(--color-brand-mint);
-    border-bottom: 1px solid var(--color-brand-mint);
-    border-left: 0;
-    border-bottom-right-radius: 24px;
+  .field dd {
+    margin-top: 8px;
   }
 }

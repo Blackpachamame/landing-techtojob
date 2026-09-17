@@ -1,4 +1,5 @@
 import messages from "../../../messages/es.json";
+import styles from "./News.module.css";
 
 export default function News() {
   const content = messages.News;
@@ -7,15 +8,15 @@ export default function News() {
     <section
       id="news"
       aria-labelledby="news-title"
-      className="bg-brand-white py-20 text-brand-dark md:py-24 lg:py-30 xl:py-32"
+      className={`${styles.section} bg-brand-white py-20 text-brand-dark md:py-24 lg:py-32`}
     >
       <div className="page-container">
-        <p className="mb-5 text-[13px] leading-relaxed font-semibold tracking-[0.1em] uppercase">
+        <p className="section-eyebrow mb-6">
           {content.eyebrow}
         </p>
         <h2
           id="news-title"
-          className="max-w-200 text-4xl leading-[1.1] font-semibold tracking-[-0.045em] text-balance md:text-5xl xl:text-[52px]"
+          className="max-w-200 section-title"
         >
           {content.title}
         </h2>
@@ -23,25 +24,21 @@ export default function News() {
           {content.description}
         </p>
 
-        <div className="mt-14 grid gap-x-16 gap-y-10 md:mt-16 md:gap-y-14 lg:grid-cols-2 xl:gap-x-24">
+        <div className={styles.stories}>
           {content.stories.map((story, index) => (
             <article
               key={story.number}
               aria-labelledby={`news-story-${story.number}`}
               className={
                 index === 0
-                  ? "border-t-2 border-brand-dark pt-7 md:pt-9 lg:col-span-2"
-                  : "border-t border-brand-dark/30 pt-7 md:pt-9"
+                  ? `${styles.story} ${styles.lead}`
+                  : styles.story
               }
             >
-              <div className="mb-6 flex items-center gap-5 md:mb-8">
+              <div className={styles.index}>
                 <span
                   aria-hidden="true"
-                  className={
-                    index === 0
-                      ? "text-[56px] leading-none tracking-[-0.06em] tabular-nums md:text-[72px]"
-                      : "text-[40px] leading-none tracking-[-0.06em] tabular-nums md:text-5xl"
-                  }
+                  className={styles.number}
                 >
                   {story.number}
                 </span>
@@ -51,17 +48,13 @@ export default function News() {
               </div>
 
               <div
-                className={
-                  index === 0
-                    ? "grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-end lg:gap-16 xl:gap-24"
-                    : "grid gap-5"
-                }
+                className={styles.storyBody}
               >
                 <h3
                   id={`news-story-${story.number}`}
                   className={
                     index === 0
-                      ? "text-[30px] leading-[1.2] font-semibold tracking-[-0.04em] text-pretty md:text-4xl xl:text-[40px]"
+                      ? "text-[32px] leading-[1.12] font-semibold tracking-[-0.05em] text-pretty md:text-[44px] xl:text-[56px]"
                       : "text-[26px] leading-[1.25] font-semibold tracking-[-0.035em] text-pretty md:text-[28px] xl:text-[30px]"
                   }
                 >

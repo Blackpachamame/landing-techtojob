@@ -1,0 +1,41 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  background-image: radial-gradient(ellipse at 0 45%, rgb(132 192 191 / 7%), transparent 60%);
+}
+
+.lead {
+  position: relative;
+  padding-top: 28px;
+}
+
+.quoteMark {
+  position: absolute;
+  top: -80px;
+  left: -18px;
+  color: rgb(132 192 191 / 14%);
+  font-size: 240px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.08em;
+  pointer-events: none;
+}
+
+.avatar {
+  border: 1px solid rgb(132 192 191 / 50%);
+  background: linear-gradient(140deg, rgb(132 192 191 / 18%), transparent);
+  box-shadow: inset 0 0 0 4px var(--color-brand-dark);
+}
+
+@media (min-width: 1024px) {
+
+  .lead {
+    padding-block: 40px;
+  }
+
+  .quoteMark {
+    top: -78px;
+    left: -30px;
+    font-size: 320px;
+  }
+}

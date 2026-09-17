@@ -4,10 +4,47 @@
   --color-brand-dark: #2f3436;
   --color-brand-mint: #84c0bf;
   --color-brand-white: #ffffff;
+  --color-brand-deep: color-mix(in srgb, #2f3436 82%, #000000);
 }
 
 @theme inline {
   --font-sans: var(--font-sora), sans-serif;
+}
+
+::selection {
+  background: var(--color-brand-mint);
+  color: var(--color-brand-dark);
+}
+
+@utility section-title {
+  font-size: clamp(2.25rem, 4.5vw, 4rem);
+  font-weight: 600;
+  line-height: 1.06;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+
+  @media (min-width: 768px) {
+    font-size: clamp(3rem, 4.5vw, 4rem);
+  }
+}
+
+@utility section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  &::before {
+    content: "";
+    flex-shrink: 0;
+    width: 20px;
+    height: 1px;
+    background: currentColor;
+  }
 }
 
 @utility page-container {

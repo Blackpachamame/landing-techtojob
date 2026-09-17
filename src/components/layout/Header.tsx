@@ -33,9 +33,9 @@ export default function Header() {
   ));
 
   return (
-    <header className="relative z-10 bg-brand-dark">
+    <header className={`relative z-10 ${styles.header}`}>
       <div className="page-container">
-        <div className="flex h-20 items-center justify-between gap-8 border-b border-brand-white/15">
+        <div className="flex h-20 items-center justify-between gap-8 border-b border-brand-white/10 lg:h-24">
           <Link
             href="/"
             aria-label={content.home}
@@ -62,7 +62,7 @@ export default function Header() {
             </summary>
             <nav
               aria-label={content.label}
-              className="absolute inset-x-0 top-full z-20 border-b border-brand-mint/40 bg-brand-dark"
+              className="absolute inset-x-0 top-full z-20 border-b border-brand-mint/40 bg-brand-deep shadow-lg"
             >
               <ul className="page-container flex flex-col py-5">{links}</ul>
             </nav>

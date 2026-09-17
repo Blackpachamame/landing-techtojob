@@ -8,17 +8,17 @@ export default function HowItWorks() {
     <section
       id="how-it-works"
       aria-labelledby="how-it-works-title"
-      className="bg-brand-white py-20 text-brand-dark md:py-24 lg:py-30 xl:py-32"
+      className={`${styles.section} bg-brand-white py-20 text-brand-dark md:py-24 lg:py-28`}
     >
       <div className="page-container">
         <div className="grid gap-6 lg:grid-cols-[1.25fr_1fr] lg:items-end lg:gap-20">
           <div>
-            <p className="mb-5 text-[13px] leading-relaxed font-semibold tracking-[0.1em] uppercase">
+            <p className="section-eyebrow mb-6">
               {content.eyebrow}
             </p>
             <h2
               id="how-it-works-title"
-              className="max-w-160 text-4xl leading-[1.1] font-semibold tracking-[-0.045em] text-balance md:text-5xl xl:text-[52px]"
+              className="max-w-160 section-title"
             >
               {content.title}
             </h2>

@@ -1,0 +1,158 @@
+.section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-image: radial-gradient(ellipse at 95% 80%, rgb(255 255 255 / 28%), transparent 65%);
+}
+
+.intro {
+  display: grid;
+  gap: 28px;
+}
+
+.signals {
+  position: relative;
+  isolation: isolate;
+  margin: 56px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.signals::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -18px 18% 20px 8%;
+  border: 1px solid rgb(255 255 255 / 30%);
+  background: linear-gradient(120deg, rgb(255 255 255 / 15%), transparent 70%);
+  transform: rotate(-5deg);
+}
+
+.signals::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 50px 4% -18px 40%;
+  border: 1px solid rgb(47 52 54 / 10%);
+  transform: rotate(8deg);
+}
+
+.signal {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  padding: 26px 0;
+  border-top: 1px solid rgb(47 52 54 / 25%);
+  font-size: clamp(32px, 5.8vw, 80px);
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -0.06em;
+}
+
+.mark {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  border: 1px solid rgb(47 52 54 / 65%);
+}
+
+.mark::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  top: 3px;
+  left: 3px;
+  background: var(--color-brand-dark);
+}
+
+.closing {
+  position: relative;
+  margin-top: 36px;
+  border-top: 1px solid rgb(47 52 54 / 50%);
+}
+
+@media (min-width: 768px) {
+
+  .signals {
+    margin-top: 72px;
+  }
+
+  .signal {
+    padding-block: 36px;
+  }
+
+  .signal:nth-child(2) {
+    padding-left: 22%;
+  }
+
+  .signal:nth-child(3) {
+    padding-left: 8%;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .intro {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
+  }
+
+  .signals {
+    margin-top: 88px;
+  }
+
+  .signal {
+    padding-block: 40px;
+  }
+
+  .signal:nth-child(2) {
+    padding-left: 34%;
+  }
+
+  .signal:nth-child(3) {
+    padding-left: 13%;
+  }
+
+  .closing {
+    margin-top: 48px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .signals::after {
+    display: none;
+  }
+
+  .signals::before {
+    inset: 0 10% 0 5%;
+    transform: rotate(-3deg);
+  }
+
+  .signal {
+    gap: 12px;
+    font-size: clamp(30px, 7.8vw, 48px);
+  }
+
+  .signal:nth-child(2) {
+    padding-left: 20px;
+  }
+
+  .signal:nth-child(3) {
+    padding-right: 8px;
+  }
+
+  .mark {
+    width: 8px;
+    height: 8px;
+  }
+
+  .mark::after {
+    inset: 2px;
+    width: 2px;
+    height: 2px;
+  }
+}
