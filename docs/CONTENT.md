@@ -349,26 +349,95 @@ Ver publicación
 URL:
 https://es.linkedin.com/posts/techtojob_dise%C3%B1o-branding-identidadvisual-activity-7498086427562254336-mUcN
 
-## 5. Remaining required sections
+## 5. Approved closing sections
 
-The remaining required blocks are:
+Implementation sequence; all three sections are implemented, reviewed and approved:
 
 1. Newsletter
 2. Final CTA
 3. Footer
 
-Newsletter:
-- next section to implement;
-- copy and design will be decided before implementation;
-- the brief contains orientative example copy; do not copy the example.
+### Newsletter
 
-Final CTA:
-- close the page with one strong, simple action;
-- Discord remains the primary community destination.
+Implemented, reviewed and approved. Follows News. A real subscription integration
+remains pending.
+This copy is explicitly
+approved for this implementation and replaces the previous pending-copy status.
 
-Footer:
-- functional and restrained;
-- include required navigation/social/legal elements based on the final brief and available real links.
+Eyebrow:
+Newsletter
+
+Title:
+Que no se te pase lo que estamos construyendo.
+
+Description:
+Torneos, recursos y novedades de TechToJob en tu correo.
+
+Input label:
+Tu email
+
+Input placeholder:
+tu@email.com
+
+Submit:
+Suscribirme
+
+Status:
+La suscripción se habilitará próximamente.
+
+The form is an interface only until a real provider/backend is connected. Keep
+the submit disabled; do not claim success or expose implementation jargon.
+
+### Final CTA
+
+Implemented, reviewed and approved. Follows Newsletter. Discord is the single
+real primary action.
+
+Eyebrow:
+Comunidad
+
+Title:
+Haz que la próxima conversación empiece con lo que sabes hacer.
+
+Description:
+Entra a TechToJob, participa y deja que tu trabajo tenga contexto dentro de la comunidad.
+
+CTA:
+Entrar a la comunidad
+
+URL:
+https://discord.gg/h9FFgKdkRd
+
+### Footer
+
+Implemented, reviewed and approved. Follows main; functional, restrained and
+without invented legal destinations.
+
+Brand tagline:
+Personas que construyen. Oportunidades con más contexto.
+
+Navigation reuses the existing Navigation messages and exact destinations:
+- Cómo funciona → #how-it-works
+- Talento → #talent
+- Empresas → #companies
+- Torneos → #tournaments
+- Comunidad → #networking
+
+Social link labels:
+- Discord
+- LinkedIn
+- X
+- Instagram
+
+Use the four confirmed URLs in section 6. External links open with
+target=_blank and rel=noopener noreferrer.
+
+Copyright:
+© TechToJob
+
+No year or privacy, terms, cookies or contact links are needed without real URLs.
+The brand link reuses the existing accessible home label. The footer navigation
+reuses the existing navigation label; social links form a separate unordered list.
 
 ## 6. Confirmed links
 

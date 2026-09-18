@@ -4,7 +4,8 @@
 
 The authorized global visual redesign covers Header through News. Existing content,
 links, semantics and functionality remain approved; the previous visual closure is
-reopened for this pass only. Newsletter, Final CTA and Footer remain unimplemented.
+reopened for that pass only. Header through News are now approved and unchanged
+during the closing-sections implementation described below.
 The directions below supersede the earlier section compositions where they differ.
 
 Art direction: **premium editorial-tech / contemporary digital community**.
@@ -223,7 +224,7 @@ Nodes, networks, curves, branches, and connection diagrams have already been use
 For the remaining sections, prefer new visual registers.
 
 Especially:
-- Newsletter is next; its copy and design will be decided before implementation.
+- Newsletter begins the closing sequence defined below.
 - Final CTA should be bold and simple.
 - Footer should be functional and restrained.
 
@@ -301,7 +302,67 @@ Avoid:
 - invented dates, news, or articles;
 - nodes, diagrams, timelines, or rounded cards.
 
-Newsletter is the next section to implement. Its copy and design will be decided before implementation.
+Newsletter follows News, using the approved closing direction below.
+
+## Closing sections — direction approved before implementation
+
+Implementation order: Newsletter, Final CTA, then Footer. All three are
+implemented, reviewed, approved and closed. Preserve the existing
+global system and every section through News.
+
+### Newsletter
+
+Status: implemented, reviewed, approved and closed.
+
+A compact charcoal pause between the white newsroom and the mint closing CTA.
+Use a horizontal desktop composition: editorial copy on the left, a real email
+form on the right. At tablet and mobile, stack the two areas before they become
+narrow. Fine partial rules and a small registration detail supply restrained
+depth; the section itself is the surface, not a floating rounded card. No images,
+email illustrations, mockups or icon libraries.
+
+The visible form is required by the tournament but has no provider or endpoint.
+Use form, a real label, type=email, autocomplete=email and a disabled submit
+button. Keep the input usable and the disabled button legible. Associate the
+approved availability message with the form and input. The disabled default
+submit must also prevent implicit Enter submission; verify this in the browser.
+No action, fake success, alert, request, client JavaScript or dummy Server Action.
+
+### Final CTA
+
+Status: implemented, reviewed, approved and closed.
+
+Immediately after Newsletter, a large mint closing composition expresses
+“the next conversation starts by participating”. A dominant H2 and real Discord
+anchor balance an abstract opening made from converging angled planes, fine edges
+and light. Use lightweight decorative SVG and CSS, distinct from the Hero network:
+no nodes, physical door, road, planet, photographs or product interface.
+
+Desktop is spacious and asymmetric; tablet reduces the graphic's weight and
+mobile uses a short, simplified graphic after the copy. Keep text independent of
+the decorative geometry. The solid charcoal Discord anchor is the second primary
+CTA alongside Hero, with visible focus and no secondary action.
+
+### Footer
+
+Status: implemented, reviewed, approved and closed.
+
+Outside main, a compact charcoal footer provides the official unchanged logo,
+approved tagline, useful internal navigation, four real social links and the
+neutral copyright. Desktop separates the brand, navigation and social areas;
+mobile stacks them with comfortable touch targets. Use text for social links,
+fine rules and restrained hierarchy. No invented legal links or additional pitch.
+
+### Closing rhythm and verification
+
+News white → Newsletter charcoal (compact pause) → Final CTA mint (large visual
+close) → Footer charcoal (functional end). Align with the existing page container;
+use restrained edge rules and light gradients rather than aggressive clipping.
+All new copy belongs in the three existing message namespaces. All components
+remain server-rendered, with no new dependencies, raster assets or client logic.
+Review all ten project widths and full Header-to-Footer development captures at
+1440, 768 and 375. Final delivery assets, SEO, deployment and Lighthouse remain
+separate work.
 
 ## 8. Responsive philosophy
 

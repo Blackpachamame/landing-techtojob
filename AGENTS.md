@@ -163,7 +163,7 @@ GSAP or another animation system may be considered only in a later global polish
 
 ## Existing sections
 
-Approved and considered closed unless a real integration bug is discovered:
+Implemented, reviewed, approved and considered closed unless a real integration bug is discovered:
 
 - Header
 - Hero
@@ -174,10 +174,13 @@ Approved and considered closed unless a real integration bug is discovered:
 - Networking
 - Testimonials
 - News
+- Newsletter
+- Final CTA
+- Footer
 
 Do not make cosmetic changes to closed sections while implementing a later section.
 
-Newsletter is the next section to implement. Its copy and design will be decided before implementation.
+The visual landing is complete. The next phase is technical finalization: final README, SEO, accessibility/performance, Lighthouse and deployment.
 
 ## Scope discipline
 

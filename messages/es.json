@@ -192,7 +192,29 @@
       }
     ]
   },
-  "Newsletter": {},
-  "FinalCTA": {},
-  "Footer": {}
+  "Newsletter": {
+    "eyebrow": "Newsletter",
+    "title": "Que no se te pase lo que estamos construyendo.",
+    "description": "Torneos, recursos y novedades de TechToJob en tu correo.",
+    "emailLabel": "Tu email",
+    "emailPlaceholder": "tu@email.com",
+    "submit": "Suscribirme",
+    "status": "La suscripción se habilitará próximamente."
+  },
+  "FinalCTA": {
+    "eyebrow": "Comunidad",
+    "title": "Haz que la próxima conversación empiece con lo que sabes hacer.",
+    "description": "Entra a TechToJob, participa y deja que tu trabajo tenga contexto dentro de la comunidad.",
+    "cta": "Entrar a la comunidad"
+  },
+  "Footer": {
+    "tagline": "Personas que construyen. Oportunidades con más contexto.",
+    "socialLinks": [
+      { "label": "Discord", "href": "https://discord.gg/h9FFgKdkRd" },
+      { "label": "LinkedIn", "href": "https://www.linkedin.com/company/techtojob/" },
+      { "label": "X", "href": "https://x.com/techtojob" },
+      { "label": "Instagram", "href": "https://www.instagram.com/techtojob" }
+    ],
+    "copyright": "© TechToJob"
+  }
 }

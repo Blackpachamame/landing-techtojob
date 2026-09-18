@@ -1,7 +1,8 @@
 # TechToJob
 
 Technical foundation for the TechToJob web development tournament landing page.
-The current page only verifies the setup; landing design and final copy are pending.
+The complete landing is implemented from Hero through Footer. Final metadata and
+SEO are still pending.
 
 ## Stack and requirements
 
@@ -27,7 +28,7 @@ serves the production application. The build needs access to Google Fonts for
 
 ```text
 src/
-  app/                 # Layout, verification page, global tokens, robots and sitemap
+  app/                 # Layout, landing page, global tokens, robots and sitemap
   components/
     layout/
     sections/
@@ -47,8 +48,8 @@ when real files are added. Future raster assets should prefer WebP or AVIF.
 
 `messages/es.json` contains the Metadata, Navigation, Hero, HowItWorks, Talent,
 Companies, Tournaments, Networking, Testimonials, News, Newsletter, FinalCTA and
-Footer namespaces. Only provisional metadata and the verification heading have
-values. Server Components currently import the Spanish messages directly.
+Footer namespaces. The approved landing copy is populated; metadata remains
+provisional. Server Components currently import the Spanish messages directly.
 
 English support can later add `messages/en.json` with the same keys and a solution
 such as next-intl. Locale routing, language switching and translation dependencies
@@ -58,6 +59,13 @@ are intentionally deferred. Keep future visible copy in the message files.
 `brand-white` (#ffffff). The body uses dark text on white; mint is decorative.
 Sora is configured globally in `src/app/layout.tsx`. All application components
 are Server Components; the framework still supplies its standard client runtime.
+
+## Newsletter integration
+
+The Newsletter interface is included to meet the tournament requirements. There
+is currently no subscription provider or endpoint, so the form does not perform
+a real subscription and its submit button remains disabled. Connect it to a real
+provider/backend before production; the subscription feature is not complete.
 
 ## Example testimonials
 
