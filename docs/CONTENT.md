@@ -57,6 +57,11 @@ It is acceptable to reuse required concepts or vocabulary from the brief when th
 
 ## 4. Current approved copy
 
+All landing sections, Header through Footer, are implemented, reviewed, approved
+and closed. The final technical/SEO pass is complete. Production preparation,
+deployment, Lighthouse and manual delivery screenshots are next; the Newsletter
+integration and real testimonials remain production prerequisites.
+
 The following copy is approved and should not be rewritten during unrelated section work.
 
 ### Hero
@@ -484,15 +489,20 @@ When a detail is not confirmed by the brief, leave it out rather than fabricatin
 
 ## 9. SEO copy
 
-Current Metadata content is temporary and must be replaced in the final SEO pass.
+Final Metadata is implemented in messages/es.json:
 
-Final SEO work still needs:
-- title around 50–60 characters;
-- description around 150–160 characters;
-- canonical;
-- Open Graph;
-- Twitter card;
-- Organization JSON-LD;
-- final metadata aligned with the completed landing.
+Title (50 characters):
+TechToJob | Comunidad tech para talento y empresas
+
+Description (151 characters):
+TechToJob conecta desarrolladores y empresas en una comunidad donde participar, construir y compartir proyectos aporta más contexto que enviar otro CV.
+
+Canonical, Open Graph, Twitter card, 1200 × 630 social images and escaped
+Organization JSON-LD are implemented. SITE_URL controls public URLs, robots and
+sitemap. Without SITE_URL, indexing stays disabled and canonical/social image URLs
+are omitted. With SITE_URL, the homepage is indexable and public URLs are absolute.
+
+The technical pass is complete. Verify the real production origin after deployment
+and run Lighthouse; no Lighthouse score is claimed yet.
 
 Do not change Metadata while implementing individual sections unless explicitly requested.

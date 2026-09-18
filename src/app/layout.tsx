@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Sora } from "next/font/google";
 import messages from "../../messages/es.json";
-import { siteUrl } from "@/config/site";
+import { siteName, siteUrl } from "@/config/site";
 import "./globals.css";
 
 const sora = Sora({
@@ -18,6 +18,8 @@ export const metadata: Metadata = {
     template: `%s | ${messages.Metadata.title}`,
   },
   description: messages.Metadata.description,
+  applicationName: siteName,
+  alternates: siteUrl ? { canonical: "/" } : undefined,
   icons: {
     icon: {
       url: "/brand/symbol-positive.svg",
@@ -25,7 +27,7 @@ export const metadata: Metadata = {
       sizes: "any",
     },
   },
-  robots: siteUrl ? undefined : { index: false, follow: false },
+  robots: { index: Boolean(siteUrl), follow: Boolean(siteUrl) },
 };
 
 export const viewport: Viewport = {

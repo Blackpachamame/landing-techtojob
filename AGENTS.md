@@ -180,7 +180,7 @@ Implemented, reviewed, approved and considered closed unless a real integration 
 
 Do not make cosmetic changes to closed sections while implementing a later section.
 
-The visual landing is complete. The next phase is technical finalization: final README, SEO, accessibility/performance, Lighthouse and deployment.
+The visual landing and final technical pass are complete: final README, SEO, social images, structured data and accessibility/performance review. All sections remain closed. The next phase is production preparation, deployment and Lighthouse on the public URL; final delivery screenshots will be captured manually. Newsletter integration and real, verifiable testimonials remain production prerequisites documented in README.md.
 
 ## Scope discipline
 

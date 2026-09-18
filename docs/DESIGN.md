@@ -2,6 +2,11 @@
 
 ## Global redesign direction
 
+Current status: the complete landing, Header through Footer, is implemented,
+reviewed, approved and closed. The final technical pass is complete, including
+SEO and accessibility/performance review. Next: production preparation, deployment
+and Lighthouse on the public URL. Final delivery screenshots remain a manual task.
+
 The authorized global visual redesign covers Header through News. Existing content,
 links, semantics and functionality remain approved; the previous visual closure is
 reopened for that pass only. Header through News are now approved and unchanged
@@ -59,8 +64,10 @@ Responsive and accessibility:
 - Desktop may use asymmetry; tablet removes extreme offsets before narrowing text.
 - Mobile recomposes the Hero into a compact visual, simplifies planes and preserves
   strong typography. No forced desktop diagram, small body text or horizontal overflow.
-- Verify 1440, 1366, 1280, 1024, 900, 820, 768, 430, 390 and 375 pixels; save complete
-  Header-to-News captures at 1440, 768 and 375.
+- Verification at 1440, 1366, 1280, 1024, 900, 820, 768, 430, 390 and 375 pixels
+  remains mandatory for the complete Header-to-Footer landing.
+- Do not generate or save screenshots, artifacts, REVIEW.md files or automated
+  visual reports. Final delivery screenshots will be captured manually after deployment.
 - Preserve semantic HTML and content order, one H1, visible keyboard focus, real
   anchors and native details/summary. Decorative elements are hidden; essential
   labels remain HTML. Small text uses charcoal on light fields or light text on dark.
@@ -121,7 +128,7 @@ Avoid:
 
 ### Header + Hero
 
-Status: implemented; visual redesign authorized for the global pass above. Content remains approved.
+Status: implemented, reviewed, approved and closed.
 
 Background:
 - charcoal.
@@ -138,7 +145,7 @@ Important:
 
 ### How it works
 
-Status: implemented; visual redesign authorized for the global pass above. Content remains approved.
+Status: implemented, reviewed, approved and closed.
 
 Background:
 - white.
@@ -155,7 +162,7 @@ Important:
 
 ### Talent
 
-Status: implemented; visual redesign authorized for the global pass above. Content remains approved.
+Status: implemented, reviewed, approved and closed.
 
 Background:
 - mint.
@@ -171,7 +178,7 @@ Important:
 
 ### Companies
 
-Status: implemented; visual redesign authorized for the global pass above. Content remains approved.
+Status: implemented, reviewed, approved and closed.
 
 Background:
 - charcoal.
@@ -187,7 +194,7 @@ Important:
 
 ### Tournaments
 
-Status: implemented; visual redesign authorized for the global pass above. Content remains approved.
+Status: implemented, reviewed, approved and closed.
 
 Background:
 - white.
@@ -204,7 +211,7 @@ Important:
 
 ### Testimonials
 
-Status: implemented; visual redesign authorized for the global pass above. Content remains approved.
+Status: implemented, reviewed, approved and closed.
 
 Background:
 - charcoal.
@@ -230,7 +237,7 @@ Especially:
 
 ## 6. Networking direction
 
-Status: implemented; visual redesign authorized for the global pass above. Content remains approved.
+Status: implemented, reviewed, approved and closed.
 
 Background:
 - mint.
@@ -279,7 +286,7 @@ Do not invent:
 
 ## 7. News direction
 
-Status: implemented; visual redesign authorized for the global pass above. Content remains approved.
+Status: implemented, reviewed, approved and closed.
 
 Background:
 - white.
@@ -360,9 +367,9 @@ close) → Footer charcoal (functional end). Align with the existing page contai
 use restrained edge rules and light gradients rather than aggressive clipping.
 All new copy belongs in the three existing message namespaces. All components
 remain server-rendered, with no new dependencies, raster assets or client logic.
-Review all ten project widths and full Header-to-Footer development captures at
-1440, 768 and 375. Final delivery assets, SEO, deployment and Lighthouse remain
-separate work.
+Review the complete Header-to-Footer landing at all ten project widths without
+generating or saving review captures or artifacts. SEO is complete. Final delivery assets, deployment and Lighthouse
+remain separate work; no review captures were saved during the technical pass.
 
 ## 8. Responsive philosophy
 
