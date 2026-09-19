@@ -1,4 +1,5 @@
 import messages from "../../../messages/es.json";
+import DrawOnView from "./DrawOnView";
 import styles from "./Companies.module.css";
 
 export default function Companies() {
@@ -8,7 +9,7 @@ export default function Companies() {
     <section
       id="companies"
       aria-labelledby="companies-title"
-      className={`${styles.section} bg-brand-dark py-20 text-brand-white md:py-24 lg:py-28`}
+      className="bg-brand-dark py-20 text-brand-white md:py-24 lg:py-28"
     >
       <div className="page-container">
         <div className={styles.layout}>
@@ -29,14 +30,20 @@ export default function Companies() {
 
           <div className={styles.context}>
             <p className={styles.source}>{content.context.source}</p>
-            <ul className={styles.signals}>
-              {content.context.signals.map((signal) => (
-                <li key={signal} className={styles.signal}>
-                  <span aria-hidden="true" className={styles.marker} />
-                  {signal}
-                </li>
-              ))}
-            </ul>
+            <div className={styles.cut}>
+              <svg aria-hidden="true" focusable="false" className={styles.side} viewBox="0 0 16 374" preserveAspectRatio="none">
+                <path d="M0 0 16 14V374L0 360Z" />
+              </svg>
+              <ul className={styles.signals}>
+                {content.context.signals.map((signal, index) => (
+                  <li key={signal} className={styles.signal}>
+                    <span aria-hidden="true" data-reveal data-duration=".35" data-delay={index * 0.18} className={styles.face} />
+                    {signal}
+                  </li>
+                ))}
+              </ul>
+              <DrawOnView />
+            </div>
           </div>
         </div>
 

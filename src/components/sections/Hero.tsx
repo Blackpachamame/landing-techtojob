@@ -11,7 +11,7 @@ export default function Hero() {
     <section aria-labelledby="hero-title" className={styles.hero}>
       <div className={`page-container ${styles.composition}`}>
         <div className={styles.copy}>
-          <p className="section-eyebrow mb-6 max-w-110 text-brand-mint">
+          <p className={`section-eyebrow max-w-110 text-brand-mint ${styles.eyebrow}`}>
             {content.eyebrow}
           </p>
           <h1
@@ -22,14 +22,14 @@ export default function Hero() {
             <span className="text-brand-mint">{content.title.slice(titleAccentStart, titleAccentEnd)}</span>
             <span className="text-brand-white/75">{content.title.slice(titleAccentEnd)}</span>
           </h1>
-          <p className="mt-6 max-w-120 text-base leading-[1.7] text-brand-white/80">
+          <p className={`max-w-120 text-base text-brand-white/80 ${styles.description}`}>
             {content.description}
           </p>
           <a
             href="https://discord.gg/h9FFgKdkRd"
             target="_blank"
             rel="noopener noreferrer"
-            className="group mt-7 inline-flex min-h-14 w-full items-center justify-between gap-6 rounded-xl border border-brand-mint bg-brand-mint px-6 py-4 text-sm font-semibold text-brand-dark hover:border-brand-white hover:bg-brand-white focus-visible:outline-2 focus-visible:outline-offset-6 focus-visible:outline-brand-mint motion-safe:transition-colors sm:w-auto"
+            className={`group inline-flex min-h-14 w-full items-center justify-between gap-6 rounded-xl border border-brand-mint bg-brand-mint px-6 py-4 text-sm font-semibold text-brand-dark hover:border-brand-white hover:bg-brand-white focus-visible:outline-2 focus-visible:outline-offset-6 focus-visible:outline-brand-mint motion-safe:transition-colors sm:w-auto ${styles.cta}`}
           >
             {content.cta}
             <svg

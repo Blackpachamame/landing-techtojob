@@ -52,19 +52,19 @@ export default function HeroBuild() {
                 <path d={geometry.bodyCut} className={styles.face} />
                 <path data-build-cover d={geometry.cavity} className={styles.cover} />
               </g>
-              <g transform="translate(-2.4 -2.4)">
+              <g transform="translate(-1.75 -1.75)">
                 <g data-build-part="profile">
                   <path d={geometry[`profile${depth}Side`]} className={styles.whiteSide} />
                   <path d={geometry.profile} className={styles.whiteFace} />
                 </g>
               </g>
-              <g transform="translate(2.4 -2.4)">
+              <g transform="translate(1.75 -1.75)">
                 <g data-build-part="tournament">
                   <path d={geometry[`tournament${depth}Side`]} className={styles.side} />
                   <path d={geometry.tournament} className={styles.face} />
                 </g>
               </g>
-              <g transform="translate(-2.4 2.4)">
+              <g transform="translate(-1.75 1.75)">
                 <g data-build-part="company">
                   <path d={geometry[`company${depth}Side`]} className={styles.side} />
                   <path d={geometry.company} className={styles.face} />

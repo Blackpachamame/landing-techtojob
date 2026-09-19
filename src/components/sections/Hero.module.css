@@ -17,6 +17,10 @@
   max-width: 700px;
 }
 
+.eyebrow { margin-bottom: 24px; }
+.description { margin-top: 24px; line-height: 1.7; }
+.cta { margin-top: 28px; }
+
 .title {
   max-width: 11.5em;
   color: var(--color-brand-white);
@@ -35,9 +39,17 @@
 @media (min-width: 1024px) {
   .composition {
     grid-template-columns: 48% 52%;
-    min-height: 690px;
-    padding-block: 64px 88px;
+    align-items: start;
+    padding-block: clamp(24px, 4svh, 48px) 56px;
   }
 
-  .title { font-size: clamp(52px, 5.1vw, 74px); }
+  .title { font-size: clamp(48px, min(5.1vw, 8svh), 74px); }
+}
+
+@media (min-width: 1024px) and (max-height: 700px) {
+  .composition { padding-top: 20px; }
+  .title { font-size: clamp(44px, min(4.4vw, 8svh), 56px); line-height: 1.08; }
+  .eyebrow { margin-bottom: 14px; }
+  .description { margin-top: 16px; line-height: 1.6; }
+  .cta { margin-top: 20px; }
 }

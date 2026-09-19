@@ -1,135 +1,28 @@
-.section {
-  position: relative;
-  background-image: linear-gradient(180deg, rgb(132 192 191 / 9%), transparent 180px);
-}
+.process { position: relative; margin-top: 64px; }
+.journey { display: grid; gap: 40px; list-style: none; margin: 0; padding: 0; }
+.step { position: relative; min-width: 0; padding-left: 48px; }
+.station { position: absolute; top: 12px; left: 0; width: 24px; height: 24px; }
+.station rect { fill: var(--color-brand-mint); stroke: var(--color-brand-dark); stroke-width: 1.5; }
+.desktopRail, .tabletRail { display: none; }
+.mobileRail { position: absolute; top: 24px; left: 11px; width: 2px; height: calc(100% + 40px); }
+.process path { fill: none; stroke: var(--color-brand-dark); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.number { display: block; font-size: 64px; font-weight: 400; line-height: 1; letter-spacing: -0.065em; }
+.title { margin-top: 18px; font-size: 23px; font-weight: 600; line-height: 1.25; letter-spacing: -0.035em; text-wrap: balance; }
+.description { margin-top: 14px; max-width: 42ch; color: color-mix(in srgb, var(--color-brand-dark) 85%, white); font-size: 16px; line-height: 1.75; }
 
-.journey {
-  display: grid;
-  gap: 48px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.step {
-  position: relative;
-  min-width: 0;
-  padding-left: 64px;
-}
-
-.node {
-  position: absolute;
-  top: 28px;
-  left: 0;
-  width: 28px;
-  height: 28px;
-  border: 1.5px solid var(--color-brand-dark);
-  border-radius: 50%;
-  background: var(--color-brand-white);
-}
-
-.node::after {
-  content: "";
-  position: absolute;
-  inset: 7px;
-  border-radius: 50%;
-  background: var(--color-brand-dark);
-}
-
-.rail {
-  position: absolute;
-  top: 42px;
-  left: -6px;
-  width: 44px;
-  height: calc(100% + 48px);
-  pointer-events: none;
-}
-
-.tablet, .connector {
-  display: none;
-}
-
-.connectorTrace {
-  vector-effect: non-scaling-stroke;
-  stroke-linecap: round;
-  stroke: var(--color-brand-mint);
-  stroke-width: 2.5px;
-}
-
-.number {
-  display: block;
-  font-size: 84px;
-  font-weight: 400;
-  line-height: 0.95;
-  letter-spacing: -0.075em;
-  color: var(--color-brand-dark);
-}
-
-.title {
-  margin-top: 20px;
-  font-size: 23px;
-  font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: -0.04em;
-  text-wrap: balance;
-}
-
-.description {
-  margin-top: 14px;
-  color: color-mix(in srgb, var(--color-brand-dark) 85%, white);
-  font-size: 16px;
-  line-height: 1.75;
-}
-
-@media (min-width: 768px) and (max-width: 1279px) {
-  .mobile { display: none; }
-  .tablet { display: block; }
-
-  .step {
-    display: grid;
-    grid-template-columns: 100px minmax(0, 0.9fr) minmax(0, 1.3fr);
-    column-gap: 24px;
-    padding-bottom: 32px;
-    border-bottom: 1px solid rgb(47 52 54 / 12%);
-  }
-
-  .title, .description { margin-top: 0; }
-  .number { font-size: 88px; }
+@media (min-width: 768px) {
+  .journey { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px 48px; }
+  .step { padding: 40px 0 0; }
+  .station { top: 0; }
+  .mobileRail { display: none; }
+  .tabletRail { position: absolute; display: block; top: 11px; left: 12px; width: calc(100% + 48px); height: 2px; }
+  .number { font-size: 80px; }
 }
 
 @media (min-width: 1280px) {
-  .journey {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 32px;
-  }
-
-  .step {
-    padding-top: 270px;
-    padding-left: 0;
-  }
-
-  .node { top: 136px; }
-  .step:nth-child(even) .node { top: 200px; }
-  .rail { display: none; }
-
-  .connector {
-    position: absolute;
-    top: 110px;
-    left: 14px;
-    display: block;
-    width: calc(100% + 32px);
-    height: 160px;
-    overflow: visible;
-    pointer-events: none;
-  }
-
-  .number {
-    position: absolute;
-    top: 0;
-    left: 28px;
-    font-size: 112px;
-  }
-
-  .step:nth-child(even) .number { top: 64px; }
-  .title { margin-top: 0; }
+  .process { margin-top: 80px; }
+  .journey { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; }
+  .tabletRail { display: none; }
+  .desktopRail { position: absolute; display: block; top: 11px; left: 12px; width: calc(75% + 24px); height: 2px; }
+  .number { font-size: 88px; }
 }

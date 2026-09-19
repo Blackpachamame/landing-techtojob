@@ -57,10 +57,12 @@ It is acceptable to reuse required concepts or vocabulary from the brief when th
 
 ## 4. Current approved copy
 
-All landing sections, Header through Footer, are implemented, reviewed, approved
-and closed. The final technical/SEO pass is complete. Production preparation,
-deployment, Lighthouse and manual delivery screenshots are next; the Newsletter
-integration and real testimonials remain production prerequisites.
+Approved copy and URLs remain unchanged across the complete landing. The Build
+visual redesign is implemented through Batch A (Hero, How it works, Talent and
+Companies); Batches B and C remain pending. Existing SEO is preserved. Production
+preparation, deployment, Lighthouse and manual delivery screenshots remain pending;
+Newsletter integration and real testimonials remain production prerequisites.
+Section approvals below refer to existing content, not closure of the new redesign.
 
 The following copy is approved and should not be rewritten during unrelated section work.
 

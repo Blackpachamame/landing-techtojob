@@ -7,9 +7,10 @@ TechToJob is a community where developers and companies participate, build and g
 to know one another. The landing explains that proposition and guides visitors to
 Discord, without promising employment.
 
-The complete visual landing is implemented and approved. The final technical pass
-covers SEO, structured data, social images and accessibility/performance checks.
-Deployment and final Lighthouse measurements remain pending.
+The complete landing is present. The Build redesign is implemented through Batch A
+(Hero, How it works, Talent and Companies); Batches B and C remain pending. Existing
+SEO, structured data and social images are preserved. Deployment and Lighthouse
+measurements remain pending.
 
 ## Stack
 
@@ -17,7 +18,8 @@ Deployment and final Lighthouse measurements remain pending.
 - Tailwind CSS 4, with CSS Modules for section-specific compositions.
 - Sora through `next/font/google`.
 - Bun 1.3.14 or newer; Node.js 20.9 or newer for Next.js.
-- Server Components throughout the landing; no application Client Components.
+- Server Components for content; small HeroBuildMotion and DrawOnView Client Components
+  enhance decorative art only.
 
 ## Running locally
 
@@ -144,10 +146,10 @@ focus and labeled form controls support accessibility. The mobile menu uses nati
 `details`/`summary`; decorative graphics are hidden from assistive technology.
 Responsive checks cover 1440, 1366, 1280, 1024, 900, 820, 768, 430, 390 and 375 px.
 
-The landing uses Server Components and static rendering, with no animation libraries,
-unnecessary visual dependencies or application client state. SVG geometry and CSS
-provide the visuals without photographic downloads. Next.js still supplies its
-standard framework client runtime.
+The landing uses Server Components and static rendering. Existing GSAP and small
+IntersectionObserver helpers animate decorative art once, with no-JS and reduced-motion
+final states. SVG geometry and CSS supply visuals without photographic downloads
+or per-frame React state. Next.js supplies its standard framework client runtime.
 
 Lighthouse targets for delivery are SEO 100, accessibility >90 and mobile performance
 >90. These are targets, not measured results. Run Lighthouse against the production

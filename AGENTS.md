@@ -157,9 +157,9 @@ Prefer:
 - CSS;
 - lightweight inline decorative SVG when useful.
 
-Do not add animation libraries yet.
-
-GSAP or another animation system may be considered only in a later global polish pass if explicitly requested.
+GSAP is already installed. Approved small, localized motion helpers may use GSAP
+and IntersectionObserver for decorative art. Text never animates. Keep final
+static visuals without JavaScript and with reduced motion. Do not add libraries.
 
 ## Existing sections
 

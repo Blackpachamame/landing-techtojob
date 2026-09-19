@@ -14,13 +14,13 @@
 .face, .cover { fill: var(--color-brand-mint); }
 .face, .whiteFace { stroke: rgb(255 255 255 / 24%); stroke-width: 0.45; stroke-linejoin: round; }
 .whiteFace { fill: var(--color-brand-white); }
-.side { fill: color-mix(in srgb, var(--color-brand-mint) 36%, var(--color-brand-dark)); }
-.whiteSide { fill: color-mix(in srgb, var(--color-brand-white) 45%, var(--color-brand-dark)); }
-.recess { fill: color-mix(in srgb, var(--color-brand-mint) 58%, var(--color-brand-dark)); }
-.floor { fill: color-mix(in srgb, var(--color-brand-mint) 24%, var(--color-brand-dark)); }
-.cutEdge { stroke: rgb(47 52 54 / 35%); stroke-width: 0.65; }
+.side { fill: var(--build-side); }
+.whiteSide { fill: var(--build-white-side); }
+.recess { fill: var(--build-recess); }
+.floor { fill: var(--build-floor); }
+.cutEdge { stroke: var(--build-edge); stroke-width: 0.8; }
 .cover { opacity: 0; }
-.guides { stroke: rgb(255 255 255 / 30%); stroke-width: 1; }
+.guides { stroke: var(--build-muted-line); stroke-width: 1; }
 
 .annotation {
   position: absolute;
@@ -54,7 +54,7 @@
 }
 
 @media (max-width: 767px) {
-  .build { width: 100%; max-width: 420px; margin: 18px auto 0; }
+  .build { width: 100%; max-width: 420px; margin: 34px auto 0; }
   .mobile { display: block; aspect-ratio: 342 / 365; }
   .annotation { font-size: 12px; gap: 2px; }
   .label { font-size: 13px; }

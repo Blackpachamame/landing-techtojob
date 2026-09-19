@@ -8,7 +8,7 @@ export default function Talent() {
     <section
       id="talent"
       aria-labelledby="talent-title"
-      className={`${styles.section} bg-brand-mint py-20 text-brand-dark md:py-24 lg:py-32`}
+      className="bg-brand-mint py-20 text-brand-dark md:py-24 lg:py-32"
     >
       <div className="page-container grid items-center gap-14 md:gap-16 lg:grid-cols-[1fr_0.9fr] lg:gap-20 xl:gap-28">
         <div className="max-w-160">
@@ -39,16 +39,15 @@ export default function Talent() {
                 <dt className="text-lg leading-snug font-semibold tracking-[-0.02em]">
                   {field.term}
                 </dt>
-                <dd className="mt-2 text-base leading-relaxed text-brand-white/80">
+                <dd className="mt-2 text-base leading-relaxed text-brand-dark/85">
                   {field.description}
-                  <span aria-hidden="true" className={styles.branch} />
                 </dd>
               </div>
             ))}
           </dl>
           <p className={styles.company}>
             {content.profile.company}
-            <span aria-hidden="true" className={styles.node} />
+            <span aria-hidden="true" className={styles.terminal} />
           </p>
         </div>
       </div>
