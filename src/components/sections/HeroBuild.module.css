@@ -1,0 +1,64 @@
+.build {
+  min-width: 0;
+  pointer-events: none;
+  color: var(--color-brand-white);
+}
+
+.scene {
+  position: relative;
+  display: none;
+}
+
+.drawing { display: block; width: 100%; height: 100%; overflow: visible; }
+.outline { stroke: var(--color-brand-white); stroke-width: 1.1; opacity: 0; }
+.face, .cover { fill: var(--color-brand-mint); }
+.face, .whiteFace { stroke: rgb(255 255 255 / 24%); stroke-width: 0.45; stroke-linejoin: round; }
+.whiteFace { fill: var(--color-brand-white); }
+.side { fill: color-mix(in srgb, var(--color-brand-mint) 36%, var(--color-brand-dark)); }
+.whiteSide { fill: color-mix(in srgb, var(--color-brand-white) 45%, var(--color-brand-dark)); }
+.recess { fill: color-mix(in srgb, var(--color-brand-mint) 58%, var(--color-brand-dark)); }
+.floor { fill: color-mix(in srgb, var(--color-brand-mint) 24%, var(--color-brand-dark)); }
+.cutEdge { stroke: rgb(47 52 54 / 35%); stroke-width: 0.65; }
+.cover { opacity: 0; }
+.guides { stroke: rgb(255 255 255 / 30%); stroke-width: 1; }
+
+.annotation {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgb(255 255 255 / 75%);
+}
+
+.label { font-size: 14px; font-weight: 600; color: var(--color-brand-white); }
+.available { color: var(--color-brand-mint); }
+
+@media (min-width: 1024px) {
+  .build { width: 107%; }
+  .desktop { display: block; aspect-ratio: 640 / 620; }
+  .profile { left: 2%; top: 10%; }
+  .tournament { left: 72%; top: 3%; }
+  .company { left: 3.4%; top: 81.5%; }
+  .community { left: 64%; top: 89%; }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .build { width: 100%; max-width: 780px; margin: 28px auto 0; }
+  .tablet { display: block; aspect-ratio: 780 / 440; }
+  .profile { left: 10%; top: 13%; }
+  .tournament { left: 80%; top: 14%; }
+  .company { left: 10%; top: 72%; }
+  .community { left: 80%; top: 77%; }
+}
+
+@media (max-width: 767px) {
+  .build { width: 100%; max-width: 420px; margin: 18px auto 0; }
+  .mobile { display: block; aspect-ratio: 342 / 365; }
+  .annotation { font-size: 12px; gap: 2px; }
+  .label { font-size: 13px; }
+  .profile { left: 42%; top: 3%; }
+  .community { left: 63%; top: 82%; }
+  .company, .tournament { display: none; }
+}

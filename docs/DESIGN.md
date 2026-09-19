@@ -2,12 +2,13 @@
 
 ## Global redesign direction
 
-Current status: the complete landing, Header through Footer, is implemented,
-reviewed, approved and closed. The final technical pass is complete, including
-SEO and accessibility/performance review. Next: production preparation, deployment
-and Lighthouse on the public URL. Final delivery screenshots remain a manual task.
+Current status: the Hero north star, The Build, is approved and implemented (see
+section 13). This reopens only Hero presentation; the remaining global redesign
+is not implemented or closed by this pass. Existing content, branding and the
+completed SEO remain intact. Final delivery screenshots remain a manual task.
 
-The authorized global visual redesign covers Header through News. Existing content,
+Previous implementation history (the current Hero exception is in section 13):
+The earlier authorized global visual redesign covered Header through News. Existing content,
 links, semantics and functionality remain approved; the previous visual closure is
 reopened for that pass only. Header through News are now approved and unchanged
 during the closing-sections implementation described below.
@@ -36,9 +37,9 @@ System:
 Section composition:
 - Header: spacious navigation integrated with the Hero's charcoal field; official
   logo, existing native mobile menu, no additional CTA.
-- Hero: primary identity piece. Large copy beside an open, folded orbital field
-  formed by converging paths, translucent planes and mint light. HTML labels float
-  at different depths. Avoid literal planets, atoms, targets and analytics.
+- Hero: The Build, a modular brand illustration derived from the official symbol.
+  Large copy beside assembled SVG surfaces, visible joints and an interior cut.
+  Section 13 supersedes the former orbital and Context Signal compositions.
 - How it works: white editorial route with oversized 01–04, subtly staggered on
   wide desktop. At tablet simplify to readable rows; mobile has a vertical rule.
 - Talent: mint light field and a charcoal technical sheet with an offset backing
@@ -128,20 +129,21 @@ Avoid:
 
 ### Header + Hero
 
-Status: implemented, reviewed, approved and closed.
+Status: Hero north star visual approved / implemented; see The Build in section 13.
+Header retains its official branding and navigation.
 
 Background:
 - charcoal.
 
 Language:
-- connection network;
-- paths and nodes;
+- modular brand illustration with surfaces, joints and an interior cut;
+- real outline draw followed by finite assembly;
 - strong first-screen message;
 - integrated navigation.
 
 Important:
-- do not recreate this network in later sections;
-- the Hero owns the largest connection graphic.
+- The Build is an illustration, not a new logo variant;
+- later sections await their own authorized redesign.
 
 ### How it works
 
@@ -436,8 +438,78 @@ Rules:
 ## 12. Animation
 
 Current phase:
-- static only.
+- static for sections outside the approved Hero exception in section 13.
 
 Do not add scroll animation while sections are still being built.
 
 A final global animation pass may later consider subtle motion if it improves the experience without hurting accessibility or performance.
+
+## 13. Hero north star
+
+### The Build
+
+Hero status: **north star visual approved / implemented**. The supplied desktop
+and mobile HTML prototypes establish this north star. This implementation replaces
+the rejected Context Signal experiments. It does not close or implement the
+remaining global redesign.
+
+The Build is a **brand illustration derived from the official TechToJob symbol's
+geometry**, not a logo variant. Header and Footer retain the official artwork.
+The central body and three assembled modules (white Perfil, mint Torneo and
+Empresa) preserve the symbol's silhouette, with visible joints and an open interior.
+The whole object represents construction through contributions; individual faces
+do not claim product features.
+
+Implementation:
+- Server Components render the complete illustration, approved HTML annotations,
+  full Hero copy and real Discord CTA. Only HeroBuildMotion is a Client Component.
+- Module contours and visible side faces are precomputed in heroBuildGeometry.ts.
+  Each external module uses one top path and one compound side path. No stacks of
+  10-14 translated symbol copies, filters, masks, raster assets or new dependencies.
+- The desktop/tablet compositions each contain 15 rendered SVG paths; mobile has
+  14. These counts include the temporary outline, interior cover and guide path.
+  The three CSS-selected compositions total 44 paths in server HTML.
+- Depth comes from resolved geometry, tonal values derived from charcoal/mint/white
+  and overlapping faces. The interior retains two levels on desktop/tablet and one
+  simplified level on mobile.
+- The draw uses the original curved outline with stroke-dasharray/dashoffset.
+  In roughly 2.2 seconds: outline 0-0.8s, body 0.5-1.2s, modules 0.9-1.7s,
+  interior 1.5-1.85s and annotations 1.8-2.2s. No bounce, loops, floating,
+  cursor effects or subsequent scroll animation. No connection to How it works.
+- GSAP animates only local art geometry and annotations. Media-query cleanup
+  reverts styles/tweens; completed assemblies do not restart on breakpoint changes.
+  No per-frame React state, scroll listeners or ScrollTrigger instances are needed
+  for this Hero. GSAP remains installed for future authorized work.
+
+Responsive:
+- Desktop (1024+): approximately 48% copy / 52% art, with the art extending slightly
+  into the outer margin. The title is dominant; annotations remain secondary.
+- Tablet (768-1023): stacked copy and a separate wide composition, reduced
+  extrusion, repositioned annotations and shorter guides.
+- Mobile (below 768): text and CTA first, then its own compact composition, reduced
+  depth, a single-level cut and only Perfil (including the approved detail and
+  availability) and Comunidad annotations. Readability determines the height;
+  the full production copy is not forced into the prototype's 844px frame.
+- Header only adapts its background to the Hero's charcoal field; its layout,
+  navigation, native menu and official logo remain intact.
+- The title's mint emphasis follows the prototype's construction phrase, using
+  slices of the approved message without rewriting it or forcing line breaks.
+
+Accessibility and verification:
+- Conceptual artwork and visual annotations are aria-hidden; essential content
+  stays semantic HTML. One H1, accessible navigation, visible focus and the
+  original CTA URL remain intact.
+- Reduced motion runs no draw, assembly or reveals. Without JavaScript the fully
+  assembled object, exposed cut and appropriate annotations are visible.
+- Lint, TypeScript and production build pass. Browser checks at 1440, 1366, 1280,
+  1024, 900, 820, 768, 430, 390 and 375 found no horizontal overflow, annotation/art
+  intersections or invalid paths. Production checks found no console/hydration
+  errors or external asset requests; static fallback, reduced motion and a
+  stationary final scene after scrolling were verified.
+- No screenshots, artifacts or visual reports were generated. Lighthouse and
+  final manual delivery screenshots remain outside this task.
+
+Context Signal cleanup removes HeroNetwork, HeroSignalMotion and their obsolete
+styles, plus HowItWorksSignalMotion and its animation hooks/duplicate trace.
+How it works retains its current static layout, copy and colors. All subsequent
+sections and SEO remain unchanged by this task.

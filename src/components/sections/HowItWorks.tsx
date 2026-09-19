@@ -13,13 +13,8 @@ export default function HowItWorks() {
       <div className="page-container">
         <div className="grid gap-6 lg:grid-cols-[1.25fr_1fr] lg:items-end lg:gap-20">
           <div>
-            <p className="section-eyebrow mb-6">
-              {content.eyebrow}
-            </p>
-            <h2
-              id="how-it-works-title"
-              className="max-w-160 section-title"
-            >
+            <p className="section-eyebrow mb-6">{content.eyebrow}</p>
+            <h2 id="how-it-works-title" className="max-w-160 section-title">
               {content.title}
             </h2>
           </div>
@@ -32,29 +27,40 @@ export default function HowItWorks() {
           <ol className={styles.journey}>
             {content.steps.map((step, index) => (
               <li key={step.number} className={styles.step}>
-                {index < content.steps.length - 1 && (
-                  <>
-                    <span aria-hidden="true" className={styles.rail} />
-                    <svg
-                      aria-hidden="true"
-                      className={styles.connector}
-                      viewBox="0 0 100 48"
-                      preserveAspectRatio="none"
-                      fill="none"
-                    >
-                      <path
-                        d={
-                          index % 2 === 0
-                            ? "M0 0 C50 0 50 48 100 48"
-                            : "M0 48 C50 48 50 0 100 0"
-                        }
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        vectorEffect="non-scaling-stroke"
-                      />
-                    </svg>
-                  </>
-                )}
+                {index < content.steps.length - 1 && [
+                  {
+                    variant: "horizontal",
+                    viewBox: "0 0 100 160",
+                    path: index % 2 === 0
+                      ? "M0 40C28-10 48 56 100 104"
+                      : "M0 104C30 148 64 46 100 40",
+                    className: styles.connector,
+                  },
+                  {
+                    variant: "tablet",
+                    viewBox: "0 0 44 100",
+                    path: "M20 0C20 30 28 38 28 52S20 78 20 100",
+                    className: `${styles.rail} ${styles.tablet}`,
+                  },
+                  {
+                    variant: "mobile",
+                    viewBox: "0 0 44 100",
+                    path: "M20 0C20 24 36 34 36 52S20 78 20 100",
+                    className: `${styles.rail} ${styles.mobile}`,
+                  },
+                ].map(({ variant, viewBox, path, className }) => (
+                  <svg
+                    key={variant}
+                    aria-hidden="true"
+                    focusable="false"
+                    className={className}
+                    viewBox={viewBox}
+                    preserveAspectRatio="none"
+                    fill="none"
+                  >
+                    <path d={path} className={styles.connectorTrace} />
+                  </svg>
+                ))}
                 <span aria-hidden="true" className={styles.node} />
                 <span className={styles.number}>{step.number}</span>
                 <h3 className={styles.title}>{step.title}</h3>
