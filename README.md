@@ -7,10 +7,14 @@ TechToJob is a community where developers and companies participate, build and g
 to know one another. The landing explains that proposition and guides visitors to
 Discord, without promising employment.
 
-The complete landing and The Build redesign are implemented through Batches A, B
-and C, including C.1 corrections, from Header to Footer. Existing SEO, structured data and social images are
-preserved; the favicon adapts to light/dark browser UI. Final QA, deployment and
-Lighthouse measurements remain pending.
+The complete landing is implemented and approved from Header to Footer, with SEO,
+structured data, social images and an adaptive favicon.
+
+## Live site
+
+[techtojob.vercel.app](https://techtojob.vercel.app/)
+
+The tournament site is deployed on Vercel with `SITE_URL` configured in production.
 
 ## Stack
 
@@ -44,8 +48,8 @@ afterward, with weights 400, 600 and 700 and `display: swap`.
 
 Copy `.env.example` to `.env.local` for local configuration. Set `SITE_URL` to the
 actual public HTTP(S) origin in the hosting environment **before the production
-build**. Do not include credentials, a subpath, query or fragment. No production
-domain is assumed. Rebuild whenever this value changes.
+build**. Production uses `https://techtojob.vercel.app/`. Do not include credentials,
+a subpath, query or fragment. Rebuild whenever this value changes.
 
 `src/config/site.ts` is the single source of truth:
 
@@ -124,30 +128,35 @@ social profiles and, when configured, public URL and official logo.
 
 `/opengraph-image` and `/twitter-image` return real 1200 × 630 PNGs, prerendered by
 native Next.js route handlers using [ImageResponse](https://nextjs.org/docs/app/api-reference/functions/image-response).
-Both share one composition with brand colors and approved landing copy. They use
-the font bundled with ImageResponse (Geist in the installed Next.js version),
-without runtime downloads or external assets. Sora remains the landing font.
+Both use one shared renderer: the exact official mint symbol from
+`public/brand/symbol-negative.svg` on charcoal, with the existing brand name.
+The SVG path and viewBox are read locally without changing the asset or proportions.
+Brand text uses ImageResponse's bundled font; Sora remains the landing font.
+No runtime external asset requests are needed.
 Explicit metadata URLs avoid implicit localhost fallbacks when `SITE_URL` is absent.
 
 ## Testimonials
 
-The current testimonials are placeholders permitted for the tournament. Before
-production, replace them with real, verifiable testimonials, including a photograph
-and a link to each person's LinkedIn profile.
+The tournament version uses the permitted placeholder testimonials. A future
+operational release should replace them with verified community testimonials,
+photos and profile links.
 
 ## Newsletter
 
 The compact charcoal strip contains a real form with an email label, autocomplete,
 a disabled default submit and a visible availability message. Enter in the email
 field does not submit or reload the page. There is currently no subscription provider or endpoint. The form
-does not simulate a real subscription or display a false success. Connect it to
-a real provider/backend before production.
+does not simulate a real subscription or display a false success. Newsletter
+provider/backend integration remains pending for a post-tournament operational release.
 
 ## AI usage
 
-ChatGPT and Codex supported planning and design direction, copy iteration, code
-generation and refinement, and technical review. The result was reviewed and
-iterated within the project; final decisions remained part of that review process.
+AI tools were used and declared as required by the tournament rules. ChatGPT and
+Codex supported planning, copy iteration, implementation/refinement and technical
+review. Claude (Anthropic) and Gemini (Google) were also used for additional
+art-direction proposals, visual prototypes and independent review. Final design
+and implementation decisions were selected, reviewed and validated by the author,
+who can explain and defend the work.
 
 ## Accessibility / performance
 
@@ -163,29 +172,37 @@ Responsive checks cover 1440, 1366, 1280, 1024, 900, 820, 768, 430, 390 and 375 
 
 The landing uses Server Components and static rendering. Existing GSAP and small
 IntersectionObserver helpers animate decorative art once, with no-JS and reduced-motion
-final states. The Final CTA reuses DrawOnView for a 1.1-second simplified Build assembly,
-with the white Perfil module entering last;
-no ScrollTrigger, reverse or scroll scrubbing is used. SVG geometry and CSS supply visuals without photographic downloads
+final states. Final CTA / Comunidad is a small community cluster: three member
+terminals around a shared conversation element. DrawOnView reveals its decorative
+pieces once over 0.95 seconds, then they remain static. No ScrollTrigger, reverse
+or scroll scrubbing is used. SVG geometry and CSS supply visuals without photographic downloads
 or per-frame React state. Next.js supplies its standard framework client runtime.
 
-Lighthouse targets for delivery are SEO 100, accessibility >90 and mobile performance
->90. These are targets, not measured results. Run Lighthouse against the production
-deployment after setting `SITE_URL`; check keyboard use and responsive behavior too.
+## Lighthouse
+
+Verified measurements on the deployed tournament site, supplied by the author:
+
+| Mode | Performance | Accessibility | Best Practices | SEO |
+| --- | --- | --- | --- | --- |
+| Mobile | 94 | 100 | 100 | 100 |
+| Desktop | 100 | 100 | 100 | 100 |
+
+These describe the measured production revision. Capture/store the required
+Lighthouse evidence for delivery; these measurements are not a new audit of local changes.
 
 ## Deployment
 
-The project is prepared for Next.js-compatible platforms such as Vercel. Configure
-`SITE_URL`, install with Bun and build with `bun run build`. A Node.js host can serve
-the production build with `bun run start`. No deployment is claimed here.
-
-Before production, connect Newsletter and replace the placeholder testimonials.
-After deployment, verify canonical, robots, sitemap, structured data and both social
-image routes on the real public origin.
+The tournament deployment is hosted on Vercel at https://techtojob.vercel.app/.
+For a future deployment, configure `SITE_URL`, install with Bun and build with
+`bun run build`. A Node.js host can serve the build with `bun run start`.
+Verify canonical, robots, sitemap, structured data and both social image routes
+on the public origin after each release.
 
 ## Tournament delivery
 
 - [ ] Confirm the public repository and final submission revision.
-- [ ] Deploy and verify the public production URL.
+- [x] Deploy and verify the public production URL.
 - [ ] Capture final desktop and mobile screenshots manually.
-- [ ] Run Lighthouse and capture the required result.
+- [x] Run Lighthouse on the deployed site.
+- [ ] Capture/store the required Lighthouse evidence.
 - [ ] Submit the repository, deployment and required evidence in Discord.

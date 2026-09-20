@@ -4,7 +4,7 @@
     "description": "TechToJob conecta desarrolladores y empresas en una comunidad donde participar, construir y compartir proyectos aporta más contexto que enviar otro CV."
   },
   "Navigation": {
-    "home": "TechToJob, inicio",
+    "home": "Tech to Job, inicio",
     "label": "Navegación principal",
     "menu": "Menú",
     "howItWorks": "Cómo funciona",
@@ -214,7 +214,7 @@
       { "label": "Discord", "href": "https://discord.gg/h9FFgKdkRd" },
       { "label": "LinkedIn", "href": "https://www.linkedin.com/company/techtojob/" },
       { "label": "X", "href": "https://x.com/techtojob" },
-      { "label": "Instagram", "href": "https://www.instagram.com/techtojob" }
+      { "label": "Instagram", "href": "https://www.instagram.com/techtojob/" }
     ],
     "copyright": "© TechToJob"
   }

@@ -11,7 +11,7 @@ the approved content. Preserve section order, positioning and SEO.
 The Build is the approved Hero North Star. It establishes a shared visual grammar,
 not a template to repeat across every section. Avoid generic SaaS layouts, card
 grids, dashboards, fake interfaces, invented metrics, badges and stock imagery.
-C.1 explicitly allows static Build-style testimonial modules as an exception.
+The approved design explicitly allows static Build-style testimonial modules as an exception.
 
 ## The Build
 
@@ -21,13 +21,14 @@ It is NOT an official logo variant. Header and Footer retain the official artwor
 The central mint body, white Perfil module, mint Torneo and Empresa modules,
 restrained joints and exposed interior express construction through contributions.
 Hero establishes the complete object; subsequent sections use selected fragments.
-The Final CTA returns to its recognizable silhouette in a simplified assembly.
+The Final CTA uses a separate community/conversation cluster, without repeating
+the symbol or Hero silhouette.
 
 Static geometry is precomputed in heroBuildGeometry.ts. Each external module has
 one top face and one side path; no stacks of translated symbol copies. Desktop
 and tablet have two interior levels; mobile has one. Depth comes from geometry,
-overlap and derived tones. Joints use 1.75 source-unit offsets, approximately 27%
-less than the original 2.4. The recess/floor have stronger tonal separation.
+overlap and derived tones. Joints use 1.75 source-unit offsets. The recess and
+floor use distinct tones.
 
 Hero contains 15 SVG paths per desktop/tablet composition and 14 for mobile.
 The three CSS-selected compositions total 44 paths, with no filters or masks.
@@ -77,19 +78,19 @@ Target final rhythm and implementation state:
 | Section | Background | Current redesign status |
 | --- | --- | --- |
 | Header | Charcoal | Sticky header and progressive mobile menu implemented |
-| Hero | Charcoal | Approved North Star; B.2 heading hierarchy and Comunidad guide implemented |
-| How it works | White | Implemented; B.1 continuous rail correction applied |
+| Hero | Charcoal | Approved Hero composition with contextual annotations |
+| How it works | White | Approved continuous process rail |
 | Talent | Mint | Final static profile slab and rear socket alignment implemented |
-| Companies | Charcoal | Implemented; B.1 per-level depth correction applied |
-| Tournaments | White with mint proof band | Implemented in Batch B |
+| Companies | Charcoal | Approved per-level depth composition |
+| Tournaments | White with mint proof band | Implemented and approved |
 | Networking | Charcoal | Final static intro, grouped signals and cropped fragment implemented |
-| Testimonials | White | C.1 static primary module plus three supporting modules |
-| News | Derived near-white | Implemented in Batch B |
+| Testimonials | White | Approved static primary module plus three supporting modules |
+| News | Derived near-white | Implemented and approved |
 | Newsletter | Charcoal compact strip | Implemented; semantic form disabled pending integration |
-| Final CTA | Mint | C.1 implemented; white Perfil enters simplified Build once |
-| Footer | Derived deeper charcoal | C.1 implemented; brand/socials and two navigation columns |
+| Final CTA | Mint | Approved community cluster reveals once |
+| Footer | Derived deeper charcoal | Approved brand/socials and two navigation columns |
 
-The Build redesign is implemented from Header through Footer. Spanish is the only
+The landing is implemented, approved and closed from Header through Footer. Spanish is the only
 release language; messages remain structured for future localization. No language
 toggle, additional locale or translation dependency is present.
 
@@ -108,9 +109,8 @@ Reduced motion immediately shows the final state, with no draw, assembly or
 reveals. Media-query changes and unmount disconnect observers and revert local
 animations. A completed animation does not replay on re-entry.
 Scroll animations play once and remain complete when scrolling upward; no reverse,
-scroll scrubbing or ScrollTrigger. The Final CTA is the only new motion moment in
-Batch C, refined in C.1: the body resolves, white Perfil enters and its final face
-locks into the simplified Build over 1.1 seconds with DrawOnView.
+scroll scrubbing or ScrollTrigger. The Final CTA reveals three member terminals
+and one shared conversation element over 0.95 seconds with DrawOnView.
 
 Hero uses a small HeroBuildMotion controller. Desktop may begin at mount;
 tablet/mobile wait for the active scene to become meaningfully visible through
@@ -126,9 +126,8 @@ and plays once when visible. data-grow="x" prepares scaleX:0 with left-center or
 data-grow="y" prepares scaleY:0 with center-top origin. Both grow to 1 and clear
 their transform/origin on completion. data-duration and data-delay retain the
 existing contract. data-reveal continues to affect independent surfaces only.
-C.1 adds opt-in data-enter with data-from-x/y offsets: translation returns to zero
-and clears its transform, using the same duration/delay contract. Fixed SVG joint
-transforms stay on an outer group. Existing scene behavior is unchanged.
+DrawOnView also supports optional data-enter translations with data-from-x/y
+offsets and the same duration/delay contract; no current section uses that option.
 The visibility threshold adapts to tall mobile content. It uses no React state.
 Talent, Networking, Testimonials and News are intentionally static.
 
@@ -168,8 +167,7 @@ Favicon metadata declares the unchanged official symbol-positive.svg for light
 UI (asset charcoal #303436) and symbol-negative.svg for dark UI (mint #84c0bf),
 using prefers-color-scheme media queries. There is no site theme switch.
 
-Hero begins directly with the H1; its eyebrow is intentionally removed from the
-component, messages and active copy documentation. There is no replacement line.
+Hero begins directly with the H1, without an eyebrow or pre-heading.
 Hero uses approximately 55% copy and 45% illustration on desktop. Copy aligns
 from the top independently of the art. Typography and spacing respond to viewport
 width AND height; no forced minimum height pushes the CTA down.
@@ -188,12 +186,10 @@ HTML grid reserves annotation space independently of the SVG, with 12px details,
 13px labels, 16px row gaps and 44px breathing room after the CTA. The drawing uses
 a 342x314 viewBox and short guides relating the labels to the object. No labels
 are hidden at 430, 390 or 375px. Height follows content, not a locked 844px frame.
-The desktop technical baseline and its ticks are removed; meaningful short
-annotation guides remain. The desktop Comunidad guide ends exactly at the central
+Desktop uses short annotation guides without a technical baseline or ticks. The desktop Comunidad guide ends exactly at the central
 recess boundary (source vertex 164.91, 179.42, transformed by its composition).
 It crosses only the recess's own narrow extrusion, without entering unrelated
-modules or extending into the cavity. Other guides, label positions, mobile/tablet
-geometry and construction timings are preserved.
+modules or extending into the cavity.
 
 ### How it works
 
@@ -246,7 +242,7 @@ The note is a large editorial closing line outside the cut.
 Tablet/mobile stack the composition and reduce offsets without shrinking text.
 No SVG: three main CSS surfaces, three right and three bottom planes.
 
-### Tournaments - Batch B
+### Tournaments
 
 Implemented. White section with four adjoining modules, thin 2px joints and a
 shared shallow depth treatment. Real dl/dt/dd pairs retain Reto, Entrega, Jurado
@@ -259,7 +255,7 @@ At 1280+ the modules form one horizontal assembly; 768-1279 uses a joined 2x2
 composition; mobile uses adjoining vertical pieces. A separate flat mint proof
 band closes the section with large typography and no extra decorative cluster.
 
-### Networking - Batch B
+### Networking
 
 Charcoal editorial composition. Desktop places eyebrow, H2 and approved description
 in the left column, with one vertical group of three semantic ul/li signals to
@@ -283,21 +279,23 @@ Mobile follows intro, vertical icon/label group, closing note and Discord link.
 The fragment becomes smaller and more cropped without reserving layout height.
 All icons and decorative SVG are aria-hidden and focusable=false. The section
 is a static Server Component with no motion attributes or animation controller.
-The mockup supplies composition only: its invented supporting copy is omitted.
+Only approved signal labels appear; no supporting descriptions are invented.
 
-### Testimonials - Batch C.1
+### Testimonials
 
 Four static Build-style modules preserve the original figure/blockquote/figcaption
 entries and their order. One substantial charcoal module with white copy occupies
-the left on desktop; three near-white supporting modules sit in the right column.
+the left on desktop; three near-white supporting modules sit in an independent
+right column. The primary card aligns to the top and follows its content height,
+without row spanning or stretching to the full supporting column height.
 Flat depth planes extend 8px right and 10px down, with one restrained lower-right
 chamfer. This is visual hierarchy, not an endorsement of greater credibility.
 Tablet uses two columns; mobile stacks all four. Quotes lead, followed by small
 terminal-square initials, names and roles. No shadows, gradients, SVG, ratings,
-photography or motion. This module treatment is explicitly approved for C.1.
+photography or motion. This module treatment is approved.
 Placeholder status stays documented outside the UI; all four quotes are unchanged.
 
-### News - Batch B
+### News
 
 Implemented. Flat near-white derived from 92% white and 8% mint. Three comparable
 publication rows, each with a restrained index/category, real h3, description and
@@ -309,7 +307,7 @@ Each link retains its descriptive accessible name, 44px minimum hit height and
 visible charcoal focus. Three small outbound SVG paths; no motion.
 Time-sensitive approved copy remains unchanged and needs a separate content decision.
 
-### Newsletter - Batch C
+### Newsletter
 
 Compact charcoal #2f3436 transition strip with white copy and readable secondary
 text. The white email field contrasts with the deliberately muted disabled button;
@@ -321,27 +319,25 @@ its explicit email label, autocomplete and visible 14px availability status.
 The disabled default submit prevents implicit Enter submission as well as clicks.
 No JavaScript, provider, request, success simulation or form action is added.
 
-### Final CTA - Batch C.1
+### Final CTA
 
-Mint #84c0bf closing section. Strong approved copy and the real Discord action sit
-beside a simplified, recognizable Build on desktop. The CTA retains its 56px
-minimum height; H2 stays 42-76px, below desktop Hero. The previous abstract figure
-is removed completely.
+Mint #84c0bf closing section. Approved copy and the real Discord action sit beside
+a small community cluster: three member/profile terminals around one shared central
+conversation element. The terminals use rounded-square geometry, simple abstract
+profile marks and white/charcoal/derived tones. The conversation uses a speech
+shape. It does not repeat The Build, the TechToJob symbol or a network graph.
 
-Nine flat paths reuse the existing optimized Hero geometry: body/depth/recess,
-two assembled darker modules, and the white Perfil face with its restrained side.
-Charcoal and darker derived tones remain distinct against mint. There are no
-annotations, guides, filters or stacked path copies. Existing 1.75-unit joints
-preserve the relationship between profile and body.
+The decorative SVG has 13 primitives in four groups. DrawOnView reveals member 1
+at 0-.25s, member 2 at .15-.4s, member 3 at .3-.55s, and the conversation at
+.55-.95s. It plays once and remains static, without text animation, bounce, reverse,
+loop or ScrollTrigger. Reduced motion and no-JS show the complete final state.
 
-DrawOnView prepares the body over 0-.25s, moves Perfil into its joint over .25-.8s,
-and resolves its side face over .8-1.1s. No bounce, overshoot, loop, reverse, scrub
-or text animation. No-JS and reduced motion show the complete final art immediately.
-Tablet stacks copy and a right-aligned 240px-high object; mobile keeps copy and CTA
-first, followed by compact 200px-high art. Desktop restores the side-by-side layout
-at 1024px. Reserved dimensions avoid animation-related layout shifts.
+The CTA retains its 56px minimum height and H2 scale of 42-76px. Tablet stacks copy
+and right-aligned 240px-high art; mobile puts copy and action first, then compact
+200px-high art. Desktop restores the side-by-side layout at 1024px. Reserved art
+dimensions keep the four conceptual pieces readable without increasing section height.
 
-### Footer - Batch C.1
+### Footer
 
 Static deep-charcoal footer. The official logo and tagline sit above a row of four
 terminal-square social links in the left group. The right group has two labeled
@@ -369,25 +365,23 @@ filters, heavy shadows, external images or new requests.
 Verify widths 1440, 1366, 1280, 1024, 900, 820, 768, 430, 390 and 375,
 plus the short desktop heights above. Check anchors/menu, console and hydration,
 overflow, valid paths, motion visibility timing, no-JS and reduced motion.
-Run lint, TypeScript and production build. Performance mobile >90 remains a target,
-not a claimed Lighthouse result.
+Run lint, TypeScript and production build for code changes. Verified production
+Lighthouse results supplied by the author are mobile 94/100/100/100 and desktop
+100/100/100/100 (Performance/Accessibility/Best Practices/SEO). These describe the
+measured deployed revision, not a fresh audit of local changes.
 
 Do not create screenshots, artifacts, review files, exported images or visual
 reports. Manual visual review belongs to the user. Final delivery screenshots
 remain a manual post-deploy task. No commit, push or deploy without authorization.
 
-Batches A, B, C and the C.1 implementation are complete. C.1 changes only native
-smooth navigation, Testimonials, Newsletter, Final CTA, Footer and related docs;
-other approved section implementations remain unchanged. Implementation validation
-is distinct from final QA and aesthetic approval.
+The landing design and implementation are approved and closed. Production is live
+at https://techtojob.vercel.app/ with SITE_URL configured in Vercel. Existing
+Chromium checks cover all ten widths, keyboard focus/menu, anchor offsets, inactive
+form, 44px social targets and play-once/reduced-motion/no-JS behavior. Safari/WebKit
+has not been independently checked in this environment.
 
-C.1 implementation checks pass in Chromium at all ten widths and four short
-desktop sizes: no overflow, clipped quotes, duplicate IDs, invalid anchors, console
-errors or hydration warnings. Native smooth/reduced scrolling, 88px/80px offsets,
-keyboard focus/menu, inactive form, 44px socials, play-once and no-JS states were
-checked without screenshots. Lint, TypeScript and production build pass.
-
-Final aesthetic review, Safari/WebKit, Lighthouse, deployment and tournament
-submission remain pending. No production approval or Lighthouse score is claimed.
-Newsletter integration and real testimonials remain production prerequisites.
-No screenshots, reports, commit, push or deployment are generated.
+Final screenshots, Lighthouse evidence capture/storage, public-repository/revision
+confirmation and Discord tournament submission remain manual delivery tasks.
+Newsletter integration and verified testimonials belong to a future operational
+release; the deployed tournament version intentionally uses the inactive form and
+permitted placeholder testimonials.

@@ -39,6 +39,7 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between gap-8 lg:h-18">
           <Link
             href="/"
+            prefetch={false}
             aria-label={content.home}
             className="flex min-h-11 shrink-0 items-center focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-brand-mint"
           >

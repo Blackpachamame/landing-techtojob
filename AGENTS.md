@@ -180,7 +180,7 @@ Implemented, reviewed, approved and considered closed unless a real integration 
 
 Do not make cosmetic changes to closed sections while implementing a later section.
 
-The visual landing and final technical pass are complete: final README, SEO, social images, structured data and accessibility/performance review. All sections remain closed. The next phase is production preparation, deployment and Lighthouse on the public URL; final delivery screenshots will be captured manually. Newsletter integration and real, verifiable testimonials remain production prerequisites documented in README.md.
+The landing design and implementation are approved and closed. The tournament site is deployed at https://techtojob.vercel.app/ with SITE_URL configured in Vercel production. Verified Lighthouse results supplied by the author are mobile 94/100/100/100 and desktop 100/100/100/100 (Performance/Accessibility/Best Practices/SEO). Remaining delivery tasks are manual screenshots, Lighthouse evidence capture/storage, public-repository/revision confirmation and Discord submission. Newsletter integration and verified testimonials are future operational-release work documented in README.md.
 
 ## Scope discipline
 

@@ -57,20 +57,22 @@ It is acceptable to reuse required concepts or vocabulary from the brief when th
 
 ## 4. Current approved copy
 
-Approved copy and URLs remain unchanged except for the explicitly approved B.2
-removal of the Hero eyebrow. The Build
-visual redesign is implemented through Batches A, B and C (Header through Footer).
-Batch C preserves every approved string and URL. Existing SEO is preserved, with
-adaptive favicon declarations added. Final visual review and production
-preparation, deployment, Lighthouse and manual delivery screenshots remain pending;
-Newsletter integration and real testimonials remain production prerequisites.
-Section approvals below refer to existing content, not closure of the new redesign.
+The landing design, implementation and approved copy are closed. The tournament
+site is deployed at https://techtojob.vercel.app/ with SITE_URL configured in the
+Vercel production environment. Verified Lighthouse results supplied by the author
+are mobile 94/100/100/100 and desktop 100/100/100/100
+(Performance/Accessibility/Best Practices/SEO).
+
+Final screenshots, Lighthouse evidence capture/storage, public-repository/revision
+confirmation and Discord tournament submission remain manual delivery tasks.
+Newsletter integration and verified community testimonials remain future
+operational-release work; they do not block the deployed tournament version.
 
 The following copy is approved and should not be rewritten during unrelated section work.
 
 ### Hero
 
-The Hero begins directly with its H1. B.2 intentionally removes the eyebrow;
+The Hero begins directly with its H1, without an eyebrow;
 no replacement eyebrow, badge or pre-heading copy is approved.
 
 Title:
@@ -223,8 +225,8 @@ Do not add:
 Status: implemented, reviewed, approved and closed.
 
 The current testimonials are placeholders permitted by the tournament rules. This
-condition is documented in README.md, not in the UI. Before production, replace
-them with real, verifiable testimonials, including photographs and LinkedIn profiles.
+condition is documented in README.md, not in the UI. A future operational release
+should replace them with verified community testimonials, photos and profile links.
 
 Eyebrow:
 Testimonios
@@ -368,10 +370,8 @@ Implementation sequence; all three sections are implemented, reviewed and approv
 
 ### Newsletter
 
-Implemented, reviewed and approved. Follows News. A real subscription integration
-remains pending.
-This copy is explicitly
-approved for this implementation and replaces the previous pending-copy status.
+Implemented, reviewed and approved. Follows News. Newsletter provider/backend
+integration remains pending for a post-tournament operational release.
 
 Eyebrow:
 Newsletter
@@ -425,7 +425,7 @@ without invented legal destinations.
 Brand tagline:
 Personas que construyen. Oportunidades con más contexto.
 
-C.1 navigation structure uses two explicitly approved headings. Link labels reuse
+The navigation structure uses two explicitly approved headings. Link labels reuse
 the existing Navigation, Testimonials, News and Newsletter messages.
 
 Explorar:
@@ -455,8 +455,8 @@ Copyright:
 No year or privacy, terms, cookies or contact links are needed without real URLs.
 The brand link reuses the existing accessible home label. Each navigation landmark
 is labeled by its visible heading; social links form a separate unordered list
-directly beneath the tagline. C.1 visual corrections are implemented; manual visual
-approval is separate from the unchanged approved copy.
+directly beneath the tagline. Header and Footer use the accessible home label
+"Tech to Job, inicio"; the official visual logo is unchanged.
 
 ## 6. Confirmed links
 
@@ -470,7 +470,7 @@ X:
 https://x.com/techtojob
 
 Instagram:
-https://www.instagram.com/techtojob
+https://www.instagram.com/techtojob/
 
 ## 7. Section ids already established
 
@@ -516,7 +516,8 @@ Organization JSON-LD are implemented. SITE_URL controls public URLs, robots and
 sitemap. Without SITE_URL, indexing stays disabled and canonical/social image URLs
 are omitted. With SITE_URL, the homepage is indexable and public URLs are absolute.
 
-The technical pass is complete. Verify the real production origin after deployment
-and run Lighthouse; no Lighthouse score is claimed yet.
+The production origin is https://techtojob.vercel.app/ and SITE_URL is configured.
+Lighthouse has been measured as documented above; its required evidence and final
+submission remain manual delivery tasks.
 
 Do not change Metadata while implementing individual sections unless explicitly requested.

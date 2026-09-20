@@ -37,6 +37,7 @@ export default function Footer() {
           <div>
             <Link
               href="/"
+              prefetch={false}
               aria-label={messages.Navigation.home}
               className="inline-flex min-h-11 items-center focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-6 focus-visible:outline-brand-mint"
             >
