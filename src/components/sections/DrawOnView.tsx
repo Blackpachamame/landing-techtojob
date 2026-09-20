@@ -42,6 +42,19 @@ export default function DrawOnView() {
             clearProps: "transform,transformOrigin",
           }, Number(element.dataset.delay ?? 0));
         });
+        // Opt-in assembly movement; other sections keep their existing targets/timing.
+        scene.querySelectorAll<HTMLElement | SVGElement>("[data-enter]").forEach(element => {
+          gsap.set(element, {
+            x: Number(element.dataset.fromX ?? 0),
+            y: Number(element.dataset.fromY ?? 0),
+          });
+          intro.to(element, {
+            x: 0, y: 0,
+            duration: Number(element.dataset.duration ?? 0.55),
+            ease: "power2.out",
+            clearProps: "transform",
+          }, Number(element.dataset.delay ?? 0));
+        });
         scene.querySelectorAll<HTMLElement | SVGElement>("[data-reveal]").forEach(element => {
           gsap.set(element, { opacity: 0 });
           intro.to(element, {

@@ -207,6 +207,8 @@
     "cta": "Entrar a la comunidad"
   },
   "Footer": {
+    "exploreHeading": "Explorar",
+    "communityHeading": "Comunidad",
     "tagline": "Personas que construyen. Oportunidades con más contexto.",
     "socialLinks": [
       { "label": "Discord", "href": "https://discord.gg/h9FFgKdkRd" },

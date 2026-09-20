@@ -59,8 +59,9 @@ It is acceptable to reuse required concepts or vocabulary from the brief when th
 
 Approved copy and URLs remain unchanged except for the explicitly approved B.2
 removal of the Hero eyebrow. The Build
-visual redesign is implemented through Batches A and B (Hero through News);
-Batch C remains pending. Existing SEO is preserved. Production
+visual redesign is implemented through Batches A, B and C (Header through Footer).
+Batch C preserves every approved string and URL. Existing SEO is preserved, with
+adaptive favicon declarations added. Final visual review and production
 preparation, deployment, Lighthouse and manual delivery screenshots remain pending;
 Newsletter integration and real testimonials remain production prerequisites.
 Section approvals below refer to existing content, not closure of the new redesign.
@@ -424,12 +425,20 @@ without invented legal destinations.
 Brand tagline:
 Personas que construyen. Oportunidades con más contexto.
 
-Navigation reuses the existing Navigation messages and exact destinations:
+C.1 navigation structure uses two explicitly approved headings. Link labels reuse
+the existing Navigation, Testimonials, News and Newsletter messages.
+
+Explorar:
 - Cómo funciona → #how-it-works
 - Talento → #talent
 - Empresas → #companies
 - Torneos → #tournaments
+
+Comunidad:
 - Comunidad → #networking
+- Testimonios → #testimonials
+- Noticias → #news
+- Newsletter → #newsletter
 
 Social link labels:
 - Discord
@@ -444,8 +453,10 @@ Copyright:
 © TechToJob
 
 No year or privacy, terms, cookies or contact links are needed without real URLs.
-The brand link reuses the existing accessible home label. The footer navigation
-reuses the existing navigation label; social links form a separate unordered list.
+The brand link reuses the existing accessible home label. Each navigation landmark
+is labeled by its visible heading; social links form a separate unordered list
+directly beneath the tagline. C.1 visual corrections are implemented; manual visual
+approval is separate from the unchanged approved copy.
 
 ## 6. Confirmed links
 

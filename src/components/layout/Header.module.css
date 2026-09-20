@@ -1,5 +1,6 @@
 .header {
   background: var(--color-brand-dark);
+  border-bottom: 1px solid var(--build-muted-line);
 }
 
 .logo {
@@ -13,12 +14,8 @@
   height: auto;
 }
 
-@media (min-width: 1024px) and (max-height: 700px) {
-  .header > div > div { height: 80px; }
-}
-
 @media (min-width: 1024px) {
   .logo {
-    width: 216px;
+    width: 200px;
   }
 }

@@ -3,6 +3,7 @@ import path from "node:path";
 import Link from "next/link";
 import messages from "../../../messages/es.json";
 import styles from "./Header.module.css";
+import MobileMenu from "./MobileMenu";
 
 // Inline the trusted official SVG unchanged so its live text can use Sora.
 const logo = readFileSync(
@@ -33,9 +34,9 @@ export default function Header() {
   ));
 
   return (
-    <header className={`relative z-10 ${styles.header}`}>
+    <header className={`sticky top-0 z-50 ${styles.header}`}>
       <div className="page-container">
-        <div className="flex h-20 items-center justify-between gap-8 border-b border-brand-white/10 lg:h-24">
+        <div className="flex h-16 items-center justify-between gap-8 lg:h-18">
           <Link
             href="/"
             aria-label={content.home}
@@ -52,21 +53,14 @@ export default function Header() {
             <ul className="flex items-center gap-7 xl:gap-9">{links}</ul>
           </nav>
 
-          <details className="group lg:hidden">
-            <summary className="flex min-h-11 cursor-pointer list-none items-center gap-3 text-sm focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-mint [&::-webkit-details-marker]:hidden">
-              {content.menu}
-              <span aria-hidden="true" className="flex w-5 flex-col gap-1.5">
-                <span className="h-px w-5 bg-brand-mint group-open:translate-y-[3.5px] group-open:rotate-45 motion-safe:transition-transform" />
-                <span className="h-px w-5 bg-brand-mint group-open:-translate-y-[3.5px] group-open:-rotate-45 motion-safe:transition-transform" />
-              </span>
-            </summary>
+          <MobileMenu label={content.menu}>
             <nav
               aria-label={content.label}
-              className="absolute inset-x-0 top-full z-20 border-b border-brand-mint/40 bg-brand-deep shadow-lg"
+              className="absolute inset-x-0 top-full z-20 max-h-[calc(100dvh-64px)] overflow-y-auto border-b border-brand-mint/40 bg-brand-dark"
             >
               <ul className="page-container flex flex-col py-5">{links}</ul>
             </nav>
-          </details>
+          </MobileMenu>
         </div>
       </div>
     </header>

@@ -26,6 +26,15 @@
   color: var(--color-brand-dark);
 }
 
+/* Reserve the sticky header plus breathing room for anchors and native focus scrolling. */
+html { scroll-padding-top: 80px; }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+@media (min-width: 1024px) {
+  html { scroll-padding-top: 88px; }
+}
+
 @utility section-title {
   font-size: clamp(2.25rem, 4.5vw, 4rem);
   font-weight: 600;

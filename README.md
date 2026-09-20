@@ -7,10 +7,10 @@ TechToJob is a community where developers and companies participate, build and g
 to know one another. The landing explains that proposition and guides visitors to
 Discord, without promising employment.
 
-The complete landing is present. The Build redesign is implemented through Batches A
-and B (Hero through News); Batch C remains pending. Existing
-SEO, structured data and social images are preserved. Deployment and Lighthouse
-measurements remain pending.
+The complete landing and The Build redesign are implemented through Batches A, B
+and C, including C.1 corrections, from Header to Footer. Existing SEO, structured data and social images are
+preserved; the favicon adapts to light/dark browser UI. Final QA, deployment and
+Lighthouse measurements remain pending.
 
 ## Stack
 
@@ -18,8 +18,8 @@ measurements remain pending.
 - Tailwind CSS 4, with CSS Modules for section-specific compositions.
 - Sora through `next/font/google`.
 - Bun 1.3.14 or newer; Node.js 20.9 or newer for Next.js.
-- Server Components for content; small HeroBuildMotion and DrawOnView Client Components
-  enhance decorative art only.
+- Server Components for content; HeroBuildMotion and DrawOnView enhance decorative
+  art, while a small MobileMenu Client Component handles closing and focus.
 
 ## Running locally
 
@@ -94,7 +94,9 @@ adapt to desktop, tablet and mobile instead of shrinking desktop compositions.
 TechToJob brand assets were provided for this project. `public/brand/` preserves
 twelve byte-for-byte SVG copies: original `Símbolo*` files map to `symbol-*`,
 `v1*` to `horizontal-*`, and `v2*` to `stacked-*`, each in black, gradient, negative
-and positive variants. The official `symbol-positive.svg` is the favicon.
+and positive variants. Media-aware Next.js icon metadata selects unchanged
+`symbol-positive.svg` (charcoal) for light UI and `symbol-negative.svg` (mint) for
+dark UI. No theme toggle is added.
 
 The original non-gradient horizontal and stacked SVGs contain live Sora text.
 Header and Footer inline the official logo so the page font applies; Footer
@@ -105,6 +107,13 @@ contains embedded raster data. Original artwork, data and colors are preserved.
 The landing currently uses no external stock photographs. The site's geometry,
 decorative SVG and CSS compositions are part of this implementation. No additional
 license or redistribution rights are asserted for the provided brand assets.
+
+Footer social paths are copied exactly from the official [Simple Icons repository](https://github.com/simple-icons/simple-icons):
+
+- Discord, X and Instagram: revision [b86d5c9](https://github.com/simple-icons/simple-icons/tree/b86d5c9a0bdd4f3f5c30898a63654dd32f39fd76/icons).
+- LinkedIn: verified [13.21.0 SVG](https://github.com/simple-icons/simple-icons/blob/13.21.0/icons/linkedin.svg). It is absent from current releases; the official historical source is used explicitly, not a reconstructed path.
+
+The project's [CC0-1.0 license](https://github.com/simple-icons/simple-icons/blob/b86d5c9a0bdd4f3f5c30898a63654dd32f39fd76/LICENSE.md) and [disclaimer](https://github.com/simple-icons/simple-icons/blob/b86d5c9a0bdd4f3f5c30898a63654dd32f39fd76/DISCLAIMER.md) were verified, as was the archived release license. CC0 for Simple Icons does not imply that every brand icon is CC0 or grant trademark rights; individual brand terms still apply. The paths are local, with no package dependency or runtime icon requests.
 
 ## SEO and social sharing
 
@@ -128,8 +137,9 @@ and a link to each person's LinkedIn profile.
 
 ## Newsletter
 
-The required UI is implemented with an email label, autocomplete and a disabled
-submit button. There is currently no subscription provider or endpoint. The form
+The compact charcoal strip contains a real form with an email label, autocomplete,
+a disabled default submit and a visible availability message. Enter in the email
+field does not submit or reload the page. There is currently no subscription provider or endpoint. The form
 does not simulate a real subscription or display a false success. Connect it to
 a real provider/backend before production.
 
@@ -143,12 +153,19 @@ iterated within the project; final decisions remained part of that review proces
 
 Semantic landmarks, one H1, ordered heading levels, real links, explicit keyboard
 focus and labeled form controls support accessibility. The mobile menu uses native
-`details`/`summary`; decorative graphics are hidden from assistive technology.
+`details`/`summary`, enhanced to close on selection/Escape and move focus. Without
+JavaScript it still opens and navigates, but must be closed manually. The Header
+is CSS-sticky with global anchor/focus scroll padding and native smooth anchors
+that respect reduced motion. Footer navigation groups eight existing anchors under
+Explorar and Comunidad; its social row sits beneath the tagline. Social icons have accessible
+names and 44px targets; decorative graphics are hidden from assistive technology.
 Responsive checks cover 1440, 1366, 1280, 1024, 900, 820, 768, 430, 390 and 375 px.
 
 The landing uses Server Components and static rendering. Existing GSAP and small
 IntersectionObserver helpers animate decorative art once, with no-JS and reduced-motion
-final states. SVG geometry and CSS supply visuals without photographic downloads
+final states. The Final CTA reuses DrawOnView for a 1.1-second simplified Build assembly,
+with the white Perfil module entering last;
+no ScrollTrigger, reverse or scroll scrubbing is used. SVG geometry and CSS supply visuals without photographic downloads
 or per-frame React state. Next.js supplies its standard framework client runtime.
 
 Lighthouse targets for delivery are SEO 100, accessibility >90 and mobile performance
