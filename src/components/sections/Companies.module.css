@@ -1,23 +1,20 @@
 .layout { display: grid; gap: 48px; }
 .context { position: relative; min-width: 0; width: 100%; max-width: 650px; margin-inline: auto; }
 .source { margin-bottom: 24px; padding-left: 16px; border-left: 2px solid var(--color-brand-mint); font-size: 16px; line-height: 1.5; color: var(--color-brand-mint); }
-.cut { --step: 24px; position: relative; isolation: isolate; padding-right: 16px; padding-bottom: 14px; }
-.cut::after { content: ""; position: absolute; z-index: -1; bottom: 0; left: calc(var(--step) * 2); right: 0; height: 14px; background: var(--build-floor); clip-path: polygon(0 0, 100% 0, 100% 100%, 16px 100%); }
-.side { position: absolute; z-index: -1; top: 0; right: 0; width: 16px; height: 100%; fill: var(--build-floor); }
+.cut { --step: 24px; --depth-x: 14px; --depth-y: 12px; position: relative; padding-right: calc(var(--step) * 2 + var(--depth-x)); padding-bottom: var(--depth-y); }
 .signals { margin: 0; padding: 0; list-style: none; }
-.signal { position: relative; isolation: isolate; display: flex; align-items: center; min-height: 108px; padding: 24px; font-size: clamp(24px, 2.35vw, 32px); font-weight: 600; line-height: 1.2; letter-spacing: -0.035em; }
-.signal:nth-child(2) { margin-left: 24px; }
-.signal:nth-child(3) { margin-left: 48px; }
-.face { position: absolute; z-index: -1; inset: 0; background: var(--build-recess); border-bottom: 1px solid var(--build-edge); }
-.signal:nth-child(2) .face { background: var(--build-side); }
-.signal:nth-child(3) .face { background: var(--build-floor); }
+.signal { --level-face: var(--build-recess); position: relative; isolation: isolate; display: flex; align-items: center; width: 100%; min-height: 108px; padding: 24px; font-size: clamp(24px, 2.35vw, 32px); font-weight: 600; line-height: 1.2; letter-spacing: -0.035em; }
+.signal:nth-child(2) { --level-face: var(--build-side); margin-left: var(--step); }
+.signal:nth-child(3) { --level-face: color-mix(in srgb, var(--color-brand-mint) 28%, var(--color-brand-dark)); margin-left: calc(var(--step) * 2); }
+.face { position: absolute; z-index: -1; inset: 0; background: var(--level-face); border-bottom: 1px solid var(--build-edge); }
+.face::before, .face::after { content: ""; position: absolute; pointer-events: none; }
+.face::before { top: 0; right: calc(-1 * var(--depth-x)); width: var(--depth-x); height: calc(100% + var(--depth-y)); background: color-mix(in srgb, var(--level-face) 60%, var(--color-brand-dark)); clip-path: polygon(0 0, 100% var(--depth-y), 100% 100%, 0 calc(100% - var(--depth-y))); }
+.face::after { top: 100%; left: 0; width: calc(100% + var(--depth-x)); height: var(--depth-y); background: color-mix(in srgb, var(--level-face) 40%, var(--color-brand-dark)); clip-path: polygon(0 0, calc(100% - var(--depth-x)) 0, 100% 100%, var(--depth-x) 100%); }
 .note { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--build-muted-line); font-size: clamp(28px, 3.5vw, 46px); line-height: 1.2; letter-spacing: -0.045em; text-wrap: balance; }
 
 @media (min-width: 768px) {
   .cut { --step: 32px; }
   .signal { min-height: 124px; padding: 28px 32px; }
-  .signal:nth-child(2) { margin-left: 32px; }
-  .signal:nth-child(3) { margin-left: 64px; }
 }
 @media (min-width: 1024px) {
   .layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 64px; }

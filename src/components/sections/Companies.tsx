@@ -31,9 +31,6 @@ export default function Companies() {
           <div className={styles.context}>
             <p className={styles.source}>{content.context.source}</p>
             <div className={styles.cut}>
-              <svg aria-hidden="true" focusable="false" className={styles.side} viewBox="0 0 16 374" preserveAspectRatio="none">
-                <path d="M0 0 16 14V374L0 360Z" />
-              </svg>
               <ul className={styles.signals}>
                 {content.context.signals.map((signal, index) => (
                   <li key={signal} className={styles.signal}>

@@ -15,25 +15,14 @@ export default function HowItWorks() {
           <p className="max-w-145 text-base leading-[1.7] text-brand-dark/80 md:text-lg">{content.description}</p>
         </div>
         <div className={styles.process}>
-          <svg aria-hidden="true" focusable="false" className={styles.desktopRail} viewBox="0 0 100 2" preserveAspectRatio="none">
-            <path data-draw d="M0 1H100" />
-          </svg>
+          <span aria-hidden="true" data-grow="x" className={styles.desktopRail} />
+          <span aria-hidden="true" data-grow="x" data-duration=".45" className={`${styles.tabletRail} ${styles.firstRow}`} />
+          <span aria-hidden="true" data-grow="x" data-duration=".45" data-delay=".45" className={`${styles.tabletRail} ${styles.secondRow}`} />
+          <span aria-hidden="true" data-grow="y" className={styles.mobileRail} />
           <ol className={styles.journey}>
             {content.steps.map((step, index) => (
               <li key={step.number} className={styles.step}>
-                {index % 2 === 0 && (
-                  <svg aria-hidden="true" focusable="false" className={styles.tabletRail} viewBox="0 0 100 2" preserveAspectRatio="none">
-                    <path data-draw data-duration=".45" data-delay={index * 0.225} d="M0 1H100" />
-                  </svg>
-                )}
-                {index < content.steps.length - 1 && (
-                  <svg aria-hidden="true" focusable="false" className={styles.mobileRail} viewBox="0 0 2 100" preserveAspectRatio="none">
-                    <path data-draw data-duration=".45" data-delay={index * 0.2} d="M1 0V100" />
-                  </svg>
-                )}
-                <svg aria-hidden="true" focusable="false" className={styles.station} viewBox="0 0 24 24">
-                  <rect data-reveal data-delay={0.15 + index * 0.23} x="1" y="1" width="22" height="22" rx="6" />
-                </svg>
+                <span aria-hidden="true" data-reveal data-delay={0.15 + index * 0.23} className={styles.station} />
                 <span className={styles.number}>{step.number}</span>
                 <h3 className={styles.title}>{step.title}</h3>
                 <p className={styles.description}>{step.description}</p>

@@ -11,9 +11,6 @@ export default function Hero() {
     <section aria-labelledby="hero-title" className={styles.hero}>
       <div className={`page-container ${styles.composition}`}>
         <div className={styles.copy}>
-          <p className={`section-eyebrow max-w-110 text-brand-mint ${styles.eyebrow}`}>
-            {content.eyebrow}
-          </p>
           <h1
             id="hero-title"
             className={styles.title}
@@ -22,7 +19,7 @@ export default function Hero() {
             <span className="text-brand-mint">{content.title.slice(titleAccentStart, titleAccentEnd)}</span>
             <span className="text-brand-white/75">{content.title.slice(titleAccentEnd)}</span>
           </h1>
-          <p className={`max-w-120 text-base text-brand-white/80 ${styles.description}`}>
+          <p className={`max-w-140 text-base text-brand-white/80 ${styles.description}`}>
             {content.description}
           </p>
           <a

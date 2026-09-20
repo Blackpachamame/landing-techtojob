@@ -1,41 +1,18 @@
-.section {
-  position: relative;
-  overflow: hidden;
-  background-image: radial-gradient(ellipse at 0 45%, rgb(132 192 191 / 7%), transparent 60%);
-}
+.quotes { display: grid; gap: 32px; margin-top: 48px; }
+.quote { min-width: 0; margin: 0; padding-top: 28px; border-top: 1px solid var(--build-edge); }
+.quote blockquote { font-size: 20px; line-height: 1.55; letter-spacing: -.025em; }
+.quote:first-child blockquote { font-size: 28px; line-height: 1.3; letter-spacing: -.04em; }
+.initials { display: grid; place-items: center; flex-shrink: 0; width: 36px; height: 36px; border-radius: 5px; background: color-mix(in srgb, var(--color-brand-white) 90%, var(--color-brand-dark)); font-size: 11px; font-weight: 600; }
 
-.lead {
-  position: relative;
-  padding-top: 28px;
+@media (min-width: 768px) {
+  .quotes { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; margin-top: 64px; }
+  .quote:first-child blockquote { font-size: 30px; }
 }
-
-.quoteMark {
-  position: absolute;
-  top: -80px;
-  left: -18px;
-  color: rgb(132 192 191 / 14%);
-  font-size: 240px;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.08em;
-  pointer-events: none;
-}
-
-.avatar {
-  border: 1px solid rgb(132 192 191 / 50%);
-  background: linear-gradient(140deg, rgb(132 192 191 / 18%), transparent);
-  box-shadow: inset 0 0 0 4px var(--color-brand-dark);
-}
-
 @media (min-width: 1024px) {
-
-  .lead {
-    padding-block: 40px;
-  }
-
-  .quoteMark {
-    top: -78px;
-    left: -30px;
-    font-size: 320px;
-  }
+  .quotes { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); column-gap: 64px; row-gap: 32px; }
+  .quote:first-child { grid-row: span 3; padding-top: 40px; }
+  .quote:first-child blockquote { max-width: 20ch; font-size: clamp(36px, 3.2vw, 46px); line-height: 1.25; }
+}
+@media (min-width: 1280px) {
+  .quotes { column-gap: 96px; }
 }

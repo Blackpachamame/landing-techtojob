@@ -7,8 +7,8 @@ TechToJob is a community where developers and companies participate, build and g
 to know one another. The landing explains that proposition and guides visitors to
 Discord, without promising employment.
 
-The complete landing is present. The Build redesign is implemented through Batch A
-(Hero, How it works, Talent and Companies); Batches B and C remain pending. Existing
+The complete landing is present. The Build redesign is implemented through Batches A
+and B (Hero through News); Batch C remains pending. Existing
 SEO, structured data and social images are preserved. Deployment and Lighthouse
 measurements remain pending.
 

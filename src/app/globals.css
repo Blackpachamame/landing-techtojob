@@ -14,6 +14,7 @@
 :root {
   --build-side: color-mix(in srgb, var(--color-brand-mint) 36%, var(--color-brand-dark));
   --build-white-side: color-mix(in srgb, var(--color-brand-white) 45%, var(--color-brand-dark));
+  --build-side-on-mint: color-mix(in srgb, var(--color-brand-mint) 46%, var(--color-brand-dark));
   --build-recess: color-mix(in srgb, var(--color-brand-mint) 48%, var(--color-brand-dark));
   --build-floor: color-mix(in srgb, var(--color-brand-mint) 12%, var(--color-brand-dark));
   --build-edge: rgb(47 52 54 / 35%);

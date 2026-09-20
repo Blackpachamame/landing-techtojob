@@ -17,8 +17,9 @@ export default function DrawOnView() {
       let intro: gsap.core.Timeline;
       const animation = gsap.context(() => {
         intro = gsap.timeline({ paused: true });
-        // Prepare every responsive rail once so a resize cannot expose a final rail.
+        // Dash lengths must scale with the path. Straight non-scaling rails use data-grow.
         scene.querySelectorAll<SVGGeometryElement>("[data-draw]").forEach(path => {
+          if (getComputedStyle(path).vectorEffect === "non-scaling-stroke") return;
           const length = path.getTotalLength();
           gsap.set(path, { strokeDasharray: length, strokeDashoffset: length });
           intro.to(path, {
@@ -27,6 +28,19 @@ export default function DrawOnView() {
             ease: "power1.inOut",
             clearProps: "strokeDasharray,strokeDashoffset",
           }, Number(path.dataset.delay ?? 0));
+        });
+        scene.querySelectorAll<HTMLElement | SVGElement>('[data-grow="x"], [data-grow="y"]').forEach(element => {
+          const horizontal = element.dataset.grow === "x";
+          gsap.set(element, {
+            [horizontal ? "scaleX" : "scaleY"]: 0,
+            transformOrigin: horizontal ? "left center" : "center top",
+          });
+          intro.to(element, {
+            [horizontal ? "scaleX" : "scaleY"]: 1,
+            duration: Number(element.dataset.duration ?? 0.95),
+            ease: "power1.inOut",
+            clearProps: "transform,transformOrigin",
+          }, Number(element.dataset.delay ?? 0));
         });
         scene.querySelectorAll<HTMLElement | SVGElement>("[data-reveal]").forEach(element => {
           gsap.set(element, { opacity: 0 });

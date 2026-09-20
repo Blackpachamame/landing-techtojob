@@ -57,9 +57,10 @@ It is acceptable to reuse required concepts or vocabulary from the brief when th
 
 ## 4. Current approved copy
 
-Approved copy and URLs remain unchanged across the complete landing. The Build
-visual redesign is implemented through Batch A (Hero, How it works, Talent and
-Companies); Batches B and C remain pending. Existing SEO is preserved. Production
+Approved copy and URLs remain unchanged except for the explicitly approved B.2
+removal of the Hero eyebrow. The Build
+visual redesign is implemented through Batches A and B (Hero through News);
+Batch C remains pending. Existing SEO is preserved. Production
 preparation, deployment, Lighthouse and manual delivery screenshots remain pending;
 Newsletter integration and real testimonials remain production prerequisites.
 Section approvals below refer to existing content, not closure of the new redesign.
@@ -68,8 +69,8 @@ The following copy is approved and should not be rewritten during unrelated sect
 
 ### Hero
 
-Eyebrow:
-Desarrolladores y empresas tech, en una misma comunidad
+The Hero begins directly with its H1. B.2 intentionally removes the eyebrow;
+no replacement eyebrow, badge or pre-heading copy is approved.
 
 Title:
 Que te conozcan por lo que construyes, no por otro CV.

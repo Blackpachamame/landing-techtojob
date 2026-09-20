@@ -8,9 +8,9 @@ export default function Talent() {
     <section
       id="talent"
       aria-labelledby="talent-title"
-      className="bg-brand-mint py-20 text-brand-dark md:py-24 lg:py-32"
+      className="bg-brand-mint py-20 text-brand-dark md:py-24"
     >
-      <div className="page-container grid items-center gap-14 md:gap-16 lg:grid-cols-[1fr_0.9fr] lg:gap-20 xl:gap-28">
+      <div className="page-container grid items-center gap-14 md:gap-16 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10 xl:gap-16">
         <div className="max-w-160">
           <p className="section-eyebrow mb-6">
             {content.eyebrow}
@@ -30,25 +30,25 @@ export default function Talent() {
         </div>
 
         <div className={styles.profile}>
-          <p className="text-4xl leading-tight font-semibold tracking-[-0.045em] md:text-5xl">
-            {content.profile.label}
-          </p>
-          <dl className={styles.fields}>
-            {content.profile.fields.map((field) => (
-              <div key={field.term} className={styles.field}>
-                <dt className="text-lg leading-snug font-semibold tracking-[-0.02em]">
-                  {field.term}
-                </dt>
-                <dd className="mt-2 text-base leading-relaxed text-brand-dark/85">
-                  {field.description}
-                </dd>
-              </div>
-            ))}
-          </dl>
-          <p className={styles.company}>
-            {content.profile.company}
-            <span aria-hidden="true" className={styles.terminal} />
-          </p>
+          <span aria-hidden="true" className={styles.socket} />
+          <div className={styles.piece}>
+            <p className="text-4xl leading-tight font-semibold tracking-[-0.045em] md:text-5xl">
+              {content.profile.label}
+            </p>
+            <dl className={styles.fields}>
+              {content.profile.fields.map((field) => (
+                <div key={field.term} className={styles.field}>
+                  <dt className="text-base leading-relaxed font-semibold tracking-[-0.025em]">
+                    {field.term}
+                  </dt>
+                  <dd className="text-base leading-relaxed text-brand-dark/85">
+                    {field.description}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+            <p className={styles.company}>{content.profile.company}</p>
+          </div>
         </div>
       </div>
     </section>
