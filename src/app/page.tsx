@@ -48,7 +48,7 @@ const organization = {
   sameAs: [
     "https://www.linkedin.com/company/techtojob/",
     "https://x.com/techtojob",
-    "https://www.instagram.com/techtojob/",
+    "https://www.instagram.com/techtojob",
   ],
 };
 
@@ -62,7 +62,7 @@ export default function HomePage() {
         }}
       />
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <Hero />
         <HowItWorks />
         <Talent />

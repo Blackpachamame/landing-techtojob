@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: siteUrl,
   title: {
     default: messages.Metadata.title,
-    template: `%s | ${messages.Metadata.title}`,
+    template: "%s | TechToJob",
   },
   description: messages.Metadata.description,
   applicationName: siteName,
@@ -41,7 +41,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={sora.variable} data-scroll-behavior="smooth">
-      <body className="min-h-screen bg-brand-dark font-sans text-brand-white">{children}</body>
+      <body className="min-h-screen bg-brand-dark font-sans text-brand-white">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-sm focus:bg-brand-mint focus:px-5 focus:py-3 focus:text-brand-dark focus:outline-2 focus:outline-offset-4 focus:outline-brand-dark">
+          {messages.Navigation.skipToContent}
+        </a>
+        {children}
+      </body>
     </html>
   );
 }

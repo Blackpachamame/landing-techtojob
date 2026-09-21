@@ -72,8 +72,8 @@ The following copy is approved and should not be rewritten during unrelated sect
 
 ### Hero
 
-The Hero begins directly with its H1, without an eyebrow;
-no replacement eyebrow, badge or pre-heading copy is approved.
+Eyebrow:
+Comunidad de desarrolladores y empresas tech en español
 
 Title:
 Que te conozcan por lo que construyes, no por otro CV.
@@ -309,6 +309,12 @@ Torneos, decisiones y avances que compartimos mientras TechToJob toma forma.
 
 #### Story 01
 
+Date:
+8 sep 2026
+
+Datetime:
+2026-09-08
+
 Category:
 Torneo #2
 
@@ -319,7 +325,7 @@ Description:
 El reto ya está abierto: una landing con brief y rúbrica pública cuya propuesta ganadora pasará a ser la web oficial.
 
 Link label:
-Ver publicación
+Leer la publicación en LinkedIn
 
 URL:
 https://es.linkedin.com/posts/techtojob_desarrolloweb-frontend-nextjs-activity-7503104580864368640-YQDy
@@ -327,6 +333,12 @@ https://es.linkedin.com/posts/techtojob_desarrolloweb-frontend-nextjs-activity-7
 Internal note: “El reto ya está abierto” is time-sensitive. Review it in the final pass if the tournament has ended; keep the approved copy unchanged for now.
 
 #### Story 02
+
+Date:
+24 ago 2026
+
+Datetime:
+2026-08-24
 
 Category:
 Comunidad
@@ -338,12 +350,18 @@ Description:
 Torneos, proyectos colaborativos, empresas y networking conviven en un mismo lugar para que participar deje más contexto que otra candidatura anónima.
 
 Link label:
-Ver publicación
+Leer la publicación en LinkedIn
 
 URL:
 https://es.linkedin.com/posts/techtojob_empleo-tech-programaci%C3%B3n-activity-7497649410609283072-eXDp
 
 #### Story 03
+
+Date:
+25 ago 2026
+
+Datetime:
+2026-08-25
 
 Category:
 Identidad
@@ -355,7 +373,7 @@ Description:
 El primer torneo puso el diseño del logo, los colores y la tipografía en manos de quienes quisieran participar.
 
 Link label:
-Ver publicación
+Leer la publicación en LinkedIn
 
 URL:
 https://es.linkedin.com/posts/techtojob_dise%C3%B1o-branding-identidadvisual-activity-7498086427562254336-mUcN
@@ -380,7 +398,7 @@ Title:
 Que no se te pase lo que estamos construyendo.
 
 Description:
-Torneos, recursos y novedades de TechToJob en tu correo.
+Un correo a la semana con los torneos que se abren, las novedades de la comunidad y las oportunidades que comparten otras personas. Sin spam.
 
 Input label:
 Tu email
@@ -389,7 +407,7 @@ Input placeholder:
 tu@email.com
 
 Submit:
-Suscribirme
+Quiero recibirlas
 
 Status:
 La suscripción se habilitará próximamente.
@@ -425,7 +443,7 @@ without invented legal destinations.
 Brand tagline:
 Personas que construyen. Oportunidades con más contexto.
 
-The navigation structure uses two explicitly approved headings. Link labels reuse
+The navigation structure uses three headings: Explorar, Comunidad and Legal. Link labels reuse
 the existing Navigation, Testimonials, News and Newsletter messages.
 
 Explorar:
@@ -440,6 +458,9 @@ Comunidad:
 - Noticias → #news
 - Newsletter → #newsletter
 
+Legal:
+- Aviso legal → /aviso-legal
+
 Social link labels:
 - Discord
 - LinkedIn
@@ -452,7 +473,8 @@ target=_blank and rel=noopener noreferrer.
 Copyright:
 © TechToJob
 
-No year or privacy, terms, cookies or contact links are needed without real URLs.
+The single legal destination is /aviso-legal. There are no separate privacy, terms,
+cookies or contact routes.
 The brand link reuses the existing accessible home label. Each navigation landmark
 is labeled by its visible heading; social links form a separate unordered list
 directly beneath the tagline. Header and Footer use the accessible home label
@@ -470,7 +492,7 @@ X:
 https://x.com/techtojob
 
 Instagram:
-https://www.instagram.com/techtojob/
+https://www.instagram.com/techtojob
 
 ## 7. Section ids already established
 
@@ -521,3 +543,19 @@ Lighthouse has been measured as documented above; its required evidence and fina
 submission remain manual delivery tasks.
 
 Do not change Metadata while implementing individual sections unless explicitly requested.
+
+## 10. Legal notice and skip link
+
+The first keyboard link is "Saltar al contenido", targeting main-content on both
+pages. /aviso-legal is a provisional notice for the Torneo #2 entry, with noindex.
+Its title is "Aviso legal" and the root template is "%s | TechToJob"; the homepage
+default title is unchanged. The legal page has its own canonical when SITE_URL is set.
+
+All legal page copy lives in messages/es.json under LegalNotice. It describes only
+verified project behavior: no enabled data-collection forms/endpoints; the disabled
+newsletter does not transmit the entered email; no integrated analytics/tracking;
+no intentionally set first-party cookies; Vercel hosting and linked external
+services may process technical data under their own policies. It is explicitly
+provisional and must be replaced by TechToJob's official legal text before the
+site becomes its official operational website. No corporate identities or contact
+details are invented.

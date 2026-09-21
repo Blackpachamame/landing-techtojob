@@ -88,7 +88,7 @@ Target final rhythm and implementation state:
 | News | Derived near-white | Implemented and approved |
 | Newsletter | Charcoal compact strip | Implemented; semantic form disabled pending integration |
 | Final CTA | Mint | Approved community cluster reveals once |
-| Footer | Derived deeper charcoal | Approved brand/socials and two navigation columns |
+| Footer | Derived deeper charcoal | Approved brand/socials with Explorar, Comunidad and Legal groups |
 
 The landing is implemented, approved and closed from Header through Footer. Spanish is the only
 release language; messages remain structured for future localization. No language
@@ -167,7 +167,9 @@ Favicon metadata declares the unchanged official symbol-positive.svg for light
 UI (asset charcoal #303436) and symbol-negative.svg for dark UI (mint #84c0bf),
 using prefers-color-scheme media queries. There is no site theme switch.
 
-Hero begins directly with the H1, without an eyebrow or pre-heading.
+A compact, static positioning eyebrow sits above the Hero H1: 12px text, 20px
+line height and 12px bottom spacing. It has no badge, panel or animation.
+The H1, description, CTA and Build artwork retain their approved treatment.
 Hero uses approximately 55% copy and 45% illustration on desktop. Copy aligns
 from the top independently of the art. Typography and spacing respond to viewport
 width AND height; no forced minimum height pushes the CTA down.
@@ -298,8 +300,8 @@ Placeholder status stays documented outside the UI; all four quotes are unchange
 ### News
 
 Implemented. Flat near-white derived from 92% white and 8% mint. Three comparable
-publication rows, each with a restrained index/category, real h3, description and
-the existing outbound anchor. Thin horizontal rules separate articles; there is
+publication rows, each with a restrained index/category, a verified date in a
+semantic time element, real h3, description and descriptive LinkedIn anchor. Thin horizontal rules separate articles; there is
 no featured-story hierarchy, card grid, thumbnail or invented metadata.
 Desktop places index, title and description/link across the row. Tablet retains
 the index column with stacked story content; mobile places metadata above the text.
@@ -316,7 +318,9 @@ focus is mint and the status stays white. Desktop pairs its restrained
 tablet uses two rows, mobile stacks copy, label, input, button and status.
 No surrounding panel, gradient or decorative corner marks. The real form retains
 its explicit email label, autocomplete and visible 14px availability status.
-The disabled default submit prevents implicit Enter submission as well as clicks.
+The final tournament description states the proposed weekly email content and
+"Sin spam"; the button reads "Quiero recibirlas". The availability status remains
+visible. The disabled default submit prevents implicit Enter submission as well as clicks.
 No JavaScript, provider, request, success simulation or form action is added.
 
 ### Final CTA
@@ -340,15 +344,26 @@ dimensions keep the four conceptual pieces readable without increasing section h
 ### Footer
 
 Static deep-charcoal footer. The official logo and tagline sit above a row of four
-terminal-square social links in the left group. The right group has two labeled
-navigation columns: Explorar (How it works, Talent, Companies, Tournaments) and
-Comunidad (Networking, Testimonials, News, Newsletter), all using real section IDs.
+terminal-square social links in the left group. The right area has three labeled
+navigation groups: Explorar (How it works, Talent, Companies, Tournaments),
+Comunidad (Networking, Testimonials, News, Newsletter), and Legal (Aviso legal).
+The first two use real homepage section IDs; Legal links to /aviso-legal. The
+existing two-column grid places Legal on the following row, preserving link widths.
 A thin bottom divider separates copyright. On mobile, brand/socials precede the
 navigation; columns share a row from 430px and stack below that width.
 Discord, LinkedIn, X and Instagram retain their exact paths and URLs, 44x44px targets,
 accessible names, visible focus and contrast-changing hover affordance. Their SVGs
 are decorative. README retains the verified Simple Icons source/license caveat,
 including the historical official LinkedIn source. No invented legal links.
+
+### Legal notice and skip navigation
+
+/aviso-legal uses a simple white reading surface, charcoal text, Sora and the
+existing containers, with a home link and the shared Footer. Footer section links
+return to homepage anchors from this page. The provisional notice is noindex.
+A native skip link is first in the body on both pages, visually hidden until focused,
+then fixed above the page in mint/charcoal. It targets the focusable main-content
+landmark without JavaScript, animation or a normal-layout shift.
 
 ## Accessibility, performance and validation
 

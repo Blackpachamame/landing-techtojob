@@ -27,7 +27,7 @@ const communityNavigation = [
 const linkClassName =
   "inline-flex min-h-11 items-center py-2 text-sm leading-relaxed text-brand-white/85 underline decoration-brand-white/30 underline-offset-4 hover:text-brand-mint hover:decoration-brand-mint focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-mint motion-safe:transition-colors";
 
-export default function Footer() {
+export default function Footer({ homePath = "" }: { homePath?: string }) {
   const content = messages.Footer;
 
   return (
@@ -77,7 +77,7 @@ export default function Footer() {
               <ul>
                 {exploreNavigation.map(({ key, href }) => (
                   <li key={key}>
-                    <a href={href} className={linkClassName}>{messages.Navigation[key]}</a>
+                    <a href={`${homePath}${href}`} className={linkClassName}>{messages.Navigation[key]}</a>
                   </li>
                 ))}
               </ul>
@@ -89,9 +89,17 @@ export default function Footer() {
               <ul>
                 {communityNavigation.map(({ label, href }) => (
                   <li key={href}>
-                    <a href={href} className={linkClassName}>{label}</a>
+                    <a href={`${homePath}${href}`} className={linkClassName}>{label}</a>
                   </li>
                 ))}
+              </ul>
+            </nav>
+            <nav aria-labelledby="footer-legal-title">
+              <h2 id="footer-legal-title" className="mb-4 text-xs font-semibold tracking-[.12em] text-brand-mint uppercase">
+                {content.legalHeading}
+              </h2>
+              <ul>
+                <li><Link href="/aviso-legal" prefetch={false} className={linkClassName}>{content.legalNotice}</Link></li>
               </ul>
             </nav>
           </div>

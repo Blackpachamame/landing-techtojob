@@ -16,7 +16,10 @@ export default function News() {
             <article key={story.number} aria-labelledby={`news-story-${story.number}`} className={styles.story}>
               <div className={styles.index}>
                 <span aria-hidden="true" className={styles.number}>{story.number}</span>
-                <p className="text-xs leading-relaxed font-semibold tracking-[0.08em] uppercase">{story.category}</p>
+                <div>
+                  <p className="text-xs leading-relaxed font-semibold tracking-[0.08em] uppercase">{story.category}</p>
+                  <time dateTime={story.dateTime} className="mt-2 block text-xs leading-relaxed text-brand-dark/80">{story.date}</time>
+                </div>
               </div>
               <div className={styles.storyBody}>
                 <h3 id={`news-story-${story.number}`} className="text-2xl leading-[1.25] font-semibold tracking-[-0.035em] text-pretty xl:text-[30px]">{story.title}</h3>

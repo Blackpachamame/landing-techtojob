@@ -11,6 +11,7 @@ export default function Hero() {
     <section aria-labelledby="hero-title" className={styles.hero}>
       <div className={`page-container ${styles.composition}`}>
         <div className={styles.copy}>
+          <p className="mb-3 max-w-130 text-xs leading-5 font-semibold text-brand-mint">{content.eyebrow}</p>
           <h1
             id="hero-title"
             className={styles.title}
