@@ -75,20 +75,20 @@ become narrow. Mobile is an intentional vertical composition, not scaled desktop
 
 Target final rhythm and implementation state:
 
-| Section | Background | Current redesign status |
-| --- | --- | --- |
-| Header | Charcoal | Sticky header and progressive mobile menu implemented |
-| Hero | Charcoal | Approved Hero composition with contextual annotations |
-| How it works | White | Approved continuous process rail |
-| Talent | Mint | Final static profile slab and rear socket alignment implemented |
-| Companies | Charcoal | Approved per-level depth composition |
-| Tournaments | White with mint proof band | Implemented and approved |
-| Networking | Charcoal | Final static intro, grouped signals and cropped fragment implemented |
-| Testimonials | White | Approved static primary module plus three supporting modules |
-| News | Derived near-white | Implemented and approved |
-| Newsletter | Charcoal compact strip | Implemented; semantic form disabled pending integration |
-| Final CTA | Mint | Approved community cluster reveals once |
-| Footer | Derived deeper charcoal | Approved brand/socials with Explorar, Comunidad and Legal groups |
+| Section      | Background                 | Current redesign status                                              |
+| ------------ | -------------------------- | -------------------------------------------------------------------- |
+| Header       | Charcoal                   | Sticky header and progressive mobile menu implemented                |
+| Hero         | Charcoal                   | Approved Hero composition with contextual annotations                |
+| How it works | White                      | Approved continuous process rail                                     |
+| Talent       | Mint                       | Final static profile slab and rear socket alignment implemented      |
+| Companies    | Charcoal                   | Approved per-level depth composition                                 |
+| Tournaments  | White with mint proof band | Implemented and approved                                             |
+| Networking   | Charcoal                   | Final static intro, grouped signals and cropped fragment implemented |
+| Testimonials | White                      | Approved static primary module plus three supporting modules         |
+| News         | Derived near-white         | Implemented and approved                                             |
+| Newsletter   | Charcoal compact strip     | Implemented; semantic form disabled pending integration              |
+| Final CTA    | Mint                       | Approved community cluster reveals once                              |
+| Footer       | Derived deeper charcoal    | Approved brand/socials with Explorar, Comunidad and Legal groups     |
 
 The landing is implemented, approved and closed from Header through Footer. Spanish is the only
 release language; messages remain structured for future localization. No language
@@ -162,14 +162,18 @@ Selection closes the menu and moves focus to the target section; Escape closes i
 and returns focus to summary. Focus can leave freely. The menu remains usable
 without JavaScript, with manual closing after navigation. The dropdown scrolls
 within short viewports; desktop navigation remains server-rendered.
+With JavaScript, opening and closing fade and translate the dropdown by 6px over
+210ms using the Web Animations API. Native closure waits for the exit transition;
+closing links become inert immediately. Reduced motion skips both transitions.
+Only opacity and transform animate, without changing the closed Header or layout.
 
 Favicon metadata declares the unchanged official symbol-positive.svg for light
 UI (asset charcoal #303436) and symbol-negative.svg for dark UI (mint #84c0bf),
 using prefers-color-scheme media queries. There is no site theme switch.
 
-A compact, static positioning eyebrow sits above the Hero H1: 12px text, 20px
-line height and 12px bottom spacing. It has no badge, panel or animation.
-The H1, description, CTA and Build artwork retain their approved treatment.
+Hero has no eyebrow. Its description opens with the explicit positioning as a
+Spanish-speaking community of developers and tech companies. The H1, CTA and
+Build artwork retain their approved treatment.
 Hero uses approximately 55% copy and 45% illustration on desktop. Copy aligns
 from the top independently of the art. Typography and spacing respond to viewport
 width AND height; no forced minimum height pushes the CTA down.
@@ -182,6 +186,8 @@ rendered H2 (73.764, 69.12, 76 and 55.296px). H2 styles remain unchanged.
 Tablet/mobile retain their existing responsive type scale.
 
 Tablet (768-1023) uses stacked copy and its own wide art composition.
+The disconnected horizontal baseline at y=415 is removed from the tablet guide
+path; annotation guides and the main Build geometry remain unchanged.
 Mobile keeps the compact single-level object with all four annotation groups:
 Perfil and Torneo above the drawing, Empresa and Comunidad below. A two-column
 HTML grid reserves annotation space independently of the SVG, with 12px details,
@@ -286,10 +292,11 @@ Only approved signal labels appear; no supporting descriptions are invented.
 ### Testimonials
 
 Four static Build-style modules preserve the original figure/blockquote/figcaption
-entries and their order. One substantial charcoal module with white copy occupies
-the left on desktop; three near-white supporting modules sit in an independent
-right column. The primary card aligns to the top and follows its content height,
-without row spanning or stretching to the full supporting column height.
+entries and their order. Desktop and tablet use a balanced two-by-two grid,
+with the charcoal module first and three near-white supporting modules following.
+The primary quote retains larger type (30-34px on desktop) and white copy.
+Each row follows its content height; no card spans multiple rows or stretches
+to the height of all three supporting cards. Mobile uses natural content heights.
 Flat depth planes extend 8px right and 10px down, with one restrained lower-right
 chamfer. This is visual hierarchy, not an endorsement of greater credibility.
 Tablet uses two columns; mobile stacks all four. Quotes lead, followed by small
@@ -336,9 +343,10 @@ at 0-.25s, member 2 at .15-.4s, member 3 at .3-.55s, and the conversation at
 .55-.95s. It plays once and remains static, without text animation, bounce, reverse,
 loop or ScrollTrigger. Reduced motion and no-JS show the complete final state.
 
-The CTA retains its 56px minimum height and H2 scale of 42-76px. Tablet stacks copy
-and right-aligned 240px-high art; mobile puts copy and action first, then compact
-200px-high art. Desktop restores the side-by-side layout at 1024px. Reserved art
+The CTA retains its 56px minimum height and H2 scale of 42-76px. Below 1024px,
+copy and action precede a centered community cluster with a 24px gap. Tablet art
+is 220px high in a wrapper up to 280px wide; mobile uses 200px-high art in a wrapper
+up to 240px wide. Desktop keeps its side-by-side layout from 1024px. Reserved art
 dimensions keep the four conceptual pieces readable without increasing section height.
 
 ### Footer
@@ -348,9 +356,11 @@ terminal-square social links in the left group. The right area has three labeled
 navigation groups: Explorar (How it works, Talent, Companies, Tournaments),
 Comunidad (Networking, Testimonials, News, Newsletter), and Legal (Aviso legal).
 The first two use real homepage section IDs; Legal links to /aviso-legal. The
-existing two-column grid places Legal on the following row, preserving link widths.
-A thin bottom divider separates copyright. On mobile, brand/socials precede the
-navigation; columns share a row from 430px and stack below that width.
+desktop grid gives each group its own column from 1024px. Tablet uses two columns;
+navigation stacks below 430px, after the brand and social links.
+A thin bottom divider separates copyright and a discreet author credit. They sit
+at opposite ends from 768px and stack below that width. The author name links to
+the confirmed GitHub profile for Blackpachamame.
 Discord, LinkedIn, X and Instagram retain their exact paths and URLs, 44x44px targets,
 accessible names, visible focus and contrast-changing hover affordance. Their SVGs
 are decorative. README retains the verified Simple Icons source/license caveat,

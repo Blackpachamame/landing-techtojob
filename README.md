@@ -88,7 +88,7 @@ implementado.
 
 Hero · Cómo funciona · Talento · Empresas · Torneos · Networking · Testimonios ·
 Noticias · Newsletter · CTA final · Footer. El Header proporciona navegación interna.
-El Hero incluye un eyebrow compacto de posicionamiento. Las entradas de Noticias
+El Hero explica qué es TechToJob al inicio del párrafo, sin eyebrow. Las entradas de Noticias
 incluyen las tres fechas de publicación verificadas mediante elementos semánticos
 `time` y enlaces descriptivos hacia LinkedIn.
 
@@ -190,13 +190,15 @@ defender el trabajo.
 Landmarks semánticos, un único H1, niveles de headings ordenados, enlaces reales,
 foco explícito por teclado y controles de formulario con labels contribuyen a la
 accesibilidad. El menú mobile utiliza `details`/`summary` nativos, mejorados para
-cerrarse al seleccionar una opción o pulsar Escape y para gestionar el foco. Sin
+cerrarse al seleccionar una opción o pulsar Escape y para gestionar el foco. La
+apertura y el cierre combinan opacidad y un desplazamiento de 6px durante 210ms;
+con reduced motion son inmediatos. Sin
 JavaScript sigue abriéndose y permitiendo navegar, aunque debe cerrarse manualmente.
 
 El Header utiliza CSS sticky con scroll padding global para anchors/foco y anchors
 con smooth scrolling nativo que respetan reduced motion. Los grupos de navegación
 del Footer organizan ocho anchors existentes bajo Explorar y Comunidad, además de
-un grupo Legal que enlaza a `/aviso-legal`; su fila de redes sociales se encuentra
+un grupo Legal que enlaza a `/aviso-legal`, en tres columnas desde 1024px; su fila de redes sociales se encuentra
 debajo del tagline. Un skip link visible por teclado apunta al contenido principal
 en ambas páginas. Los iconos sociales tienen nombres accesibles y áreas objetivo de
 44px; los gráficos decorativos están ocultos para las tecnologías de asistencia.

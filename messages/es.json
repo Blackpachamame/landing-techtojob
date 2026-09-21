@@ -15,9 +15,8 @@
     "community": "Comunidad"
   },
   "Hero": {
-    "eyebrow": "Comunidad de desarrolladores y empresas tech en español",
     "title": "Que te conozcan por lo que construyes, no\u00a0por otro CV.",
-    "description": "Participa, comparte lo que sabes hacer y deja que tu trabajo hable por ti. Aquí las empresas conocen a la gente por cómo aporta, no solo por lo que pone en su CV.",
+    "description": "TechToJob es una comunidad de desarrolladores y empresas tech en español. Participa, comparte lo que sabes hacer y deja que tu trabajo hable por ti. Aquí las empresas conocen a la gente por cómo aporta, no solo por lo que pone en su CV.",
     "cta": "Entrar a la comunidad",
     "network": {
       "profile": "Perfil",
@@ -88,11 +87,7 @@
     "note": "Menos criba. Más contexto para decidir con quién hablar.",
     "context": {
       "source": "Publicas lo que buscas",
-      "signals": [
-        "Perfil",
-        "Lo que construye",
-        "Cómo participa"
-      ]
+      "signals": ["Perfil", "Lo que construye", "Cómo participa"]
     }
   },
   "Tournaments": {
@@ -126,11 +121,7 @@
     "description": "En los canales por área compartes dudas, conoces gente del sector y sigues conversaciones que no aparecen en un portal de empleo. A veces una respuesta llega rápido. Otras veces, alguien comparte una oportunidad porque conoce a quien está contratando.",
     "note": "No todo empieza con una candidatura. A veces empieza con una conversación.",
     "discordCta": "Entrar a la comunidad en Discord",
-    "signals": [
-      "Canales por área",
-      "Gente del sector",
-      "Oportunidades compartidas"
-    ]
+    "signals": ["Canales por área", "Gente del sector", "Oportunidades compartidas"]
   },
   "Testimonials": {
     "eyebrow": "Testimonios",
@@ -226,7 +217,9 @@
       { "label": "X", "href": "https://x.com/techtojob" },
       { "label": "Instagram", "href": "https://www.instagram.com/techtojob" }
     ],
-    "copyright": "© TechToJob"
+    "copyright": "© 2026 TechToJob",
+    "authorCredit": "Diseñado y desarrollado por",
+    "authorName": "Blackpachamame"
   },
   "LegalNotice": {
     "title": "Aviso legal",

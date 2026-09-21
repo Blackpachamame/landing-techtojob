@@ -5,7 +5,7 @@ import styles from "./HeroBuild.module.css";
 
 const compositions = [
   { name: "desktop", depth: "Desktop", viewBox: "0 0 640 620", placement: "translate(165 125) scale(1.35)", guides: "M118 114 173 142M522 85V121M119 503 178 479M430 545 387.6285 367.217" },
-  { name: "tablet", depth: "Tablet", viewBox: "0 0 780 440", placement: "translate(260 50) scale(1.12)", guides: "M207 97H254M618 91H584M206 341H256M614 332 464 270M204 415H640" },
+  { name: "tablet", depth: "Tablet", viewBox: "0 0 780 440", placement: "translate(260 50) scale(1.12)", guides: "M207 97H254M618 91H584M206 341H256M614 332 464 270" },
   { name: "mobile", depth: "Mobile", viewBox: "0 0 342 314", placement: "translate(35 25) scale(.9)", guides: "M58 4V22M272 4V22M58 306V292M238 306 174 176" },
 ] as const;
 

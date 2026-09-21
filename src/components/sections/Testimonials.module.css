@@ -13,12 +13,9 @@
 @media (min-width: 768px) {
   .quotes { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; margin-top: 64px; }
   .quote { padding: 32px 28px 40px; }
-  .primary { align-self: start; }
   .primary blockquote { font-size: 30px; }
 }
 @media (min-width: 1024px) {
   .quotes { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 28px 40px; }
-  .supporting { display: grid; align-content: start; gap: 28px; }
-  .primary { padding: 40px 36px 48px; }
-  .primary blockquote { max-width: 20ch; font-size: clamp(36px, 3.2vw, 46px); line-height: 1.25; }
+  .primary blockquote { font-size: clamp(30px, 2.3vw, 34px); }
 }

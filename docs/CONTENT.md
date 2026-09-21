@@ -72,8 +72,7 @@ The following copy is approved and should not be rewritten during unrelated sect
 
 ### Hero
 
-Eyebrow:
-Comunidad de desarrolladores y empresas tech en español
+No eyebrow. The positioning appears at the start of the description.
 
 Title:
 Que te conozcan por lo que construyes, no por otro CV.
@@ -82,7 +81,7 @@ Implementation note:
 The JSON uses one non-breaking space between “no” and “por” to preserve the intended wrap. Do not replace it with a br tag.
 
 Description:
-Participa, comparte lo que sabes hacer y deja que tu trabajo hable por ti. Aquí las empresas conocen a la gente por cómo aporta, no solo por lo que pone en su CV.
+TechToJob es una comunidad de desarrolladores y empresas tech en español. Participa, comparte lo que sabes hacer y deja que tu trabajo hable por ti. Aquí las empresas conocen a la gente por cómo aporta, no solo por lo que pone en su CV.
 
 CTA:
 Entrar a la comunidad
@@ -471,7 +470,14 @@ Use the four confirmed URLs in section 6. External links open with
 target=_blank and rel=noopener noreferrer.
 
 Copyright:
-© TechToJob
+© 2026 TechToJob
+
+Author credit:
+Diseñado y desarrollado por Blackpachamame
+
+The credit is rendered as plain text pending a confirmed GitHub profile URL for
+the named author. The repository remote identifies a different person and must
+not be used as an inferred author link.
 
 The single legal destination is /aviso-legal. There are no separate privacy, terms,
 cookies or contact routes.

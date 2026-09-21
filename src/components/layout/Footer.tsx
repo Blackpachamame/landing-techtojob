@@ -39,8 +39,7 @@ export default function Footer({ homePath = "" }: { homePath?: string }) {
               href="/"
               prefetch={false}
               aria-label={messages.Navigation.home}
-              className="inline-flex min-h-11 items-center focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-6 focus-visible:outline-brand-mint"
-            >
+              className="inline-flex min-h-11 items-center focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-6 focus-visible:outline-brand-mint">
               <span
                 aria-hidden="true"
                 className="block w-48 md:w-56 [&_svg]:block [&_svg]:h-auto [&_svg]:w-full"
@@ -59,9 +58,13 @@ export default function Footer({ homePath = "" }: { homePath?: string }) {
                     title={label}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex size-11 items-center justify-center rounded-lg border border-brand-white/30 text-brand-white hover:border-brand-mint hover:bg-brand-mint hover:text-brand-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-mint"
-                  >
-                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor" className="size-5">
+                    className="flex size-11 items-center justify-center rounded-lg border border-brand-white/30 text-brand-white hover:border-brand-mint hover:bg-brand-mint hover:text-brand-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-mint">
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="size-5">
                       <path d={socialIconPaths[label]} />
                     </svg>
                   </a>
@@ -69,44 +72,68 @@ export default function Footer({ homePath = "" }: { homePath?: string }) {
               ))}
             </ul>
           </div>
-          <div className="grid gap-8 min-[430px]:grid-cols-2 md:gap-6">
+          <div className="grid gap-8 min-[430px]:grid-cols-2 md:gap-6 lg:grid-cols-3">
             <nav aria-labelledby="footer-explore-title">
-              <h2 id="footer-explore-title" className="mb-4 text-xs font-semibold tracking-[.12em] text-brand-mint uppercase">
+              <h2
+                id="footer-explore-title"
+                className="mb-4 text-xs font-semibold tracking-[.12em] text-brand-mint uppercase">
                 {content.exploreHeading}
               </h2>
               <ul>
                 {exploreNavigation.map(({ key, href }) => (
                   <li key={key}>
-                    <a href={`${homePath}${href}`} className={linkClassName}>{messages.Navigation[key]}</a>
+                    <a href={`${homePath}${href}`} className={linkClassName}>
+                      {messages.Navigation[key]}
+                    </a>
                   </li>
                 ))}
               </ul>
             </nav>
             <nav aria-labelledby="footer-community-title">
-              <h2 id="footer-community-title" className="mb-4 text-xs font-semibold tracking-[.12em] text-brand-mint uppercase">
+              <h2
+                id="footer-community-title"
+                className="mb-4 text-xs font-semibold tracking-[.12em] text-brand-mint uppercase">
                 {content.communityHeading}
               </h2>
               <ul>
                 {communityNavigation.map(({ label, href }) => (
                   <li key={href}>
-                    <a href={`${homePath}${href}`} className={linkClassName}>{label}</a>
+                    <a href={`${homePath}${href}`} className={linkClassName}>
+                      {label}
+                    </a>
                   </li>
                 ))}
               </ul>
             </nav>
             <nav aria-labelledby="footer-legal-title">
-              <h2 id="footer-legal-title" className="mb-4 text-xs font-semibold tracking-[.12em] text-brand-mint uppercase">
+              <h2
+                id="footer-legal-title"
+                className="mb-4 text-xs font-semibold tracking-[.12em] text-brand-mint uppercase">
                 {content.legalHeading}
               </h2>
               <ul>
-                <li><Link href="/aviso-legal" prefetch={false} className={linkClassName}>{content.legalNotice}</Link></li>
+                <li>
+                  <Link href="/aviso-legal" prefetch={false} className={linkClassName}>
+                    {content.legalNotice}
+                  </Link>
+                </li>
               </ul>
             </nav>
           </div>
         </div>
-        <p className="mt-10 border-t border-brand-white/15 pt-6 text-xs leading-relaxed text-brand-white/70 md:mt-12">
-          {content.copyright}
-        </p>
+        <div className="mt-10 flex flex-col gap-3 border-t border-brand-white/15 pt-6 text-xs leading-relaxed text-brand-white/70 md:mt-12 md:flex-row md:items-center md:justify-between">
+          <p>{content.copyright}</p>
+          <p>
+            {content.authorCredit}{" "}
+            <a
+              href="https://github.com/Blackpachamame"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-brand-white/30 underline-offset-4 hover:text-brand-mint hover:decoration-brand-mint focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-mint motion-safe:transition-colors">
+              {content.authorName}
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
