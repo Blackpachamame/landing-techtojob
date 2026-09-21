@@ -10,7 +10,8 @@ export default function MobileMenu({ label, children }: { label: string; childre
       ref={menu}
       className="group lg:hidden"
       onClick={(event) => {
-        const link = (event.target as Element).closest<HTMLAnchorElement>('a[href^="#"]');
+        if (!(event.target instanceof Element)) return;
+        const link = event.target.closest<HTMLAnchorElement>('a[href^="#"]');
         if (!link || !menu.current) return;
         menu.current.open = false;
         const target = document.getElementById(link.hash.slice(1));
@@ -26,7 +27,7 @@ export default function MobileMenu({ label, children }: { label: string; childre
         menu.current.querySelector("summary")?.focus();
       }}
       onBlur={(event) => {
-        if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget as Node)) {
+        if (event.relatedTarget instanceof Node && !event.currentTarget.contains(event.relatedTarget)) {
           event.currentTarget.open = false;
         }
       }}
