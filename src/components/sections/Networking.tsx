@@ -23,6 +23,19 @@ export default function Networking() {
             <p className="section-eyebrow mb-6 text-brand-mint">{content.eyebrow}</p>
             <h2 id="networking-title" className="section-title max-w-240">{content.title}</h2>
             <p className="mt-6 max-w-160 text-base leading-[1.75] text-brand-white/80 md:text-lg">{content.description}</p>
+            <div className="mt-8">
+              <p id="networking-channels-label" className="text-xs leading-relaxed font-semibold tracking-[0.12em] text-brand-white/80 uppercase">
+                {content.channelsLabel}
+              </p>
+              <ul aria-labelledby="networking-channels-label" className="mt-3 flex flex-wrap gap-2">
+                {content.channels.map((channel) => (
+                  <li key={channel} className="inline-flex items-center gap-2 rounded-full border border-brand-white/25 px-2.5 py-1.5 text-sm leading-relaxed whitespace-nowrap">
+                    <span aria-hidden="true" className="text-base leading-none text-brand-mint">#</span>
+                    <span>{channel}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
           <ul className={styles.signals}>
             {content.signals.map((signal, index) => (

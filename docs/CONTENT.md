@@ -216,6 +216,21 @@ Signals:
 - Gente del sector
 - Oportunidades compartidas
 
+Channel group label (displayed uppercase):
+Algunos canales de la comunidad
+
+Real Discord channels confirmed by the owner; all seven appear as static labels:
+- networking
+- desarrollo
+- datos-e-ia
+- ciberseguridad
+- infra-y-devops
+- portfolios
+- busco-trabajo
+
+The repeated # is decorative. Channel labels are informational, not links.
+The three signals retain their labels without additional supporting descriptions.
+
 Do not add:
 - invented Discord channel names;
 - fake chat messages;

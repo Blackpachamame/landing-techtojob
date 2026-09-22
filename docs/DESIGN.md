@@ -332,7 +332,16 @@ the icons without excessive height. Joints and depth planes retain their geometr
 Charcoal editorial composition. Desktop places eyebrow, H2 and approved description
 in the left column, with one vertical group of three semantic ul/li signals to
 the right. Each signal contains only its existing HTML label and a decorative
-mint terminal block. There are no supporting descriptions in the approved copy.
+mint terminal block. No supporting descriptions are added; the channel group
+provides concrete context without repeating the intro or lengthening the signals.
+
+Below the intro description, a compact static ul lists all seven owner-confirmed
+Discord channels from messages/es.json. A small uppercase supporting label names
+the list. Content-sized rounded tokens use a subtle white/25 border on charcoal,
+14px light text and a decorative mint #, with no links, buttons, shadows or effects.
+Tailwind flex-wrap and 8px gaps keep the group compact: two to three rows on desktop
+and natural wrapping on tablet/mobile, with two tokens per row where space allows.
+No channel is hidden, and there is no separate community section or additional CTA.
 
 Three original inline SVG marks represent channels, people and opportunities.
 Rounded mint containers measure 52px on desktop/tablet and 44px on mobile; labels
@@ -347,7 +356,7 @@ closing area: prominent approved note on the left, real underlined Discord ancho
 nearby on the right. The link retains its outbound cue and visible keyboard focus.
 
 Tablet stacks intro and grouped signals, shifting the fragment to the right.
-Mobile follows intro, vertical icon/label group, closing note and Discord link.
+Mobile follows intro and channel list, vertical icon/label group, closing note and Discord link.
 The fragment becomes smaller and more cropped without reserving layout height.
 All icons and decorative SVG are aria-hidden and focusable=false. The section
 is a static Server Component with no motion attributes or animation controller.
