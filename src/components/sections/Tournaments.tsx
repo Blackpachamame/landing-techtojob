@@ -1,6 +1,9 @@
 import messages from "../../../messages/es.json";
+import BuildIcon from "../ui/BuildIcons";
 import DrawOnView from "./DrawOnView";
 import styles from "./Tournaments.module.css";
+
+const stageIcons = ["flag", "code", "users", "trophy"] as const;
 
 export default function Tournaments() {
   const content = messages.Tournaments;
@@ -24,7 +27,12 @@ export default function Tournaments() {
             {content.format.map((item, index) => (
               <div key={item.term} className={styles.entry}>
                 <span aria-hidden="true" data-reveal data-duration=".35" data-delay={index * 0.2} className={styles.surface} />
-                <dt className="text-[28px] leading-tight font-semibold tracking-[-0.035em] xl:text-[32px]">{item.term}</dt>
+                <dt className="text-2xl leading-tight font-semibold tracking-[-0.035em] md:text-[28px] xl:text-[32px]">
+                  <span aria-hidden="true" className={styles.terminal}>
+                    <BuildIcon name={stageIcons[index]} />
+                  </span>
+                  {item.term}
+                </dt>
                 <dd className="mt-3 text-base leading-relaxed md:text-lg">{item.description}</dd>
               </div>
             ))}
@@ -33,7 +41,7 @@ export default function Tournaments() {
         </div>
 
         <div className={styles.proof}>
-          <p className="max-w-[24ch] text-[34px] leading-[1.1] font-semibold tracking-[-0.05em] text-balance md:text-5xl lg:text-[64px]">{content.proof}</p>
+          <p className="section-statement max-w-[24ch] leading-[1.1] font-semibold tracking-[-0.05em] text-balance">{content.proof}</p>
         </div>
       </div>
     </section>

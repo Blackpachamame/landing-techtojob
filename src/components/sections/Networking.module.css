@@ -1,6 +1,6 @@
 .section { position: relative; isolation: isolate; overflow: clip; }
 .composition { position: relative; isolation: isolate; }
-.main { display: grid; gap: 44px; }
+.main { display: grid; gap: 48px; }
 .intro { min-width: 0; }
 .signals { --icon-size: 44px; display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
 .signal { position: relative; display: grid; grid-template-columns: var(--icon-size) minmax(0, 1fr); align-items: center; gap: 20px; min-width: 0; padding-bottom: 32px; }
@@ -12,7 +12,7 @@
 .fragment { position: absolute; z-index: -1; top: auto; right: -108px; bottom: 32px; width: 200px; height: auto; pointer-events: none; }
 .fragmentSide { fill: var(--color-brand-deep); }
 .fragmentFace { fill: var(--build-floor); }
-.closing { display: grid; gap: 24px; margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--build-muted-line); }
+.closing { display: grid; gap: 24px; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--build-muted-line); }
 
 @media (min-width: 768px) {
   .main { gap: 48px; }

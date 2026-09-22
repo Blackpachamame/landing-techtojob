@@ -143,7 +143,6 @@ Profile:
 - Stack — Con qué trabajas
 - Nivel — Dónde estás hoy
 - Disponibilidad — Si estás abierto a oportunidades
-- Empresa
 
 ### Companies
 
@@ -166,6 +165,11 @@ Signals:
 - Perfil
 - Lo que construye
 - Cómo participa
+
+Approved supporting subtitles:
+- Perfil — Stack, nivel y disponibilidad
+- Lo que construye — Proyectos y entregas
+- Cómo participa — Aportes y conversaciones
 
 ### Tournaments
 

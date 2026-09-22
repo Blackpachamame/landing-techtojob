@@ -45,6 +45,14 @@ The three CSS-selected compositions total 44 paths, with no filters or masks.
 - **Rail:** a 1.5-2px line for a meaningful sequence.
   Prefer straight geometry; large-radius transitions only when the route requires them.
 
+BuildIcons.tsx is a server-only set of eight original SVG marks: user, code,
+bars, check-circle, building, users, flag and trophy. Their simple geometry follows
+the existing Networking vocabulary, without copying a library or changing Networking.
+Each uses a 24x24 viewBox, one compound path, no fill, currentColor and a 1.75px
+stroke with round caps/joins. All are aria-hidden and focusable=false, reinforcing
+real adjacent text. Talent, Companies and Tournaments add 11 SVG instances/paths
+in terminal-shaped squares, with no client boundary or dependency added.
+
 ## Palette and typography
 
 Sora is the only landing font, loaded through next/font with weights 400, 600 and
@@ -67,11 +75,41 @@ Use strong headings, comfortable paragraph measures and restrained annotations.
 One H1; H2/H3 reflect content hierarchy. Eyebrows remain paragraphs.
 Preserve copy exactly; use responsive type and wrapping rather than forced breaks.
 
+The main landing H2s share section-title:
+clamp(1.75rem, calc(1.25rem + 2.2vw), 3.5rem), or 28-56px at the default root size.
+This includes Final CTA; its own maximum width, leading and tracking remain.
+Keep the existing weight, tracking, leading and balanced wrapping for each role.
+Newsletter is a compact exception using
+clamp(1.625rem, calc(1rem + 1.2vw), 2.25rem), or 26-36px, below section-title.
+
+section-statement is for large supporting paragraphs, not main headings:
+clamp(1.5rem, calc(1rem + 1.6vw), 2.5rem), or 24-40px. Companies' closing line,
+the Tournaments proof and the Networking note use it while retaining their own
+weight, tracking, leading and wrapping. Secondary labels stay below the H2:
+Perfil uses 24px/32px from mobile/tablet; tournament terms use 24px/28px/32px
+from mobile/tablet/1280px. Other secondary heading and label sizes are unchanged.
+
 ## Layout and background rhythm
 
 Desktop uses deliberate asymmetry and substantial graphics; text remains readable
 and separate from decorative surfaces. Tablet restructures content before columns
 become narrow. Mobile is an intentional vertical composition, not scaled desktop.
+
+Full sections use py-20, md:py-24 and lg:py-28 (80/96/112px per side), including
+Talent and Final CTA. Final CTA keeps its existing centered, compact art below
+1024px and its desktop composition; the section now owns the vertical padding.
+Hero retains its viewport-height-aware spacing. Newsletter stays compact at
+48px per side, then 56px from 768px. Tournaments retains top padding plus its
+separate proof band; do not add duplicate bottom padding around that band.
+
+Eyebrow-to-H2 and H2-to-description spacing is normally 24px. Newsletter keeps
+16px for its compact role. Companies and Final CTA no longer use incidental
+28px copy gaps; Networking's mobile group/closing separation is 48px rather
+than 44px. Main-content separation generally uses 48-64px, with composition
+exceptions preserved: How it works reserves 64px/80px before its process rail,
+Talent keeps its 56px/64px copy-to-object gap, and proof/closing bands retain
+their existing separation and internal padding. These are spacing rules, not
+permission to reposition the decorative geometry or change the section grids.
 
 Target final rhythm and implementation state:
 
@@ -80,7 +118,7 @@ Target final rhythm and implementation state:
 | Header       | Charcoal                   | Sticky header and progressive mobile menu implemented                |
 | Hero         | Charcoal                   | Approved Hero composition with contextual annotations                |
 | How it works | White                      | Approved continuous process rail                                     |
-| Talent       | Mint                       | Final static profile slab and rear socket alignment implemented      |
+| Talent       | Mint                       | Static profile slab with one matching flat depth plane implemented   |
 | Companies    | Charcoal                   | Approved per-level depth composition                                 |
 | Tournaments  | White with mint proof band | Implemented and approved                                             |
 | Networking   | Charcoal                   | Final static intro, grouped signals and cropped fragment implemented |
@@ -181,9 +219,13 @@ With Header visible, all copy and CTA must fit at 1366x650, 1280x620, 1440x760
 and 1024x700. Art may extend below the fold before sacrificing the primary CTA.
 H1 stays Sora 400. Desktop uses clamp(64px, 6vw, 88px) with 1.02 line-height;
 short-height rules reduce spacing without reducing its font size. At those four
-viewports H1 measures 81.96, 76.8, 86.4 and 64px respectively, above the largest
-rendered H2 (73.764, 69.12, 76 and 55.296px). H2 styles remain unchanged.
-Tablet/mobile retain their existing responsive type scale.
+viewports H1 measures 81.96, 76.8, 86.4 and 64px respectively; the shared main H2
+measures 50.052, 48.16, 51.68 and 42.528px. Below 768px, H1 uses
+clamp(34px, 9.6vw, 52px); the existing tablet clamp(54px, 6.5vw, 66px) remains.
+The hierarchy target is approximately H1 >= 1.2 times the main H2, subordinate
+to overflow prevention, complete CTA visibility and readable wrapping.
+On mobile viewports at most 600px high, top padding and CTA margin are both 24px
+instead of 32px/28px, keeping the entire CTA visible at 320x568 without reducing H1.
 
 Tablet (768-1023) uses stacked copy and its own wide art composition.
 The disconnected horizontal baseline at y=415 is removed from the tablet guide
@@ -215,23 +257,29 @@ four responsive rail elements plus four stations in the DOM.
 
 ### Talent
 
-Mint background. The white editorial Perfil slab sits in front of one substantial
-rear socket, visible above and to its left. The socket uses --build-side and a
-partial clipped silhouette; it carries no content. The foreground has a rounded
-upper-left/lower-right contour and restrained top-right/lower-left chamfers.
-A narrow flat --build-side-on-mint plane extends right/down to give real depth.
-No shadows, gradients, duplicate profile content or attached company module.
+Mint background. One white editorial Perfil slab has rounded upper-left/lower-right
+corners and restrained top-right/lower-left chamfers. Its two empty CSS
+pseudo-elements share the same inset, border-radius and clip-path rule, so the
+white face and single flat --build-side-on-mint depth plane have exactly the
+same dimensions and silhouette. Only the depth plane is translated: 8px right
+and 10px down on mobile, 12px right and 14px down from 600px. There is no rear
+socket, Empresa module, shadow, gradient or duplicate profile content.
+The structured profile header pairs a charcoal user terminal with Perfil and
+the existing Hero.network.profileDetail (Frontend · Junior). A small mint chip
+reuses Hero.network.available (Disponible); it can wrap below the identity on mobile.
+The real dl keeps all three approved term/value pairs with 16px text and subtle
+charcoal rules. Code, bars and check-circle terminals sit within their dt elements.
+From 600px, terms and descriptions share a two-column grid; mobile places the
+description below its term with an inset aligned after the icon.
 
-The large Perfil heading sits above thin charcoal separators. The real dl keeps
-all three approved term/value pairs. Terms and values align in two columns from
-600px upward, with 16px text and generous row spacing. Empresa remains a plain
-informational closing row; no value exists in messages, so none is invented.
 The editorial rule and approved note remain outside the object beneath the copy.
 
 Desktop uses an asymmetric .95fr/1.05fr copy/object layout. Tablet places the
-full-size object below copy. Mobile stacks the fields, reduces the rear offset
-and simplifies depth without shrinking text. CSS supplies all three decorative
-surfaces, with the socket aria-hidden. No SVG, client state or motion.
+full-size object below copy. Exterior padding centers the slab plus its depth
+while preserving the approved face width and internal spacing. Mobile stacks the
+fields and reduces depth without shrinking text. The decorative plane adds no DOM
+or accessible content. Four original decorative icons are rendered by this static
+Server Component; no client state or motion is added.
 
 ### Companies
 
@@ -239,29 +287,45 @@ Charcoal background and one sectional cut. Publicas lo que buscas sits at its
 opening. Perfil, Lo que construye and Cómo participa remain semantic ul/li content,
 on three progressively offset horizontal levels. Each level has its own main
 face, right plane and bottom plane, sharing a 14px-right/12px-down extrusion.
+Each level pairs a terminal icon with its existing label and an approved 16px
+subtitle. User accompanies Perfil / Stack, nivel y disponibilidad; code accompanies
+Lo que construye / Proyectos y entregas; users accompanies Cómo participa /
+Aportes y conversaciones. Only the middle level has a mint face and charcoal text;
+its terminal is charcoal with a mint mark. A static mint backing preserves text
+contrast while the decorative face/depth reveals. The other two retain derived
+dark faces with full-white labels/subtitles and charcoal/mint terminals.
 Side and bottom tones are derived from each face and are always darker. The final
 main face uses 28% mint with charcoal to remain distinct from its depth faces.
 Offsets move the complete equal-width levels right; the next face occludes the
 previous bottom where appropriate, leaving exposed ledges and thin joints.
 No shared side-plane shortcut, shadows, separate cards or branching.
 Only the independent decorative faces (including their side/bottom pseudo-elements)
-reveal top to bottom, in approximately 0.71s; labels remain static.
+reveal top to bottom, in approximately 0.71s; icons, labels and subtitles remain static.
 The note is a large editorial closing line outside the cut.
-Tablet/mobile stack the composition and reduce offsets without shrinking text.
-No SVG: three main CSS surfaces, three right and three bottom planes.
+Tablet/mobile stack the composition without shrinking body text. Offsets are 16px
+on mobile and 32px from 768px. Mobile uses 36px terminals and 20px padding; larger
+layouts use 40px terminals and 28px/32px padding. Subtitles wrap in the remaining
+width. Three original icons accompany the three main CSS surfaces, three right
+planes and three bottom planes.
 
 ### Tournaments
 
 Implemented. White section with four adjoining modules, thin 2px joints and a
 shared shallow depth treatment. Real dl/dt/dd pairs retain Reto, Entrega, Jurado
 and Resultado. The first three faces use a white/charcoal derived neutral;
-Resultado alone has a mint face and darker mint side. No sequential rail or icons.
+Resultado alone has a mint face and darker mint side. Each dt includes a static
+terminal icon above its term: flag, code, users and trophy respectively. The first
+three use charcoal outline/icon treatment; Resultado has a filled charcoal terminal
+and mint trophy. Term/description hierarchy and the approved copy remain intact.
 Only the four independent CSS surfaces reveal, staggered over 0.95s; definition
-text remains visible and static. No SVG primitives.
+text and all four SVG icons remain visible and static.
 
 At 1280+ the modules form one horizontal assembly; 768-1279 uses a joined 2x2
 composition; mobile uses adjoining vertical pieces. A separate flat mint proof
-band closes the section with large typography and no extra decorative cluster.
+band closes the section with section-statement and no extra decorative cluster.
+Terminals measure 36px on mobile and 40px from tablet, with 12px before the term.
+Vertical module padding is 24px on mobile and 32px from tablet to accommodate
+the icons without excessive height. Joints and depth planes retain their geometry.
 
 ### Networking
 
@@ -321,7 +385,7 @@ Time-sensitive approved copy remains unchanged and needs a separate content deci
 Compact charcoal #2f3436 transition strip with white copy and readable secondary
 text. The white email field contrasts with the deliberately muted disabled button;
 focus is mint and the status stays white. Desktop pairs its restrained
-30-36px heading/description with one integrated email input and disabled submit;
+26-36px heading/description with one integrated email input and disabled submit;
 tablet uses two rows, mobile stacks copy, label, input, button and status.
 No surrounding panel, gradient or decorative corner marks. The real form retains
 its explicit email label, autocomplete and visible 14px availability status.
@@ -343,7 +407,7 @@ at 0-.25s, member 2 at .15-.4s, member 3 at .3-.55s, and the conversation at
 .55-.95s. It plays once and remains static, without text animation, bounce, reverse,
 loop or ScrollTrigger. Reduced motion and no-JS show the complete final state.
 
-The CTA retains its 56px minimum height and H2 scale of 42-76px. Below 1024px,
+The CTA retains its 56px minimum height and uses the shared section-title scale. Below 1024px,
 copy and action precede a centered community cluster with a 24px gap. Tablet art
 is 220px high in a wrapper up to 280px wide; mobile uses 200px-high art in a wrapper
 up to 240px wide. Desktop keeps its side-by-side layout from 1024px. Reserved art

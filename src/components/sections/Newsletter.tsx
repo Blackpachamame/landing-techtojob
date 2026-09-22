@@ -14,7 +14,7 @@ export default function Newsletter() {
           <p className="section-eyebrow mb-4 text-brand-mint">{content.eyebrow}</p>
           <h2
             id="newsletter-title"
-            className="max-w-145 text-[30px] leading-[1.15] font-semibold tracking-[-0.045em] text-balance md:text-[36px]"
+            className="max-w-145 text-[clamp(1.625rem,calc(1rem+1.2vw),2.25rem)] leading-[1.15] font-semibold tracking-[-0.045em] text-balance"
           >
             {content.title}
           </h2>

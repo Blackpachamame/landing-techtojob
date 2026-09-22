@@ -9,15 +9,15 @@ export default function FinalCTA() {
     <section
       id="final-cta"
       aria-labelledby="final-cta-title"
-      className={`${styles.section} bg-brand-mint text-brand-dark`}
+      className={`${styles.section} bg-brand-mint py-20 text-brand-dark md:py-24 lg:py-28`}
     >
       <div className={`page-container ${styles.composition}`}>
         <div className="relative z-1 min-w-0">
-          <p className="section-eyebrow mb-7">{content.eyebrow}</p>
-          <h2 id="final-cta-title" className={styles.title}>
+          <p className="section-eyebrow mb-6">{content.eyebrow}</p>
+          <h2 id="final-cta-title" className={`section-title ${styles.title}`}>
             {content.title}
           </h2>
-          <p className="mt-7 max-w-120 text-base leading-[1.75] md:text-lg">
+          <p className="mt-6 max-w-120 text-base leading-[1.75] md:text-lg">
             {content.description}
           </p>
           <a

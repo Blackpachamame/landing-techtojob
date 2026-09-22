@@ -43,7 +43,7 @@ export default function Networking() {
         </svg>
 
         <div className={styles.closing}>
-          <p className="max-w-160 text-[26px] leading-snug tracking-[-0.035em] text-balance md:text-[32px]">{content.note}</p>
+          <p className="section-statement max-w-160 leading-snug tracking-[-0.035em] text-balance">{content.note}</p>
           <a
             href="https://discord.gg/h9FFgKdkRd"
             target="_blank"

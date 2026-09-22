@@ -76,8 +76,7 @@
           "term": "Disponibilidad",
           "description": "Si estás abierto a oportunidades"
         }
-      ],
-      "company": "Empresa"
+      ]
     }
   },
   "Companies": {
@@ -87,7 +86,11 @@
     "note": "Menos criba. Más contexto para decidir con quién hablar.",
     "context": {
       "source": "Publicas lo que buscas",
-      "signals": ["Perfil", "Lo que construye", "Cómo participa"]
+      "signals": [
+        { "label": "Perfil", "description": "Stack, nivel y disponibilidad" },
+        { "label": "Lo que construye", "description": "Proyectos y entregas" },
+        { "label": "Cómo participa", "description": "Aportes y conversaciones" }
+      ]
     }
   },
   "Tournaments": {

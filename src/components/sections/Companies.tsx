@@ -1,6 +1,9 @@
 import messages from "../../../messages/es.json";
+import BuildIcon from "../ui/BuildIcons";
 import DrawOnView from "./DrawOnView";
 import styles from "./Companies.module.css";
+
+const signalIcons = ["user", "code", "users"] as const;
 
 export default function Companies() {
   const content = messages.Companies;
@@ -23,7 +26,7 @@ export default function Companies() {
             >
               {content.title}
             </h2>
-            <p className="mt-7 max-w-125 text-base leading-[1.7] text-brand-white/80 md:text-lg">
+            <p className="mt-6 max-w-125 text-base leading-[1.7] text-brand-white/80 md:text-lg">
               {content.description}
             </p>
           </div>
@@ -33,9 +36,15 @@ export default function Companies() {
             <div className={styles.cut}>
               <ul className={styles.signals}>
                 {content.context.signals.map((signal, index) => (
-                  <li key={signal} className={styles.signal}>
+                  <li key={signal.label} className={styles.signal}>
                     <span aria-hidden="true" data-reveal data-duration=".35" data-delay={index * 0.18} className={styles.face} />
-                    {signal}
+                    <span aria-hidden="true" className={styles.terminal}>
+                      <BuildIcon name={signalIcons[index]} />
+                    </span>
+                    <div className="min-w-0">
+                      <p>{signal.label}</p>
+                      <p className="mt-2 text-base leading-normal font-normal tracking-normal">{signal.description}</p>
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -44,7 +53,7 @@ export default function Companies() {
           </div>
         </div>
 
-        <p className={styles.note}>{content.note}</p>
+        <p className={`section-statement ${styles.note}`}>{content.note}</p>
       </div>
     </section>
   );
