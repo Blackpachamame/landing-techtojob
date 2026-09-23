@@ -1,254 +1,242 @@
-# TechToJob
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="public/brand/horizontal-negative.svg">
+    <source media="(prefers-color-scheme: light)" srcset="public/brand/horizontal-positive.svg">
+    <img src="public/brand/horizontal-positive.svg" alt="TechToJob" width="320">
+  </picture>
+</div>
 
-## Proyecto
+# TechToJob · Torneo #2
 
-Landing page oficial de TechToJob construida para el torneo de desarrollo web.
-TechToJob es una comunidad donde desarrolladores y empresas participan, construyen
-y se conocen. La landing explica esa propuesta y guía a los visitantes hacia
-Discord, sin prometer empleo.
+Landing oficial de TechToJob para el Torneo #2 de desarrollo web. TechToJob es una
+comunidad donde desarrolladores y empresas participan, construyen y se conocen.
+La landing presenta esa propuesta y guía a los visitantes hacia Discord, sin
+prometer empleo.
 
-La landing completa está implementada y aprobada desde Header hasta Footer, con SEO,
-datos estructurados, imágenes sociales y favicon adaptativo.
+**[Ver sitio en vivo](https://techtojob.vercel.app/)**
 
-## Sitio en producción
+## Qué incluye
 
-[techtojob.vercel.app](https://techtojob.vercel.app/)
+La landing está implementada y aprobada desde Header hasta Footer:
 
-El sitio del torneo está desplegado en Vercel con `SITE_URL` configurado en producción.
+Header · Hero · Cómo funciona · Talento · Empresas · Torneos · Networking ·
+Testimonios · Noticias · Newsletter · CTA final · Footer.
 
-## Stack
+Incluye navegación entre secciones, una página de aviso legal provisional, metadata,
+datos estructurados, imágenes sociales y favicon adaptativo. Noticias enlaza a
+publicaciones de LinkedIn con fechas verificadas y elementos semánticos `time`.
+La Newsletter está deshabilitada; las limitaciones de la versión del torneo se
+detallan más abajo.
 
-- Next.js 16 App Router y TypeScript.
-- Tailwind CSS 4, con CSS Modules para composiciones específicas de cada sección.
+Las decisiones visuales y el estado de las secciones están en
+[docs/DESIGN.md](docs/DESIGN.md); el copy aprobado y sus destinos, en
+[docs/CONTENT.md](docs/CONTENT.md).
+
+## Tecnología y arquitectura
+
+- Next.js 16 App Router y TypeScript, con Server Components y renderizado estático.
+- Tailwind CSS 4 y CSS Modules para composiciones específicas de cada sección.
 - Sora mediante `next/font/google`.
-- Bun 1.3.14 o superior; Node.js 20.9 o superior para Next.js.
-- Server Components para el contenido; HeroBuildMotion y DrawOnView mejoran el
-  arte decorativo, mientras que un pequeño Client Component MobileMenu gestiona
-  el cierre y el foco.
+- GSAP e IntersectionObserver para mejoras decorativas localizadas; MobileMenu
+  añade cierre, animación y gestión de foco al menú nativo.
 
-## Ejecución local
+```text
+src/app/                 # Páginas, layout, estilos globales y rutas SEO
+src/components/layout/   # Header, MobileMenu y Footer
+src/components/sections/ # Secciones de la landing y motion localizado
+src/config/              # Configuración central del sitio
+src/lib/                 # Renderizado compartido de imágenes sociales
+messages/                # Contenido en español
+public/brand/            # SVG oficiales de marca
+public/social/           # Artwork de la imagen social
+docs/                    # Dirección visual y copy aprobados
+```
+
+El idioma actual es español (`lang="es"`). El copy visible y SEO está centralizado
+en [messages/es.json](messages/es.json). Los namespaces preparan una futura
+internacionalización, pero no hay otros locales ni `next-intl` implementados.
+La navegación usa anchors nativos dentro de la homepage y `Link` para llegar a sus
+secciones desde el aviso legal.
+
+## Desarrollo local
+
+Requisitos: **Bun 1.3.14 o superior** y **Node.js 20.9 o superior**.
 
 ```sh
 bun install
 bun run dev
 ```
 
-Abrir http://localhost:3000. Validación y vista previa de producción:
+Abrir <http://localhost:3000>. Para validar y después servir el build de producción:
 
 ```sh
-bun run lint
-bunx tsc --noEmit
-bun run build
+bun run check
 bun run start
 ```
 
-El build necesita acceso a Google Fonts para obtener Sora. Luego, Next.js la sirve
-localmente con los pesos 400, 600 y 700 y `display: swap`.
+`check` ejecuta en orden `bun run lint`, `bun run typecheck` (`tsc --noEmit`) y
+`bun run build`. También pueden ejecutarse por separado. El build necesita acceso
+a Google Fonts para obtener Sora; después Next.js la sirve localmente con los pesos
+400, 600 y 700 y `display: swap`.
 
-## Entorno
+### Entorno y SITE_URL
 
-Copiar `.env.example` a `.env.local` para la configuración local. Configurar
-`SITE_URL` con el origen público HTTP(S) real en el entorno de hosting **antes del
-build de producción**. Producción utiliza `https://techtojob.vercel.app/`. No incluir
-credenciales, subrutas, query ni fragmentos. Volver a ejecutar el build cuando cambie
-este valor.
+Copiar [.env.example](.env.example) a `.env.local` para configurar el entorno local.
+En hosting, definir `SITE_URL` **antes del build de producción**. El despliegue
+actual en Vercel utiliza:
 
-`src/config/site.ts` es la única fuente de verdad:
-
-| Configuración | Comportamiento SEO |
-| --- | --- |
-| `SITE_URL` vacío | `noindex, nofollow`; robots impide el rastreo; sitemap vacío; se omiten canonical y las URLs públicas de las imágenes sociales; JSON-LD omite URL y logo. |
-| `SITE_URL` configurado | `index, follow`; canonical y sitemap de la homepage; URLs absolutas para Open Graph, Twitter y Organization. |
-
-Dejar `SITE_URL` vacío en previews que no deban indexarse. Los valores de origen
-inválidos fallan en la validación en lugar de producir URLs engañosas.
-
-## Estructura del proyecto
-
-```text
-src/app/                 # Página, layout, estilos globales y rutas SEO
-src/components/layout/   # Header y Footer
-src/components/sections/ # Secciones de la landing
-src/config/              # Configuración central del sitio
-src/lib/                 # Renderizado compartido de imágenes sociales
-messages/                # Contenido en español
-public/brand/            # Assets SVG oficiales proporcionados
-docs/                    # Dirección visual y copy aprobados
+```dotenv
+SITE_URL=https://techtojob.vercel.app/
 ```
 
-## Arquitectura de contenido
+Debe ser un origen público HTTP(S), sin credenciales, subrutas, query ni fragmentos.
+Los valores inválidos fallan en la validación. Volver a ejecutar el build si cambia
+el valor; [src/config/site.ts](src/config/site.ts) es la única fuente de verdad.
 
-El idioma actual es español (`lang="es"`). El copy visible y el copy SEO están
-centralizados en `messages/es.json` e importados por Server Components. Los
-namespaces preparan el contenido para una futura internacionalización. No se añadió
-`next-intl` porque no era un requisito obligatorio; no hay ningún locale adicional
-implementado.
+| Configuración          | Comportamiento SEO                                                                                                                                    |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `SITE_URL` vacío       | `noindex, nofollow`; robots impide el rastreo; sitemap vacío; se omiten canonical y URLs públicas de las imágenes sociales; JSON-LD omite URL y logo. |
+| `SITE_URL` configurado | `index, follow` en la homepage; canonical y sitemap de la homepage; URLs absolutas para Open Graph, Twitter y Organization.                           |
 
-## Secciones de la landing
+Dejarlo vacío en previews que no deban indexarse. El aviso legal mantiene `noindex`
+incluso con el origen configurado. Para otro despliegue, instalar con Bun y ejecutar
+`bun run build`; un host con Node.js puede servirlo con `bun run start`.
 
-Hero · Cómo funciona · Talento · Empresas · Torneos · Networking · Testimonios ·
-Noticias · Newsletter · CTA final · Footer. El Header proporciona navegación interna.
-El Hero explica qué es TechToJob al inicio del párrafo, sin eyebrow. Las entradas de Noticias
-incluyen las tres fechas de publicación verificadas mediante elementos semánticos
-`time` y enlaces descriptivos hacia LinkedIn.
+## Diseño, marca y licencias
 
-## Sistema de diseño
+Sora, charcoal `#2f3436`, mint `#84c0bf` y blanco `#ffffff` definen la identidad.
+La dirección editorial-tech utiliza tipografía, espacio en blanco y geometría,
+con composiciones adaptadas a desktop, tablet y mobile. La landing no utiliza
+fotografías de stock externas; las composiciones decorativas en SVG y CSS forman
+parte de esta implementación.
 
-Sora, charcoal `#2f3436`, mint `#84c0bf` y white `#ffffff` definen el sistema de marca.
-La composición original sigue una dirección premium editorial-tech, con tipografía
-fuerte, espacio en blanco, geometría y ritmos de sección diferenciados. Los layouts
-responsive se adaptan a desktop, tablet y mobile en lugar de limitarse a reducir las
-composiciones de escritorio.
+Los assets oficiales de TechToJob fueron suministrados para el torneo.
+[public/brand/](public/brand/) contiene doce SVG: símbolo, logo horizontal y logo
+apilado, cada uno en variantes black, gradient, negative y positive. Los SVG
+corregidos actuales no contienen texto editable ni dependen de una fuente externa.
+El logo apilado con gradiente incluye datos raster embebidos.
 
-## Assets y licencias
+Este README usa los logos horizontales oficiales negativo en modo oscuro y positivo
+en modo claro, con fallback positivo. Sus letras son trazados vectoriales: no
+necesitan el CSS de Sora del sitio ni exports PNG para mostrarse de forma independiente.
+Header y Footer incorporan el logo oficial inline; Footer distingue su ID raíz.
+No se afirman derechos adicionales de licencia o redistribución sobre la marca.
 
-Los assets de marca de TechToJob fueron proporcionados para este proyecto.
-`public/brand/` conserva doce copias SVG byte-for-byte: los archivos originales
-`Símbolo*` se corresponden con `symbol-*`, `v1*` con `horizontal-*` y `v2*` con
-`stacked-*`, cada uno en variantes black, gradient, negative y positive. La metadata
-de iconos de Next.js sensible al media query selecciona los archivos sin modificar
-`symbol-positive.svg` (charcoal) para UI clara y `symbol-negative.svg` (mint) para
-UI oscura. No se añadió un cambio de tema.
+Los favicons SVG adaptativos usan `symbol-positive.svg` (charcoal) para UI clara y
+`symbol-negative.svg` (mint) para UI oscura, según el tema del navegador. No hay un
+selector de tema en el sitio. [src/app/favicon.ico](src/app/favicon.ico) aporta el
+fallback de compatibilidad de App Router: tamaños de 16, 32 y 48 px con transparencia,
+rasterizados desde el símbolo positivo oficial sin modificar el SVG original.
+Next.js añade su enlace antes de los dos SVG adaptativos.
 
-`src/app/favicon.ico` proporciona el fallback de compatibilidad mediante la convención
-de App Router. Contiene tamaños de 16, 32 y 48 px con transparencia, rasterizados desde
-el símbolo positivo oficial sin modificar el SVG original. Next añade su enlace antes
-de los dos SVG adaptativos; estos siguen seleccionándose según el tema del navegador.
+### Iconos sociales
 
-Los SVG horizontales y apilados originales que no utilizan gradiente contienen texto
-Sora editable. Header y Footer incorporan inline el logo oficial para que se aplique
-la fuente de la página; Footer añade namespace al ID raíz para evitar duplicados.
-El uso independiente de estos assets basados en texto puede requerir exports oficiales
-con texto convertido a contornos. El asset apilado original con gradiente contiene
-datos raster embebidos. El artwork, los datos y los colores originales se conservan.
-
-La landing actualmente no utiliza fotografías de stock externas. La geometría del
-sitio y las composiciones decorativas en SVG y CSS forman parte de esta implementación.
-No se afirman derechos adicionales de licencia o redistribución sobre los assets de
-marca proporcionados.
-
-Los paths de los iconos sociales del Footer fueron copiados exactamente del repositorio
-oficial de [Simple Icons](https://github.com/simple-icons/simple-icons):
+Los paths del Footer se copiaron exactamente del repositorio oficial de
+[Simple Icons](https://github.com/simple-icons/simple-icons):
 
 - Discord, X e Instagram: revisión [b86d5c9](https://github.com/simple-icons/simple-icons/tree/b86d5c9a0bdd4f3f5c30898a63654dd32f39fd76/icons).
-- LinkedIn: [SVG 13.21.0](https://github.com/simple-icons/simple-icons/blob/13.21.0/icons/linkedin.svg) verificado. No está presente en las versiones actuales; se utiliza explícitamente la fuente histórica oficial, no un path reconstruido.
+- LinkedIn: [SVG 13.21.0](https://github.com/simple-icons/simple-icons/blob/13.21.0/icons/linkedin.svg), fuente histórica oficial verificada; no está presente en las versiones actuales ni se reconstruyó su path.
 
-Se verificaron la [licencia CC0-1.0 del proyecto](https://github.com/simple-icons/simple-icons/blob/b86d5c9a0bdd4f3f5c30898a63654dd32f39fd76/LICENSE.md), su [disclaimer](https://github.com/simple-icons/simple-icons/blob/b86d5c9a0bdd4f3f5c30898a63654dd32f39fd76/DISCLAIMER.md) y la licencia de la versión archivada. Que Simple Icons utilice CC0 no implica que cada icono de marca sea CC0 ni concede derechos sobre marcas registradas; siguen aplicándose los términos individuales de cada marca. Los paths se almacenan localmente, sin dependencia de paquete ni solicitudes de iconos en runtime.
+Se verificaron la [licencia CC0-1.0 del proyecto](https://github.com/simple-icons/simple-icons/blob/b86d5c9a0bdd4f3f5c30898a63654dd32f39fd76/LICENSE.md), su [disclaimer](https://github.com/simple-icons/simple-icons/blob/b86d5c9a0bdd4f3f5c30898a63654dd32f39fd76/DISCLAIMER.md) y la licencia de la versión archivada. CC0 en Simple Icons no implica que cada icono de marca sea CC0 ni concede derechos sobre marcas registradas; siguen aplicándose los términos individuales de cada marca. Los paths se almacenan localmente, sin dependencia de paquete ni solicitudes de iconos en runtime.
 
-## SEO y contenido compartido en redes
+## Accesibilidad, SEO y rendimiento
 
-El title y la description finales en español utilizan la Metadata API de Next.js.
-Canonical, Open Graph, Twitter, robots y sitemap derivan todas sus URLs públicas de
-`SITE_URL`. La homepage incluye Organization JSON-LD escapado con únicamente el
-nombre confirmado, perfiles sociales y, cuando están configurados, la URL pública y
-el logo oficial.
+La implementación utiliza landmarks semánticos, un único H1 por página, jerarquía
+de títulos, enlaces reales, foco visible y labels de formulario. Ambas páginas
+incluyen un skip link; los iconos sociales tienen nombres accesibles y áreas de
+44 px. Los gráficos decorativos están ocultos para las tecnologías de asistencia.
 
-`/opengraph-image` y `/twitter-image` devuelven PNG reales de 1200 × 630,
-prerenderizados mediante route handlers nativos de Next.js usando
+El menú mobile conserva `details`/`summary` nativos y funciona sin JavaScript,
+con cierre manual. Con JavaScript, los clicks ordinarios cierran el menú y enfocan
+el destino local; Escape devuelve el foco al control. Los clicks modificados
+conservan su acción nativa. El Header sticky y el scroll padding permiten navegar
+por anchors sin ocultar el destino; el scroll suave respeta reduced motion.
+
+El contenido permanece estático. GSAP y pequeños helpers con IntersectionObserver
+animan el arte decorativo una vez, sin ScrollTrigger, scroll scrubbing ni estado
+React por frame. Sin JavaScript o con reduced motion se conserva el estado visual
+final; el menú omite su animación con reduced motion. Next.js aporta el runtime
+cliente estándar. Las comprobaciones responsive del proyecto cubren 1440, 1366,
+1280, 1024, 900, 820, 768, 430, 390 y 375 px.
+
+### Metadata e imágenes sociales
+
+Title y description en español utilizan la Metadata API. Canonical, robots,
+sitemap, Open Graph y Twitter derivan sus URLs públicas de `SITE_URL`, sin fallback
+a localhost. La homepage incluye Organization JSON-LD escapado con el nombre y
+perfiles sociales confirmados y, cuando hay origen configurado, la URL y el logo.
+Las páginas secundarias usan la plantilla de título `%s | TechToJob`;
+`/aviso-legal` tiene canonical propio cuando se configura el origen y `noindex, follow`.
+
+[/opengraph-image](https://techtojob.vercel.app/opengraph-image) y
+[/twitter-image](https://techtojob.vercel.app/twitter-image) devuelven PNG
+prerenderizados de **1200 × 630** mediante
 [ImageResponse](https://nextjs.org/docs/app/api-reference/functions/image-response).
-Ambas rutas utilizan un único renderer compartido que lee
-`public/social/techtojob-og.png` desde el filesystem local como una data URL en base64.
-ImageResponse ocupa el canvas de 1200 x 630 mediante `objectFit: "cover"`; el PNG
-original permanece sin modificaciones. No se necesitan solicitudes externas de
-assets en runtime.
+El renderer compartido [src/lib/social-image.tsx](src/lib/social-image.tsx) lee el
+artwork oficial existente [public/social/techtojob-og.png](public/social/techtojob-og.png)
+desde el filesystem como data URL/base64 y cubre el canvas con `objectFit: "cover"`.
+El original se conserva sin modificaciones y no se solicitan assets externos en runtime.
 
-Las URLs explícitas en la metadata evitan fallbacks implícitos a localhost cuando
-`SITE_URL` no está disponible.
+### Lighthouse en producción
 
-Las páginas secundarias utilizan la plantilla de título `%s | TechToJob`; el título
-de la homepage permanece sin cambios. `/aviso-legal` tiene su propio canonical y
-`noindex`, manteniendo el aviso provisional fuera de la indexación de buscadores.
-Describe únicamente la implementación del torneo y debe ser sustituido por el texto
-legal oficial de TechToJob antes de su uso operativo.
+Resultados de la versión final desplegada, verificados y proporcionados por el autor:
 
-## Testimonios
+| Modo                                 | Performance | Accessibility | Best Practices | SEO |
+| ------------------------------------ | ----------- | ------------- | -------------- | --- |
+| Mobile — mediana de tres ejecuciones | **98**      | 100           | 100            | 100 |
+| Desktop                              | **100**     | 100           | 100            | 100 |
 
-La versión del torneo utiliza los testimonios placeholder permitidos. Una futura
-versión operativa debería sustituirlos por testimonios verificados de la comunidad,
-fotografías y enlaces a perfiles.
+Performance mobile registró **89, 98 y 98**; Accessibility, Best Practices y SEO
+fueron 100 en las tres ejecuciones. Son mediciones puntuales de Lighthouse sobre
+el despliegue, no datos continuos de usuarios reales ni una garantía de resultados
+futuros. La captura y conservación de las evidencias para la entrega siguen pendientes.
 
-## Newsletter
+## Limitaciones actuales
 
-La franja compacta charcoal contiene un formulario real con label de email,
-autocomplete, submit deshabilitado por defecto y un mensaje visible de disponibilidad.
-Pulsar Enter en el campo de email no envía ni recarga la página. Actualmente no existe
-ningún proveedor de suscripción ni endpoint. El formulario no simula una suscripción
-real ni muestra un falso estado de éxito. La integración con un proveedor/backend de
-Newsletter queda pendiente para una futura versión operativa posterior al torneo.
-
-El copy del torneo describe una propuesta de correo semanal; "Quiero recibirlas"
-permanece deshabilitado junto al mensaje visible que indica que todavía no está
-disponible.
+- **Newsletter:** deshabilitada; no recoge suscripciones ni tiene proveedor o
+  endpoint. El formulario conserva label, autocomplete y un aviso visible de
+  disponibilidad; el submit está deshabilitado y Enter no envía ni recarga la página.
+  El copy describe una propuesta semanal, pero no se simula una suscripción ni un
+  estado de éxito. La integración queda para una futura versión operativa.
+- **Testimonios:** placeholders permitidos por el brief del torneo. Antes del uso
+  operativo deben sustituirse por testimonios verificados, fotografías y enlaces
+  a perfiles de la comunidad.
+- **Aviso legal:** documentación provisional de la implementación del torneo,
+  inadecuada como aviso legal operativo definitivo. Debe sustituirse por el texto
+  oficial de TechToJob antes de su uso operativo.
 
 ## Uso de IA
 
-Se utilizaron y declararon herramientas de IA según lo exigido por las reglas del
-torneo. ChatGPT y Codex ayudaron en planificación, iteración de copy,
-implementación/refinamiento y revisión técnica. Claude (Anthropic) y Gemini (Google)
-también se utilizaron para propuestas adicionales de dirección artística, prototipos
-visuales y revisión independiente. Las decisiones finales de diseño e implementación
-fueron seleccionadas, revisadas y validadas por el autor, quien puede explicar y
-defender el trabajo.
+Se utilizaron y declararon herramientas de IA según las reglas del torneo.
+ChatGPT y Codex ayudaron en planificación, iteración de copy, implementación,
+refinamiento y revisión técnica. Claude (Anthropic) y Gemini (Google) también
+participaron en propuestas de dirección artística, prototipos visuales y revisión
+independiente. Las decisiones finales de diseño e implementación fueron
+seleccionadas, revisadas y validadas por el autor, quien puede explicar y defender
+el trabajo.
 
-## Accesibilidad / rendimiento
+## Estado de entrega
 
-Landmarks semánticos, un único H1, niveles de headings ordenados, enlaces reales,
-foco explícito por teclado y controles de formulario con labels contribuyen a la
-accesibilidad. El menú mobile utiliza `details`/`summary` nativos, mejorados para
-cerrarse al seleccionar una opción o pulsar Escape y para gestionar el foco. La
-apertura y el cierre combinan opacidad y un desplazamiento de 6px durante 210ms;
-con reduced motion son inmediatos. Sin
-JavaScript sigue abriéndose y permitiendo navegar, aunque debe cerrarse manualmente.
+El repositorio es público y la versión final está desplegada en Vercel con
+`SITE_URL` configurado. El autor verificó el sitio de producción.
 
-El Header utiliza CSS sticky con scroll padding global para anchors/foco y anchors
-con smooth scrolling nativo que respetan reduced motion. Los grupos de navegación
-del Footer organizan ocho anchors existentes bajo Explorar y Comunidad, además de
-un grupo Legal que enlaza a `/aviso-legal`, en tres columnas desde 1024px; su fila de redes sociales se encuentra
-debajo del tagline. Un skip link visible por teclado apunta al contenido principal
-en ambas páginas. Los iconos sociales tienen nombres accesibles y áreas objetivo de
-44px; los gráficos decorativos están ocultos para las tecnologías de asistencia.
-
-Las comprobaciones responsive cubren 1440, 1366, 1280, 1024, 900, 820, 768, 430,
-390 y 375 px.
-
-La landing utiliza Server Components y renderizado estático. GSAP y pequeños helpers
-basados en IntersectionObserver animan el arte decorativo una sola vez, con estados
-finales correctos tanto sin JavaScript como con reduced motion. El CTA final /
-Comunidad es un pequeño cluster comunitario: tres terminales de miembros alrededor
-de un elemento compartido de conversación. DrawOnView revela sus piezas decorativas
-una vez durante 0.95 segundos y luego permanecen estáticas. No se utiliza
-ScrollTrigger, reverse ni scroll scrubbing. La geometría SVG y CSS proporcionan los
-recursos visuales sin descargas fotográficas ni estado React por frame. Next.js
-aporta su runtime cliente estándar del framework.
-
-## Lighthouse
-
-Mediciones verificadas en el sitio del torneo desplegado, proporcionadas por el autor:
-
-| Modo | Performance | Accessibility | Best Practices | SEO |
-| --- | --- | --- | --- | --- |
-| Mobile | 94 | 100 | 100 | 100 |
-| Desktop | 100 | 100 | 100 | 100 |
-
-Estos valores describen la revisión de producción medida. Para la entrega debe
-capturarse y conservarse la evidencia de Lighthouse requerida; estas mediciones no
-constituyen una nueva auditoría de los cambios locales.
-
-## Deployment
-
-El deployment del torneo está alojado en Vercel en
-https://techtojob.vercel.app/. Para un deployment futuro, configurar `SITE_URL`,
-instalar con Bun y ejecutar el build mediante `bun run build`. Un host con Node.js
-puede servir el build mediante `bun run start`.
-
-Después de cada release, verificar canonical, robots, sitemap, structured data y
-ambas rutas de imágenes sociales en el origen público.
-
-## Entrega del torneo
-
-- [ ] Confirmar el repositorio público y la revisión final enviada.
-- [x] Desplegar y verificar la URL pública de producción.
-- [ ] Capturar manualmente screenshots finales de desktop y mobile.
-- [x] Ejecutar Lighthouse sobre el sitio desplegado.
-- [ ] Capturar/guardar la evidencia de Lighthouse requerida.
+- [x] Repositorio público.
+- [x] Versión final desplegada y verificada en <https://techtojob.vercel.app/>.
+- [x] Lighthouse ejecutado sobre el sitio desplegado.
+- [ ] Confirmar la revisión final enviada al torneo.
+- [x] Tomar manualmente las capturas finales de desktop y mobile.
+- [x] Capturar y guardar las evidencias de Lighthouse requeridas.
 - [ ] Enviar repositorio, deployment y evidencias requeridas en Discord.
+
+En futuras releases, volver a verificar canonical, robots, sitemap, datos
+estructurados y ambas rutas de imágenes sociales en el origen público.
+
+---
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="public/brand/stacked-negative.svg">
+    <source media="(prefers-color-scheme: light)" srcset="public/brand/stacked-positive.svg">
+    <img src="public/brand/stacked-positive.svg" alt="TechToJob" width="80">
+  </picture>
+</div>
