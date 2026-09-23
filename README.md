@@ -110,6 +110,11 @@ de iconos de Next.js sensible al media query selecciona los archivos sin modific
 `symbol-positive.svg` (charcoal) para UI clara y `symbol-negative.svg` (mint) para
 UI oscura. No se añadió un cambio de tema.
 
+`src/app/favicon.ico` proporciona el fallback de compatibilidad mediante la convención
+de App Router. Contiene tamaños de 16, 32 y 48 px con transparencia, rasterizados desde
+el símbolo positivo oficial sin modificar el SVG original. Next añade su enlace antes
+de los dos SVG adaptativos; estos siguen seleccionándose según el tema del navegador.
+
 Los SVG horizontales y apilados originales que no utilizan gradiente contienen texto
 Sora editable. Header y Footer incorporan inline el logo oficial para que se aplique
 la fuente de la página; Footer añade namespace al ID raíz para evitar duplicados.

@@ -27,17 +27,19 @@ const communityNavigation = [
 const linkClassName =
   "inline-flex min-h-11 items-center py-2 text-sm leading-relaxed text-brand-white/85 underline decoration-brand-white/30 underline-offset-4 hover:text-brand-mint hover:decoration-brand-mint focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-mint motion-safe:transition-colors";
 
-export default function Footer({ homePath = "" }: { homePath?: string }) {
+export default function Footer({ isHomePage = false }: { isHomePage?: boolean }) {
   const content = messages.Footer;
+  const HomeLink = isHomePage ? "a" : Link;
+  const routeLinkProps = isHomePage ? {} : { prefetch: false };
 
   return (
     <footer className="bg-brand-deep pt-14 pb-8 text-brand-white md:pt-16">
       <div className="page-container">
         <div className="grid gap-10 md:grid-cols-[1.1fr_1fr] md:gap-12 lg:gap-24">
           <div>
-            <Link
-              href="/"
-              prefetch={false}
+            <HomeLink
+              {...routeLinkProps}
+              href={isHomePage ? "#top" : "/"}
               aria-label={messages.Navigation.home}
               className="inline-flex min-h-11 items-center focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-6 focus-visible:outline-brand-mint">
               <span
@@ -45,7 +47,7 @@ export default function Footer({ homePath = "" }: { homePath?: string }) {
                 className="block w-48 md:w-56 [&_svg]:block [&_svg]:h-auto [&_svg]:w-full"
                 dangerouslySetInnerHTML={{ __html: logo }}
               />
-            </Link>
+            </HomeLink>
             <p className="mt-5 max-w-80 text-sm leading-[1.8] text-brand-white/75">
               {content.tagline}
             </p>
@@ -82,9 +84,9 @@ export default function Footer({ homePath = "" }: { homePath?: string }) {
               <ul>
                 {exploreNavigation.map(({ key, href }) => (
                   <li key={key}>
-                    <a href={`${homePath}${href}`} className={linkClassName}>
+                    <HomeLink {...routeLinkProps} href={isHomePage ? href : `/${href}`} className={linkClassName}>
                       {messages.Navigation[key]}
-                    </a>
+                    </HomeLink>
                   </li>
                 ))}
               </ul>
@@ -98,9 +100,9 @@ export default function Footer({ homePath = "" }: { homePath?: string }) {
               <ul>
                 {communityNavigation.map(({ label, href }) => (
                   <li key={href}>
-                    <a href={`${homePath}${href}`} className={linkClassName}>
+                    <HomeLink {...routeLinkProps} href={isHomePage ? href : `/${href}`} className={linkClassName}>
                       {label}
-                    </a>
+                    </HomeLink>
                   </li>
                 ))}
               </ul>
@@ -113,7 +115,7 @@ export default function Footer({ homePath = "" }: { homePath?: string }) {
               </h2>
               <ul>
                 <li>
-                  <Link href="/aviso-legal" prefetch={false} className={linkClassName}>
+                  <Link href="/aviso-legal" prefetch={false} aria-current={isHomePage ? undefined : "page"} className={linkClassName}>
                     {content.legalNotice}
                   </Link>
                 </li>

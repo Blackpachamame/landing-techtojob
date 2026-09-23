@@ -14,6 +14,8 @@ import Testimonials from "@/components/sections/Testimonials";
 import Tournaments from "@/components/sections/Tournaments";
 import { siteName, siteUrl } from "@/config/site";
 
+const heroTitle = messages.Hero.title.beforeAccent + messages.Hero.title.accent + messages.Hero.title.afterAccent;
+
 export const metadata: Metadata = {
   openGraph: {
     type: "website",
@@ -24,7 +26,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     // Omit public image URLs until the production origin is configured.
     images: siteUrl
-      ? [{ url: new URL("/opengraph-image", siteUrl), width: 1200, height: 630, alt: messages.Hero.title }]
+      ? [{ url: new URL("/opengraph-image", siteUrl), width: 1200, height: 630, alt: heroTitle }]
       : [],
   },
   twitter: {
@@ -32,7 +34,7 @@ export const metadata: Metadata = {
     title: messages.Metadata.title,
     description: messages.Metadata.description,
     images: siteUrl
-      ? [{ url: new URL("/twitter-image", siteUrl), alt: messages.Hero.title }]
+      ? [{ url: new URL("/twitter-image", siteUrl), alt: heroTitle }]
       : [],
   },
 };
@@ -61,7 +63,7 @@ export default function HomePage() {
           __html: JSON.stringify(organization).replace(/</g, "\\u003c"),
         }}
       />
-      <Header />
+      <Header isHomePage />
       <main id="main-content" tabIndex={-1}>
         <Hero />
         <HowItWorks />
@@ -74,7 +76,7 @@ export default function HomePage() {
         <Newsletter />
         <FinalCTA />
       </main>
-      <Footer />
+      <Footer isHomePage />
     </>
   );
 }

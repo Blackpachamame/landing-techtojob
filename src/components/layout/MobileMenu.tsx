@@ -64,9 +64,11 @@ export default function MobileMenu({ label, children }: { label: string; childre
           setOpen(!menu.current?.open || closing.current);
           return;
         }
-        const link = event.target.closest<HTMLAnchorElement>('a[href^="#"]');
+        const link = event.target.closest<HTMLAnchorElement>('a[href^="#"], a[href^="/#"]');
         if (!link || !menu.current) return;
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
         setOpen(false);
+        if (link.pathname !== window.location.pathname || !link.hash) return;
         const target = document.getElementById(link.hash.slice(1));
         if (target) {
           target.tabIndex = -1;
@@ -85,8 +87,8 @@ export default function MobileMenu({ label, children }: { label: string; childre
         }
       }}
     >
-      <summary className="flex min-h-11 cursor-pointer list-none items-center gap-3 text-sm focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-mint [&::-webkit-details-marker]:hidden">
-        {label}
+      <summary className="flex min-h-11 cursor-pointer list-none items-center gap-3 text-sm focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-mint [@media(max-width:375px)]:w-11 [@media(max-width:375px)]:justify-center [&::-webkit-details-marker]:hidden">
+        <span className="[@media(max-width:375px)]:sr-only">{label}</span>
         <span aria-hidden="true" className="flex w-5 flex-col gap-1.5">
           <span className="h-px w-5 bg-brand-mint group-open:translate-y-[3.5px] group-open:rotate-45" />
           <span className="h-px w-5 bg-brand-mint group-open:-translate-y-[3.5px] group-open:-rotate-45" />

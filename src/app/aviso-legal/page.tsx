@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import messages from "../../../messages/es.json";
 import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
 import { siteUrl } from "@/config/site";
 
 const content = messages.LegalNotice;
@@ -16,11 +16,7 @@ export const metadata: Metadata = {
 export default function LegalNoticePage() {
   return (
     <>
-      <header className="page-container py-8">
-        <Link href="/" prefetch={false} className="inline-flex min-h-11 items-center text-sm underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-mint">
-          {content.backToHome}
-        </Link>
-      </header>
+      <Header />
       <main id="main-content" tabIndex={-1} className="bg-brand-white py-12 text-brand-dark md:py-20">
         <article className="page-container">
           <div className="max-w-3xl">
@@ -37,7 +33,7 @@ export default function LegalNoticePage() {
           </div>
         </article>
       </main>
-      <Footer homePath="/" />
+      <Footer />
     </>
   );
 }

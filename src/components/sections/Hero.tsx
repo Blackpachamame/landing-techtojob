@@ -4,20 +4,18 @@ import styles from "./Hero.module.css";
 
 export default function Hero() {
   const content = messages.Hero;
-  const titleAccentStart = content.title.indexOf(" por ");
-  const titleAccentEnd = content.title.lastIndexOf(",") + 1;
 
   return (
-    <section aria-labelledby="hero-title" className={styles.hero}>
+    <section id="top" aria-labelledby="hero-title" className={styles.hero}>
       <div className={`page-container ${styles.composition}`}>
         <div className={styles.copy}>
           <h1
             id="hero-title"
             className={styles.title}
           >
-            {content.title.slice(0, titleAccentStart)}
-            <span className="text-brand-mint">{content.title.slice(titleAccentStart, titleAccentEnd)}</span>
-            <span className="text-brand-white/75">{content.title.slice(titleAccentEnd)}</span>
+            {content.title.beforeAccent}
+            <span className="text-brand-mint">{content.title.accent}</span>
+            <span className="text-brand-white/75">{content.title.afterAccent}</span>
           </h1>
           <p className={`max-w-140 text-base text-brand-white/80 ${styles.description}`}>
             {content.description}

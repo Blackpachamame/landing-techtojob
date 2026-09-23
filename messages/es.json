@@ -4,7 +4,7 @@
     "description": "TechToJob conecta desarrolladores y empresas en una comunidad donde participar, construir y compartir proyectos aporta más contexto que enviar otro CV."
   },
   "Navigation": {
-    "home": "Tech to Job, inicio",
+    "home": "TechToJob, inicio",
     "label": "Navegación principal",
     "menu": "Menú",
     "skipToContent": "Saltar al contenido",
@@ -15,7 +15,11 @@
     "community": "Comunidad"
   },
   "Hero": {
-    "title": "Que te conozcan por lo que construyes, no\u00a0por otro CV.",
+    "title": {
+      "beforeAccent": "Que te conozcan",
+      "accent": " por lo que construyes,",
+      "afterAccent": " no\u00a0por otro CV."
+    },
     "description": "TechToJob es una comunidad de desarrolladores y empresas tech en español. Participa, comparte lo que sabes hacer y deja que tu trabajo hable por ti. Aquí las empresas conocen a la gente por cómo aporta, no solo por lo que pone en su CV.",
     "cta": "Entrar a la comunidad",
     "network": {
@@ -173,13 +177,13 @@
     "stories": [
       {
         "number": "01",
-        "category": "Torneo #2",
-        "date": "8 sep 2026",
-        "dateTime": "2026-09-08",
-        "title": "La comunidad está construyendo la landing oficial de TechToJob.",
-        "description": "El reto ya está abierto: una landing con brief y rúbrica pública cuya propuesta ganadora pasará a ser la web oficial.",
+        "category": "Proyecto",
+        "date": "19 sep 2026",
+        "dateTime": "2026-09-19",
+        "title": "La comunidad sigue construyendo TechToJob.",
+        "description": "El logo nació del primer torneo, el stack se eligió por votación y miembros del servidor están construyendo la web. TechToJob sigue tomando forma con la comunidad.",
         "linkLabel": "Leer la publicación en LinkedIn",
-        "href": "https://es.linkedin.com/posts/techtojob_desarrolloweb-frontend-nextjs-activity-7503104580864368640-YQDy"
+        "href": "https://es.linkedin.com/posts/techtojob_seguimos-construyendo-techtojob-y-busco-m%C3%A1s-activity-7507086426929389570-hOZ7"
       },
       {
         "number": "02",
@@ -237,34 +241,28 @@
   "LegalNotice": {
     "title": "Aviso legal",
     "description": "Aviso legal provisional de la propuesta para el Torneo #2 de TechToJob: alcance de la landing, datos y servicios externos.",
-    "introduction": "Este es un aviso legal provisional creado para la propuesta del Torneo #2 de TechToJob. Debe sustituirse por el texto legal oficial de TechToJob antes de que el sitio se convierta en su web operativa oficial.",
+    "introduction": "Este aviso legal provisional describe la landing presentada al Torneo #2 de TechToJob y su funcionamiento actual. No es la documentación legal definitiva de una futura plataforma operativa.",
     "sections": [
       {
-        "title": "Formularios y datos personales",
+        "title": "Privacidad, formularios y cookies",
         "paragraphs": [
-          "Esta landing no incluye formularios habilitados ni endpoints de la aplicación destinados a recoger datos personales. La newsletter está deshabilitada y no transmite la dirección de correo que se introduce en su campo."
+          "Esta landing no tiene formularios de candidatura habilitados ni un servicio activo de suscripción a la newsletter. La aplicación no envía el correo que se introduce en el campo de la newsletter, cuyo botón de suscripción está deshabilitado.",
+          "El proyecto no integra código propio de analítica ni de seguimiento, y la aplicación no establece intencionadamente cookies propias de analítica o publicidad. Esto describe la versión del torneo, no todos los posibles mecanismos técnicos de su infraestructura."
         ]
       },
       {
-        "title": "Analítica y cookies",
+        "title": "Alojamiento y servicios externos",
         "paragraphs": [
-          "El proyecto no integra código de analítica ni de seguimiento. La aplicación no establece intencionadamente cookies propias."
-        ]
-      },
-      {
-        "title": "Alojamiento y enlaces externos",
-        "paragraphs": [
-          "La versión del torneo está desplegada en Vercel. El alojamiento y los servicios de terceros enlazados pueden tratar datos técnicos conforme a sus propias políticas.",
-          "El sitio contiene enlaces externos a servicios como Discord, LinkedIn, X e Instagram."
+          "La versión del torneo está desplegada en Vercel. La infraestructura de alojamiento puede tratar datos técnicos de las solicitudes conforme a sus propias políticas.",
+          "El sitio enlaza a servicios como Discord, LinkedIn, X e Instagram. Al seguir un enlace externo, se aplican las políticas del servicio de destino."
         ]
       },
       {
         "title": "Carácter provisional",
         "paragraphs": [
-          "Este texto describe la implementación de la propuesta del torneo y no debe interpretarse como el aviso corporativo o legal definitivo de TechToJob."
+          "Este texto documenta únicamente la implementación del torneo. Debe revisarse y sustituirse por la documentación legal oficial antes de que TechToJob se convierta en un servicio operativo, especialmente si incorpora funciones que traten datos personales."
         ]
       }
-    ],
-    "backToHome": "Volver al inicio"
+    ]
   }
 }

@@ -19,27 +19,30 @@ const navigation = [
   { key: "community", href: "#networking" },
 ] as const;
 
-export default function Header() {
+export default function Header({ isHomePage = false }: { isHomePage?: boolean }) {
   const content = messages.Navigation;
+  const HomeLink = isHomePage ? "a" : Link;
+  const routeLinkProps = isHomePage ? {} : { prefetch: false };
 
   const links = navigation.map(({ key, href }) => (
     <li key={key}>
-      <a
-        href={href}
+      <HomeLink
+        {...routeLinkProps}
+        href={isHomePage ? href : `/${href}`}
         className="block py-3 text-sm text-brand-white/85 underline-offset-8 hover:text-brand-mint hover:underline focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-mint motion-safe:transition-colors"
       >
         {content[key]}
-      </a>
+      </HomeLink>
     </li>
   ));
 
   return (
     <header className={`sticky top-0 z-50 ${styles.header}`}>
       <div className="page-container">
-        <div className="flex h-16 items-center justify-between gap-8 lg:h-18">
-          <Link
-            href="/"
-            prefetch={false}
+        <div className="flex h-16 items-center justify-between gap-4 min-[360px]:gap-8 lg:h-18">
+          <HomeLink
+            {...routeLinkProps}
+            href={isHomePage ? "#top" : "/"}
             aria-label={content.home}
             className="flex min-h-11 shrink-0 items-center focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-brand-mint"
           >
@@ -48,7 +51,7 @@ export default function Header() {
               aria-hidden="true"
               dangerouslySetInnerHTML={{ __html: logo }}
             />
-          </Link>
+          </HomeLink>
 
           <nav aria-label={content.label} className="hidden lg:block">
             <ul className="flex items-center gap-7 xl:gap-9">{links}</ul>

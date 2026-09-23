@@ -79,6 +79,12 @@ Que te conozcan por lo que construyes, no por otro CV.
 
 Implementation note:
 The JSON uses one non-breaking space between “no” and “por” to preserve the intended wrap. Do not replace it with a br tag.
+Hero.title owns beforeAccent, accent and afterAccent in messages/es.json, including
+the existing spaces and punctuation. Hero.tsx renders these segments directly,
+without parsing Spanish vocabulary or punctuation. A future locale can translate
+the segments without rewriting the component. Their concatenation also preserves
+the existing social-image alt text. The site remains Spanish-only; multilingual
+routing is not implemented.
 
 Description:
 TechToJob es una comunidad de desarrolladores y empresas tech en español. Participa, comparte lo que sabes hacer y deja que tu trabajo hable por ti. Aquí las empresas conocen a la gente por cómo aporta, no solo por lo que pone en su CV.
@@ -328,27 +334,30 @@ Torneos, decisiones y avances que compartimos mientras TechToJob toma forma.
 #### Story 01
 
 Date:
-8 sep 2026
+19 sep 2026
 
 Datetime:
-2026-09-08
+2026-09-19
 
 Category:
-Torneo #2
+Proyecto
 
 Title:
-La comunidad está construyendo la landing oficial de TechToJob.
+La comunidad sigue construyendo TechToJob.
 
 Description:
-El reto ya está abierto: una landing con brief y rúbrica pública cuya propuesta ganadora pasará a ser la web oficial.
+El logo nació del primer torneo, el stack se eligió por votación y miembros del servidor están construyendo la web. TechToJob sigue tomando forma con la comunidad.
 
 Link label:
 Leer la publicación en LinkedIn
 
 URL:
-https://es.linkedin.com/posts/techtojob_desarrolloweb-frontend-nextjs-activity-7503104580864368640-YQDy
+https://es.linkedin.com/posts/techtojob_seguimos-construyendo-techtojob-y-busco-m%C3%A1s-activity-7507086426929389570-hOZ7
 
-Internal note: “El reto ya está abierto” is time-sensitive. Review it in the final pass if the tournament has ended; keep the approved copy unchanged for now.
+Source verification: the official post's SocialMediaPosting JSON-LD records
+datePublished as 2026-09-19T14:41:19.083Z. The official sources for stories 02 and 03
+retain 2026-08-24T13:41:59.049Z and 2026-08-25T18:38:32.007Z respectively; their
+existing copy, dates and URLs remain unchanged.
 
 #### Story 02
 
@@ -494,16 +503,22 @@ Copyright:
 Author credit:
 Diseñado y desarrollado por Blackpachamame
 
-The credit is rendered as plain text pending a confirmed GitHub profile URL for
-the named author. The repository remote identifies a different person and must
-not be used as an inferred author link.
+The author name links to the confirmed GitHub profile for Blackpachamame:
+https://github.com/Blackpachamame
 
 The single legal destination is /aviso-legal. There are no separate privacy, terms,
 cookies or contact routes.
 The brand link reuses the existing accessible home label. Each navigation landmark
 is labeled by its visible heading; social links form a separate unordered list
 directly beneath the tagline. Header and Footer use the accessible home label
-"Tech to Job, inicio"; the official visual logo is unchanged.
+"TechToJob, inicio"; the official visual logo is unchanged.
+
+Header and Footer receive isHomePage from the page. On the homepage, section
+links are native #section anchors and the logo is a native #top anchor. On
+/aviso-legal, section links use Next.js Link to /#section and the logo uses Link
+to /. The legal destination uses Link; external destinations remain native anchors.
+This preserves same-document scrolling and avoids full document reloads for route
+changes with JavaScript enabled. All links retain native navigation without it.
 
 ## 6. Confirmed links
 
@@ -576,11 +591,25 @@ pages. /aviso-legal is a provisional notice for the Torneo #2 entry, with noinde
 Its title is "Aviso legal" and the root template is "%s | TechToJob"; the homepage
 default title is unchanged. The legal page has its own canonical when SITE_URL is set.
 
-All legal page copy lives in messages/es.json under LegalNotice. It describes only
-verified project behavior: no enabled data-collection forms/endpoints; the disabled
-newsletter does not transmit the entered email; no integrated analytics/tracking;
-no intentionally set first-party cookies; Vercel hosting and linked external
-services may process technical data under their own policies. It is explicitly
-provisional and must be replaced by TechToJob's official legal text before the
-site becomes its official operational website. No corporate identities or contact
-details are invented.
+All legal page copy lives in messages/es.json under LegalNotice. The shared Header
+replaces the standalone return strip; the unused backToHome message is removed.
+No separate privacy/cookies pages or cookie banner are added.
+
+Introduction:
+Este aviso legal provisional describe la landing presentada al Torneo #2 de TechToJob y su funcionamiento actual. No es la documentación legal definitiva de una futura plataforma operativa.
+
+### Privacidad, formularios y cookies
+
+Esta landing no tiene formularios de candidatura habilitados ni un servicio activo de suscripción a la newsletter. La aplicación no envía el correo que se introduce en el campo de la newsletter, cuyo botón de suscripción está deshabilitado.
+
+El proyecto no integra código propio de analítica ni de seguimiento, y la aplicación no establece intencionadamente cookies propias de analítica o publicidad. Esto describe la versión del torneo, no todos los posibles mecanismos técnicos de su infraestructura.
+
+### Alojamiento y servicios externos
+
+La versión del torneo está desplegada en Vercel. La infraestructura de alojamiento puede tratar datos técnicos de las solicitudes conforme a sus propias políticas.
+
+El sitio enlaza a servicios como Discord, LinkedIn, X e Instagram. Al seguir un enlace externo, se aplican las políticas del servicio de destino.
+
+### Carácter provisional
+
+Este texto documenta únicamente la implementación del torneo. Debe revisarse y sustituirse por la documentación legal oficial antes de que TechToJob se convierta en un servicio operativo, especialmente si incorpora funciones que traten datos personales.

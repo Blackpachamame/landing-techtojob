@@ -188,6 +188,17 @@ hiding the server-rendered graphic.
 The Header uses CSS position: sticky, top: 0 and z-index 50 with a solid charcoal
 background and one thin divider. Its content is 64px high on mobile and 72px on
 desktop, plus the 1px divider. The official logo and all five anchor links remain.
+Header and Footer remain Server Components and receive isHomePage explicitly from
+the page. On the homepage, the logo uses a native #top anchor and section links
+use native #section-id anchors. On /aviso-legal, the logo uses Next.js Link to /
+and section links use Link to /#section-id. This preserves native same-document
+scrolling while avoiding full document reloads for App Router route changes.
+No client pathname detection is needed to render the links.
+Below 360px, the Header row gap is 16px to prevent horizontal overflow; from 360px
+it remains 32px. Logo dimensions and all other Header geometry are unchanged.
+At 375px and below, the summary is a centered 44x44px icon-only control. Its
+localized label remains screen-reader-only; from 376px, the existing visible
+label, hamburger and spacing remain unchanged.
 Global scroll-padding-top reserves 80px on mobile and 88px on desktop for anchors
 and native focus scrolling. Native CSS smooth scrolling applies only with
 prefers-reduced-motion: no-preference; reduced motion retains immediate scrolling.
@@ -196,7 +207,12 @@ route-transition helper. No new click handler, scroll listener or scrollspy.
 
 MobileMenu is a small Client Component around native details/summary; its links
 are passed from the Server Component. Native expanded/collapsed semantics remain.
-Selection closes the menu and moves focus to the target section; Escape closes it
+Unmodified link activation closes the menu. Ctrl/Meta/Shift/Alt clicks retain
+native browser behavior without custom closing or target focus.
+MobileMenu recognizes both # and /# links, but moves
+focus to a target only when the anchor's resolved pathname matches the current
+pathname and that target exists. Cross-route navigation is left to Link, without
+trying to focus future-route elements. Escape closes it
 and returns focus to summary. Focus can leave freely. The menu remains usable
 without JavaScript, with manual closing after navigation. The dropdown scrolls
 within short viewports; desktop navigation remains server-rendered.
@@ -208,10 +224,19 @@ Only opacity and transform animate, without changing the closed Header or layout
 Favicon metadata declares the unchanged official symbol-positive.svg for light
 UI (asset charcoal #303436) and symbol-negative.svg for dark UI (mint #84c0bf),
 using prefers-color-scheme media queries. There is no site theme switch.
+src/app/favicon.ico adds the App Router compatibility fallback: 16x16, 32x32 and
+48x48 32-bit images rasterized from the unchanged official symbol-positive.svg,
+with transparency. Next inserts its single ICO link before the adaptive SVG links;
+the existing explicit icon metadata remains unchanged.
 
 Hero has no eyebrow. Its description opens with the explicit positioning as a
 Spanish-speaking community of developers and tech companies. The H1, CTA and
 Build artwork retain their approved treatment.
+Hero title segments are owned by messages/es.json and rendered directly, preserving
+the existing white, mint and muted-white portions, punctuation and non-breaking
+space. The component does not parse Spanish vocabulary or punctuation; a future
+locale can provide translated segments without changing Hero.tsx. This does not
+add multilingual routing.
 Hero uses approximately 55% copy and 45% illustration on desktop. Copy aligns
 from the top independently of the art. Typography and spacing respond to viewport
 width AND height; no forced minimum height pushes the CTA down.
@@ -428,7 +453,8 @@ Static deep-charcoal footer. The official logo and tagline sit above a row of fo
 terminal-square social links in the left group. The right area has three labeled
 navigation groups: Explorar (How it works, Talent, Companies, Tournaments),
 Comunidad (Networking, Testimonials, News, Newsletter), and Legal (Aviso legal).
-The first two use real homepage section IDs; Legal links to /aviso-legal. The
+The first two use native hash anchors on the homepage and Next.js Link to the
+homepage/hash destination from internal routes. Legal uses Link to /aviso-legal. The
 desktop grid gives each group its own column from 1024px. Tablet uses two columns;
 navigation stacks below 430px, after the brand and social links.
 A thin bottom divider separates copyright and a discreet author credit. They sit
@@ -441,9 +467,10 @@ including the historical official LinkedIn source. No invented legal links.
 
 ### Legal notice and skip navigation
 
-/aviso-legal uses a simple white reading surface, charcoal text, Sora and the
-existing containers, with a home link and the shared Footer. Footer section links
-return to homepage anchors from this page. The provisional notice is noindex.
+/aviso-legal uses the shared Header, a simple white reading surface with charcoal
+text, Sora and the existing containers, and the shared Footer. The standalone
+dark return strip is removed; the Header provides navigation back to the homepage.
+Footer section links return to homepage anchors. The provisional notice is noindex.
 A native skip link is first in the body on both pages, visually hidden until focused,
 then fixed above the page in mint/charcoal. It targets the focusable main-content
 landmark without JavaScript, animation or a normal-layout shift.
