@@ -215,22 +215,6 @@ independiente. Las decisiones finales de diseño e implementación fueron
 seleccionadas, revisadas y validadas por el autor, quien puede explicar y defender
 el trabajo.
 
-## Estado de entrega
-
-El repositorio es público y la versión final está desplegada en Vercel con
-`SITE_URL` configurado. El autor verificó el sitio de producción.
-
-- [x] Repositorio público.
-- [x] Versión final desplegada y verificada en <https://techtojob.vercel.app/>.
-- [x] Lighthouse ejecutado sobre el sitio desplegado.
-- [ ] Confirmar la revisión final enviada al torneo.
-- [x] Tomar manualmente las capturas finales de desktop y mobile.
-- [x] Capturar y guardar las evidencias de Lighthouse requeridas.
-- [ ] Enviar repositorio, deployment y evidencias requeridas en Discord.
-
-En futuras releases, volver a verificar canonical, robots, sitemap, datos
-estructurados y ambas rutas de imágenes sociales en el origen público.
-
 ---
 
 <div align="center">
